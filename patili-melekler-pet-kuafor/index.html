@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Patili Melekler Pet Kuaför">
 <meta property="og:title" content="Patili Melekler Pet Kuaför · Yakuplu">
-<meta property="og:description" content="Yakuplu, Hürriyet Bulvarı’nda evcil hayvan kuaförü. Google’da 151 yorum, 4,9 puan.">
+<meta property="og:description" content="Yakuplu’da köpek ve kedi kuaförü. Tıraş, yıkama ve bakım; Seda Hanım ve Kerem Bey’le.">
 <meta property="og:url" content="https://akyilanil-cyber.github.io/ornekler/patili-melekler-pet-kuafor/">
 <meta property="og:image" content="https://akyilanil-cyber.github.io/ornekler/patili-melekler-pet-kuafor/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#2F6F6A">
-<meta name="description" content="Yakuplu, Hürriyet Bulvarı’nda evcil hayvan kuaförü. Google’da 151 yorum, 4,9 puan.">
+<meta name="description" content="Yakuplu’da köpek ve kedi kuaförü. Tıraş, yıkama ve bakım; Seda Hanım ve Kerem Bey’le.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%232F6F6A%27/%3E%3Ctext x=%2720%27 y=%2727%27 font-family=%27Georgia%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23FAF7F0%27%3EP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -228,11 +228,66 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .empty { color: var(--mute); padding: 24px 0; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 80px); align-items: start; padding-bottom: clamp(56px, 8vw, 96px); }
+.split.tek-sutun { grid-template-columns: 1fr; max-width: 760px; }
 .split .photo { position: sticky; top: calc(var(--head) + 24px); margin: 0; }
 .split .photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; }
 .lead { font: 400 clamp(1.25rem, 3vw, 1.6rem)/1.45 var(--serif-text); color: var(--ink); margin-bottom: 22px; }
 .prose p + p { margin-top: 14px; }
 .prose p { color: color-mix(in srgb, var(--ink) 82%, var(--porcelain)); }
+.svc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); counter-reset: svc; }
+.svc li { display: grid; grid-template-columns: 2.6rem 1fr auto; gap: 4px 14px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); counter-increment: svc; }
+.svc li::before { content: counter(svc, decimal-leading-zero); font: 500 .8rem var(--sans); letter-spacing: .12em; color: var(--red-soft); }
+.svc h3 { font: 400 clamp(1.3rem, 3vw, 1.6rem)/1.25 var(--serif-text); color: var(--ink); }
+.svc .svc-yan { font-size: .9rem; color: var(--mute); white-space: nowrap; text-align: end; }
+.svc p { grid-column: 2 / -1; color: var(--mute); font-size: .95rem; }
+.services { padding: clamp(56px, 9vw, 104px) 0; background: var(--paper); }
+.services-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 6vw, 88px); align-items: start; }
+.services h2, .steps h2 { font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--serif); color: var(--ink); margin-bottom: 18px; }
+.services-in > div:first-child p { color: var(--mute); margin-bottom: 26px; max-width: 26em; }
+.steps { padding: clamp(56px, 9vw, 104px) 0; text-align: center; }
+.steps ol { list-style: none; padding: 0; margin: clamp(32px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(var(--n, 4), 1fr); gap: 0; text-align: start; counter-reset: adim; border-top: 1px solid var(--ink); }
+.steps li { padding: 22px 22px 0 0; counter-increment: adim; }
+.steps li::before { content: counter(adim); display: block; font: 400 2.6rem/1 var(--serif); color: var(--red); margin-bottom: 14px; }
+.steps h3 { font: 600 1rem/1.3 var(--sans); margin-bottom: 6px; }
+.steps p { color: var(--mute); font-size: .92rem; }
+@media (max-width: 760px) {
+  .services-in { grid-template-columns: 1fr; }
+  .steps ol { grid-template-columns: 1fr; border-top: 0; }
+  .steps li { display: grid; grid-template-columns: 3rem 1fr; padding: 18px 0; border-top: 1px solid var(--line); }
+  .steps li::before { grid-row: span 2; font-size: 2rem; margin: 0; }
+}
+.home:not([hidden]) { display: flex; flex-direction: column; }
+.home > * { order: 50; }
+.home > .hero, .home > .hero-band, .home > .feston, .home > .duz-kenar { order: 0; }
+.home > .visit { order: 99; }
+.visit .wrap.tek { grid-template-columns: 1fr; max-width: 760px; }
+.visit .wrap.tek .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px; }
+/* Açılış: bölünmüş (renk blok + foto) */
+.acilis-bolunmus .hero { height: auto; min-height: 0; display: grid; background: var(--red); padding-top: var(--head); align-items: stretch; }
+.acilis-bolunmus .hero .film { position: relative; inset: auto; height: 58svh; min-height: 340px; }
+.acilis-bolunmus .hero .film::after { display: none; }
+.acilis-bolunmus .hero .wrap { padding-top: 34px; padding-bottom: 44px; }
+.acilis-bolunmus .hero-band { display: none; }
+@media (min-width: 901px) {
+  .acilis-bolunmus .hero { grid-template-columns: 5fr 6fr; min-height: 100svh; }
+  .acilis-bolunmus .hero .film { order: 2; height: auto; }
+  .acilis-bolunmus .hero .wrap { align-self: end; padding: 0 clamp(28px, 5vw, 72px) clamp(48px, 9vh, 96px); width: auto; }
+}
+/* Açılış: çerçeve (başlık üstte, foto altta çerçeve içinde) */
+.acilis-cerceve .hero { height: auto; min-height: 0; display: flex; flex-direction: column-reverse; align-items: stretch; background: var(--porcelain); color: var(--ink); padding-top: calc(var(--head) + clamp(24px, 5vw, 56px)); }
+.acilis-cerceve .hero .film { position: relative; inset: auto; height: min(62svh, 640px); margin: 0 max(16px, calc((100vw - 1200px) / 2)); }
+.acilis-cerceve .hero .film::after { display: none; }
+.acilis-cerceve .hero .wrap { padding-bottom: clamp(28px, 5vw, 48px); }
+.acilis-cerceve .hero h1 { color: var(--ink); }
+.acilis-cerceve .hero p { color: var(--mute); }
+.acilis-cerceve .hero .btn.fill { background: var(--red); color: var(--on-red); border-color: var(--red); }
+.acilis-cerceve .hero-band { margin-top: clamp(28px, 5vw, 56px); }
+/* Karşılama: alt (logo sol altta) */
+.kapi-alt .gate-inner { justify-self: start; align-self: end; text-align: start; justify-items: start; padding: 0 clamp(20px, 6vw, 72px) 18px; }
+.kapi-alt .gate .mark { margin-right: 0; }
+.kapi-alt .gate-foot { text-align: start; padding-inline: clamp(20px, 6vw, 72px); }
+.kapi-alt .gate .film::after { background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,.82) 100%); }
+.home > .services { order: 1; } .home > .choco { order: 2; } .home > .story { order: 3; } .home > .reviews { order: 4; } .home > .steps { order: 5; }
 .plain { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--line); }
 .plain li { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .plain strong { display: block; font: 400 1.25rem/1.3 var(--serif-text); color: var(--red); margin-bottom: 4px; }
@@ -292,6 +347,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .pillars { grid-template-columns: 1fr 1fr; }
   .pillars li:nth-child(3) { border-inline-start: 0; }
   .pillars li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .pillars li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .sig-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -20px; padding-inline: 20px; }
   .sig { scroll-snap-align: start; }
   .rev-row { grid-template-columns: 1fr; }
@@ -313,19 +369,19 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 }
 </style>
 </head>
-<body>
+<body class="acilis-cerceve kapi-orta">
 
 <div class="gate" id="gate" hidden>
-  <div class="film" aria-hidden="true"><img src="img/00.jpg" alt=""></div>
+  <div class="film" aria-hidden="true"><video id="gateVideo" muted playsinline loop preload="metadata" poster="img/20.jpg"><source src="kapi.mp4" type="video/mp4"></video></div>
   <div class="gate-inner gate-in">
     <h1 class="mark">Patili Melekler</h1>
     <p class="gate-sub">Evcil hayvan kuaförü</p>
     <div class="gate-actions">
       <a class="btn fill" href="#anasayfa">Ana sayfa</a>
-      <a class="btn line" href="#iletisim">İletişim</a>
+      <a class="btn line" href="#hizmetler">Hizmetler</a>
     </div>
   </div>
-  <p class="gate-foot">Yakuplu, Beylikdüzü · Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</p>
+  <p class="gate-foot">Yakuplu, Beylikdüzü</p>
 </div>
 
 <header class="top" id="top">
@@ -333,26 +389,28 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     <a class="mark" href="#anasayfa" aria-label="Patili Melekler, ana sayfa">Patili Melekler</a>
     <nav class="nav" aria-label="Ana menü">
       <a href="#anasayfa">Ana sayfa</a>
+      <a href="#hizmetler">Hizmetler</a>
       <a href="#galeri">Galeri</a>
-      <a href="#iletisim">İletişim</a>
+      <a href="#iletisim">Randevu</a>
       <button class="burger" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Bölümler"><span></span><span></span></button>
     </nav>
   </div>
 </header>
 <nav class="sheet" id="sheet" aria-label="Bölümler" hidden>
   <a href="#anasayfa">Ana sayfa</a>
+      <a href="#hizmetler">Hizmetler</a>
       <a href="#galeri">Galeri</a>
-      <a href="#iletisim">İletişim</a>
+      <a href="#iletisim">Randevu</a>
   <p class="sheet-meta">Yakuplu, Beylikdüzü · Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00 · <a href="tel:+905424671474" style="color:inherit">+90 542 467 14 74</a></p>
 </nav>
 
 <main>
-  <section class="view" data-view="anasayfa" aria-label="Ana sayfa">
+  <section class="view home" data-view="anasayfa" aria-label="Ana sayfa">
     <div class="hero">
-      <div class="film" aria-hidden="true"><img src="img/00.jpg" alt="" style="object-position:50% 50%"></div>
+      <div class="film" aria-hidden="true"><video id="heroVideo" muted playsinline loop preload="metadata" poster="img/21.jpg"><source src="acilis.mp4" type="video/mp4"></video></div>
       <div class="wrap">
-        <h1>Patili dostlarınız için bakım ve güzellik.</h1>
-        <p>Yakuplu, Hürriyet Bulvarı’nda evcil hayvan kuaförü. Google’da 151 yorum, 4,9 puan.</p>
+        <h1>Patili dostlarınız için sevgiyle bakım.</h1>
+        <p>Yakuplu’da köpek ve kedi kuaförü. Tıraş, yıkama ve bakım; Seda Hanım ve Kerem Bey’le.</p>
         <div class="hero-row">
           <a class="btn fill" href="#iletisim">Randevu alın</a>
           <span class="open-now">Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</span>
@@ -368,7 +426,27 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         
         
         
-        <ul class="pillars" style="--n:4"><li><h3>Makas tıraşı</h3><p>Pomeranian, Maltese, Maltipo, Poodle.</p></li><li><h3>Kısa tıraş</h3><p>İsterseniz vücut kısa, yüz makasla.</p></li><li><h3>4,9 puan</h3><p>Google’da 151 yorum.</p></li><li><h3>Her gün açık</h3><p>Pazar dahil, haftanın her günü.</p></li></ul>
+        <ul class="pillars" style="--n:3"><li><h3>4,9 puan</h3><p>Google’da 151 yorum.</p></li><li><h3>Kedi ve köpek</h3><p>Tıraş, yıkama ve bakım.</p></li><li><h3>Her gün açık</h3><p>Pazar günü 12.00’den itibaren.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="services" aria-labelledby="svcTitle">
+      <div class="wrap services-in">
+        <div>
+          <p class="kicker left">Hizmetlerimiz</p>
+          <h2 id="svcTitle">Köpek ve kedi bakımı</h2>
+          <p>Irkına, tüyüne ve sizin isteğinize göre.</p>
+          <a class="btn red" href="#iletisim">Randevu</a>
+        </div>
+        <ul class="svc"><li><h3>Makas tıraşı</h3><span class="svc-yan"></span><p>Pomeranian, Maltese, Maltipoo, Poodle ve benzeri ırklar.</p></li><li><h3>Makine tıraşı</h3><span class="svc-yan"></span><p>Kısa istenen ya da keçeleşmiş tüyler için.</p></li><li><h3>Kedi tıraşı</h3><span class="svc-yan"></span><p>Anestezisiz.</p></li><li><h3>Yıkama ve kurutma</h3><span class="svc-yan"></span><p>Tıraşla birlikte ya da tek başına.</p></li><li><h3>Renkli tüy boyama</h3><span class="svc-yan"></span><p>Bayram ve özel günler için.</p></li><li><h3>Mama ve bakım ürünleri</h3><span class="svc-yan"></span><p>Mağazamızda.</p></li></ul>
+      </div>
+    </section>
+
+    <section class="steps" aria-labelledby="stepsTitle">
+      <div class="wrap">
+        <p class="kicker">Randevu</p>
+        <h2 id="stepsTitle">Nasıl çalışıyoruz?</h2>
+        <ol style="--n:3"><li><h3>Hizmeti ve günü seçin</h3><p>Formu doldurun ya da WhatsApp’tan yazın.</p></li><li><h3>Saati onaylayalım</h3><p>Size uygun saati WhatsApp’tan bildirelim.</p></li><li><h3>Dostunuzu getirin</h3><p>Bakım bitince haber verelim.</p></li></ol>
       </div>
     </section>
 
@@ -380,12 +458,25 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <button type="button" class="c-side" data-photo="img/04.jpg" data-caption="Bakımdan sonra" aria-label="Fotoğrafı büyüt"><img src="img/04.jpg" alt="Bakımdan sonra" loading="lazy"></button>
         </div>
         <div class="choco-text">
-          <p class="kicker left">Misafirlerimiz</p>
+          <p class="kicker left">Çalışmalarımız</p>
           <h2 id="chocoTitle">Bakımdan sonra</h2>
-          <p class="choco-lead">Salonumuzdan çıkan patili misafirlerimiz. Daha fazlası Instagram’da.</p>
+          <p class="choco-lead">Son tıraşlarımızdan. Daha fazlası Instagram’da.</p>
           
           <a class="btn red" href="#iletisim">Randevu alın</a>
         </div>
+      </div>
+    </section>
+
+    <section class="reviews" aria-labelledby="revTitle">
+      <div class="wrap">
+        <p class="kicker">Müşterilerimiz</p>
+        <h2 id="revTitle">Dostlarını bize emanet edenler</h2>
+        <div class="rev-row">
+          <figure class="rev"><span class="rev-mark" aria-hidden="true">“</span><blockquote>Patili dostumuza çok sevgiyle ve sabırla yaklaştılar. Tıraşı tam istediğimiz gibi oldu, tertemiz ve çok mutlu ayrıldık.</blockquote><figcaption><span class="rev-av" aria-hidden="true">K</span><span>Kıvanç<span class="rev-stars" aria-label="5 yıldız">★★★★★</span></span></figcaption></figure>
+          <figure class="rev"><span class="rev-mark" aria-hidden="true">“</span><blockquote>İki yıldır kedimi tıraş ve banyo için buraya getiriyorum. İlgileri çok nazik, kedim buradan her zaman çok temiz çıkıyor.</blockquote><figcaption><span class="rev-av" aria-hidden="true">D</span><span>Dyana<span class="rev-stars" aria-label="5 yıldız">★★★★★</span></span></figcaption></figure>
+          <figure class="rev"><span class="rev-mark" aria-hidden="true">“</span><blockquote>Daha önce farklı birkaç yerde olumsuz deneyimlerim olmuştu. Gerçekten hayvanlara sevgiyle yaklaşan nadir işletmelerden.</blockquote><figcaption><span class="rev-av" aria-hidden="true">S</span><span>Sinem<span class="rev-stars" aria-label="5 yıldız">★★★★★</span></span></figcaption></figure>
+        </div>
+        <p class="center"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Patili%20Melekler%20Pet%20Kuaf%C3%B6r%20Beylikd%C3%BCz%C3%BC">Google’daki yorumlar</a></p>
       </div>
     </section>
 
@@ -409,6 +500,20 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </section>
   </section>
 
+  <section class="view" data-view="hizmetler" aria-labelledby="hizmetlerTitle" hidden>
+    <div class="page-head"><div class="wrap"><h1 id="hizmetlerTitle">Hizmetler</h1></div></div>
+    <div class="feston" aria-hidden="true"></div>
+    <div class="wrap split">
+      <figure class="photo"><img src="img/00.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy"></figure>
+      <div>
+        <p class="lead">Irkına, tüyüne ve sizin isteğinize göre.</p>
+        <ul class="svc"><li><h3>Makas tıraşı</h3><span class="svc-yan"></span><p>Pomeranian, Maltese, Maltipoo, Poodle ve benzeri ırklar.</p></li><li><h3>Makine tıraşı</h3><span class="svc-yan"></span><p>Kısa istenen ya da keçeleşmiş tüyler için.</p></li><li><h3>Kedi tıraşı</h3><span class="svc-yan"></span><p>Anestezisiz.</p></li><li><h3>Yıkama ve kurutma</h3><span class="svc-yan"></span><p>Tıraşla birlikte ya da tek başına.</p></li><li><h3>Renkli tüy boyama</h3><span class="svc-yan"></span><p>Bayram ve özel günler için.</p></li><li><h3>Mama ve bakım ürünleri</h3><span class="svc-yan"></span><p>Mağazamızda.</p></li></ul>
+        
+        <p style="margin-top:28px"><a class="btn red" href="#iletisim">Randevu</a></p>
+      </div>
+    </div>
+  </section>
+
   <section class="view" data-view="galeri" aria-labelledby="galeriTitle" hidden>
     <div class="page-head"><div class="wrap"><h1 id="galeriTitle">Galeri</h1></div></div>
     <div class="feston" aria-hidden="true"></div>
@@ -428,11 +533,10 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   </section>
 
   <section class="view" data-view="iletisim" aria-labelledby="iletisimTitle" hidden>
-    <div class="page-head"><div class="wrap"><h1 id="iletisimTitle">İletişim</h1></div></div>
+    <div class="page-head"><div class="wrap"><h1 id="iletisimTitle">Randevu</h1></div></div>
     <div class="feston" aria-hidden="true" style="margin-bottom:0"></div>
     <section class="visit" style="background:var(--porcelain);color:var(--ink)">
-      <div class="wrap">
-        <img src="img/01.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy">
+      <div class="wrap tek">
         <div>
           <h2 style="color:var(--red)">Sizi bekliyoruz</h2>
           <dl class="facts visit-facts">
@@ -456,7 +560,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <p class="res-lead">Dostunuzun cinsini ve istediğiniz bakımı not kısmına yazın, WhatsApp’tan dönelim.</p>
         </div>
         <form id="form">
-          <label class="tam">Konu<select name="tur"><option>Makas tıraşı</option><option>Kısa tıraş</option><option>Diğer</option></select></label>
+          <label class="tam">Konu<select name="tur"><option>Makas tıraşı</option><option>Makine tıraşı</option><option>Kedi tıraşı</option><option>Yıkama ve kurutma</option><option>Renkli tüy boyama</option><option>Diğer</option></select></label>
           <label>Tarih<input name="tarih" type="date" required></label>
           
           <label>Ad soyad<input name="ad" required autocomplete="name"></label>
@@ -485,7 +589,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </div>
     <div>
       <p class="foot-title">Keşfedin</p>
-      <ul class="foot-links"><li><a href="#anasayfa">Ana sayfa</a></li><li><a href="#galeri">Galeri</a></li><li><a href="#iletisim">İletişim</a></li></ul>
+      <ul class="foot-links"><li><a href="#anasayfa">Ana sayfa</a></li><li><a href="#hizmetler">Hizmetler</a></li><li><a href="#galeri">Galeri</a></li><li><a href="#iletisim">Randevu</a></li></ul>
     </div>
     <div>
       <p class="foot-title">Saatler</p>
@@ -520,11 +624,11 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   }
   function play(v, on) { if (!v) return; if (on && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }
 
-  var VIEWS = ["anasayfa","galeri","iletisim"];
+  var VIEWS = ["anasayfa","hizmetler","galeri","iletisim"];
   var gate = document.getElementById('gate'), top = document.getElementById('top'), current = null;
   var burger = document.querySelector('.burger'), sheet = document.getElementById('sheet');
   function viewFromHash() { var v = decodeURIComponent(location.hash.slice(1)); return VIEWS.indexOf(v) >= 0 ? v : 'anasayfa'; }
-  function headerState() { top.classList.toggle('clear', current === 'anasayfa' && window.scrollY < window.innerHeight - 120 && sheet.hidden); }
+  function headerState() { top.classList.toggle('clear', current === 'anasayfa' && document.body.classList.contains('acilis-tam') && window.scrollY < window.innerHeight - 120 && sheet.hidden); }
   function show(v) {
     if (v !== current) {
       current = v;
@@ -553,8 +657,8 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   burger.addEventListener('click', function () { setSheet(sheet.hidden); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) { setSheet(false); burger.focus(); } });
   matchMedia('(min-width: 901px)').addEventListener('change', function (m) { if (m.matches) setSheet(false); });
-  // Karşılama her açılışta gelir; masadaki QR (#menu) ya da bir bölüme verilen link doğrudan oraya düşer
-  if (gate && !location.hash) {
+  // Karşılama her açılışta (yenileyince de) gelir; sadece masadaki QR (#menu) doğrudan menüye düşer
+  if (gate && !/^#menu$/.test(location.hash)) {
     gate.hidden = false; document.body.style.overflow = 'hidden'; play(document.getElementById('gateVideo'), true);
     // Animasyon çalışmayan bir ortamda (arka plan sekmesi, eski telefon) logo ve butonlar gizli kalmasın
     setTimeout(function () { gate.querySelector('.gate-in').classList.add('bitti'); }, 1500);

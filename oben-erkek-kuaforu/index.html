@@ -228,11 +228,66 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .empty { color: var(--mute); padding: 24px 0; }
 
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 80px); align-items: start; padding-bottom: clamp(56px, 8vw, 96px); }
+.split.tek-sutun { grid-template-columns: 1fr; max-width: 760px; }
 .split .photo { position: sticky; top: calc(var(--head) + 24px); margin: 0; }
 .split .photo img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 2px; }
 .lead { font: 400 clamp(1.25rem, 3vw, 1.6rem)/1.45 var(--serif-text); color: var(--ink); margin-bottom: 22px; }
 .prose p + p { margin-top: 14px; }
 .prose p { color: color-mix(in srgb, var(--ink) 82%, var(--porcelain)); }
+.svc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); counter-reset: svc; }
+.svc li { display: grid; grid-template-columns: 2.6rem 1fr auto; gap: 4px 14px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); counter-increment: svc; }
+.svc li::before { content: counter(svc, decimal-leading-zero); font: 500 .8rem var(--sans); letter-spacing: .12em; color: var(--red-soft); }
+.svc h3 { font: 400 clamp(1.3rem, 3vw, 1.6rem)/1.25 var(--serif-text); color: var(--ink); }
+.svc .svc-yan { font-size: .9rem; color: var(--mute); white-space: nowrap; text-align: end; }
+.svc p { grid-column: 2 / -1; color: var(--mute); font-size: .95rem; }
+.services { padding: clamp(56px, 9vw, 104px) 0; background: var(--paper); }
+.services-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 6vw, 88px); align-items: start; }
+.services h2, .steps h2 { font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--serif); color: var(--ink); margin-bottom: 18px; }
+.services-in > div:first-child p { color: var(--mute); margin-bottom: 26px; max-width: 26em; }
+.steps { padding: clamp(56px, 9vw, 104px) 0; text-align: center; }
+.steps ol { list-style: none; padding: 0; margin: clamp(32px, 5vw, 56px) 0 0; display: grid; grid-template-columns: repeat(var(--n, 4), 1fr); gap: 0; text-align: start; counter-reset: adim; border-top: 1px solid var(--ink); }
+.steps li { padding: 22px 22px 0 0; counter-increment: adim; }
+.steps li::before { content: counter(adim); display: block; font: 400 2.6rem/1 var(--serif); color: var(--red); margin-bottom: 14px; }
+.steps h3 { font: 600 1rem/1.3 var(--sans); margin-bottom: 6px; }
+.steps p { color: var(--mute); font-size: .92rem; }
+@media (max-width: 760px) {
+  .services-in { grid-template-columns: 1fr; }
+  .steps ol { grid-template-columns: 1fr; border-top: 0; }
+  .steps li { display: grid; grid-template-columns: 3rem 1fr; padding: 18px 0; border-top: 1px solid var(--line); }
+  .steps li::before { grid-row: span 2; font-size: 2rem; margin: 0; }
+}
+.home:not([hidden]) { display: flex; flex-direction: column; }
+.home > * { order: 50; }
+.home > .hero, .home > .hero-band, .home > .feston, .home > .duz-kenar { order: 0; }
+.home > .visit { order: 99; }
+.visit .wrap.tek { grid-template-columns: 1fr; max-width: 760px; }
+.visit .wrap.tek .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px; }
+/* Açılış: bölünmüş (renk blok + foto) */
+.acilis-bolunmus .hero { height: auto; min-height: 0; display: grid; background: var(--red); padding-top: var(--head); align-items: stretch; }
+.acilis-bolunmus .hero .film { position: relative; inset: auto; height: 58svh; min-height: 340px; }
+.acilis-bolunmus .hero .film::after { display: none; }
+.acilis-bolunmus .hero .wrap { padding-top: 34px; padding-bottom: 44px; }
+.acilis-bolunmus .hero-band { display: none; }
+@media (min-width: 901px) {
+  .acilis-bolunmus .hero { grid-template-columns: 5fr 6fr; min-height: 100svh; }
+  .acilis-bolunmus .hero .film { order: 2; height: auto; }
+  .acilis-bolunmus .hero .wrap { align-self: end; padding: 0 clamp(28px, 5vw, 72px) clamp(48px, 9vh, 96px); width: auto; }
+}
+/* Açılış: çerçeve (başlık üstte, foto altta çerçeve içinde) */
+.acilis-cerceve .hero { height: auto; min-height: 0; display: flex; flex-direction: column-reverse; align-items: stretch; background: var(--porcelain); color: var(--ink); padding-top: calc(var(--head) + clamp(24px, 5vw, 56px)); }
+.acilis-cerceve .hero .film { position: relative; inset: auto; height: min(62svh, 640px); margin: 0 max(16px, calc((100vw - 1200px) / 2)); }
+.acilis-cerceve .hero .film::after { display: none; }
+.acilis-cerceve .hero .wrap { padding-bottom: clamp(28px, 5vw, 48px); }
+.acilis-cerceve .hero h1 { color: var(--ink); }
+.acilis-cerceve .hero p { color: var(--mute); }
+.acilis-cerceve .hero .btn.fill { background: var(--red); color: var(--on-red); border-color: var(--red); }
+.acilis-cerceve .hero-band { margin-top: clamp(28px, 5vw, 56px); }
+/* Karşılama: alt (logo sol altta) */
+.kapi-alt .gate-inner { justify-self: start; align-self: end; text-align: start; justify-items: start; padding: 0 clamp(20px, 6vw, 72px) 18px; }
+.kapi-alt .gate .mark { margin-right: 0; }
+.kapi-alt .gate-foot { text-align: start; padding-inline: clamp(20px, 6vw, 72px); }
+.kapi-alt .gate .film::after { background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,.82) 100%); }
+
 .plain { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--line); }
 .plain li { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .plain strong { display: block; font: 400 1.25rem/1.3 var(--serif-text); color: var(--red); margin-bottom: 4px; }
@@ -292,6 +347,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .pillars { grid-template-columns: 1fr 1fr; }
   .pillars li:nth-child(3) { border-inline-start: 0; }
   .pillars li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .pillars li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .sig-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -20px; padding-inline: 20px; }
   .sig { scroll-snap-align: start; }
   .rev-row { grid-template-columns: 1fr; }
@@ -313,10 +369,10 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 }
 </style>
 </head>
-<body>
+<body class="acilis-cerceve kapi-orta">
 
 <div class="gate" id="gate" hidden>
-  <div class="film" aria-hidden="true"><img src="img/00.jpg" alt=""></div>
+  <div class="film" aria-hidden="true"></div>
   <div class="gate-inner gate-in">
     <h1 class="mark">Oben</h1>
     <p class="gate-sub">Erkek kuaförü</p>
@@ -325,7 +381,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
       <a class="btn line" href="#iletisim">İletişim</a>
     </div>
   </div>
-  <p class="gate-foot">Adnan Kahveci, Beylikdüzü · Her gün 09.00–21.00</p>
+  <p class="gate-foot">Adnan Kahveci, Beylikdüzü</p>
 </div>
 
 <header class="top" id="top">
@@ -345,7 +401,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 </nav>
 
 <main>
-  <section class="view" data-view="anasayfa" aria-label="Ana sayfa">
+  <section class="view home" data-view="anasayfa" aria-label="Ana sayfa">
     <div class="hero">
       <div class="film" aria-hidden="true"><img src="img/00.jpg" alt="" style="object-position:50% 50%"></div>
       <div class="wrap">
@@ -371,8 +427,8 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </section>
 
     <section class="visit" aria-labelledby="visitHome">
-      <div class="wrap">
-        <img src="img/01.jpg" alt="OBEN ERKEK KUAFÖRÜ" loading="lazy">
+      <div class="wrap tek">
+        
         <div>
           <h2 id="visitHome">Sizi bekliyoruz</h2>
           <dl class="facts">
@@ -394,8 +450,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     <div class="page-head"><div class="wrap"><h1 id="iletisimTitle">İletişim</h1></div></div>
     <div class="duz-kenar" aria-hidden="true" style="margin-bottom:0"></div>
     <section class="visit" style="background:var(--porcelain);color:var(--ink)">
-      <div class="wrap">
-        <img src="img/01.jpg" alt="OBEN ERKEK KUAFÖRÜ" loading="lazy">
+      <div class="wrap tek">
         <div>
           <h2 style="color:var(--red)">Sizi bekliyoruz</h2>
           <dl class="facts visit-facts">
@@ -487,7 +542,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   var gate = document.getElementById('gate'), top = document.getElementById('top'), current = null;
   var burger = document.querySelector('.burger'), sheet = document.getElementById('sheet');
   function viewFromHash() { var v = decodeURIComponent(location.hash.slice(1)); return VIEWS.indexOf(v) >= 0 ? v : 'anasayfa'; }
-  function headerState() { top.classList.toggle('clear', current === 'anasayfa' && window.scrollY < window.innerHeight - 120 && sheet.hidden); }
+  function headerState() { top.classList.toggle('clear', current === 'anasayfa' && document.body.classList.contains('acilis-tam') && window.scrollY < window.innerHeight - 120 && sheet.hidden); }
   function show(v) {
     if (v !== current) {
       current = v;
@@ -516,8 +571,8 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   burger.addEventListener('click', function () { setSheet(sheet.hidden); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !sheet.hidden) { setSheet(false); burger.focus(); } });
   matchMedia('(min-width: 901px)').addEventListener('change', function (m) { if (m.matches) setSheet(false); });
-  // Karşılama her açılışta gelir; masadaki QR (#menu) ya da bir bölüme verilen link doğrudan oraya düşer
-  if (gate && !location.hash) {
+  // Karşılama her açılışta (yenileyince de) gelir; sadece masadaki QR (#menu) doğrudan menüye düşer
+  if (gate && !/^#menu$/.test(location.hash)) {
     gate.hidden = false; document.body.style.overflow = 'hidden'; play(document.getElementById('gateVideo'), true);
     // Animasyon çalışmayan bir ortamda (arka plan sekmesi, eski telefon) logo ve butonlar gizli kalmasın
     setTimeout(function () { gate.querySelector('.gate-in').classList.add('bitti'); }, 1500);
