@@ -80,9 +80,9 @@ header nav a.randevu { background: var(--murdum); color: var(--krem); font-weigh
 .gruplar p { color: var(--soluk); font-size: .98rem; }
 .etiketler { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
 .etiketler span { font-size: .86rem; padding: 5px 12px; border-radius: 999px; background: var(--krem); border: 1px solid rgba(179,139,85,.35); }
-.gruplar > li:nth-child(2) { background: var(--murdum); color: var(--krem); }
-.gruplar > li:nth-child(2) p { color: var(--altin-acik); }
-.gruplar > li:nth-child(2) .etiketler span { background: transparent; border-color: rgba(220,194,155,.5); }
+.gruplar > li.one { background: var(--murdum); color: var(--krem); }
+.gruplar > li.one p { color: var(--altin-acik); }
+.gruplar > li.one .etiketler span { background: transparent; border-color: rgba(220,194,155,.5); }
 .hizmet .ek { margin-top: 20px; color: var(--soluk); }
 @media (max-width: 639px) {
   .gruplar > li { grid-template-columns: 112px 1fr; gap: 14px; padding: 12px; align-items: start; }
@@ -211,15 +211,15 @@ footer a:hover { color: var(--krem); text-decoration: underline; }
       <h2 class="baslik" id="hizmetBaslik">Hizmetlerimiz</h2>
       <p class="giris">Fiyat ve uygun saat için WhatsApp’tan yazabilirsiniz.</p>
       <ul class="gruplar">
+        <li class="one">
+          <div class="kemer"><img src="img/02.jpg" alt="Kına gecesi için taçlı saç ve makyaj" loading="lazy"></div>
+          <div class="ic"><h3>Gelin ve özel gün</h3><p>Düğün, kına ve dış çekim için saç ve makyaj birlikte.</p>
+            <div class="etiketler"><span>Gelin başı</span><span>Gelin makyajı</span><span>Kına saç ve makyaj</span><span>Türban ve makyaj</span></div></div>
+        </li>
         <li>
           <div class="kemer"><img src="img/01.jpg" alt="Sarı tonlarda dalgalı ombre saç" loading="lazy"></div>
           <div class="ic"><h3>Saç</h3><p>Renk, kesim ve bakım.</p>
             <div class="etiketler"><span>Ombre</span><span>Highlight</span><span>Sarı tonlar</span><span>Ghost roots</span><span>Saç kesimi</span><span>Boya</span></div></div>
-        </li>
-        <li>
-          <div class="kemer"><img src="img/02.jpg" alt="Kına gecesi için taçlı saç ve makyaj" loading="lazy"></div>
-          <div class="ic"><h3>Gelin ve özel gün</h3><p>Düğün, kına ve dış çekim için saç ve makyaj birlikte.</p>
-            <div class="etiketler"><span>Gelin başı</span><span>Gelin makyajı</span><span>Kına saç ve makyaj</span><span>Türban ve makyaj</span></div></div>
         </li>
         <li>
           <div class="kemer"><img src="img/03.jpg" alt="İpek kirpik uygulanmış göz ve şekillendirilmiş kaş" loading="lazy"></div>

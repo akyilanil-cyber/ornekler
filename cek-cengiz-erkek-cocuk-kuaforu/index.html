@@ -361,6 +361,11 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .hero h1 { max-width: min(11.5em, 46vw); }
   .hero p { max-width: min(30em, 42vw); }
 }
+/* duzen.genis: video bütün açılışı kaplar, yazı videonun üstünde (Anıl, 29.10: "videoyu büyüterek yazının arkasında") */
+@media (min-width: 1000px) {
+  .genis .hero .film { inset: 0; width: auto; }
+  .genis .hero .film::after { background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.08) 100%), linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 25%); }
+}
 @media (max-width: 900px) {
   .gal { grid-template-columns: 1fr 1fr; gap: 8px; }
   .pillars { grid-template-columns: 1fr 1fr; }
@@ -390,18 +395,6 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 </head>
 <body class="acilis-tam kapi-alt">
 
-<div class="gate" id="gate" hidden>
-  <div class="film" aria-hidden="true"><img src="img/04.jpg" alt=""></div>
-  <div class="gate-inner gate-in">
-    <h1 class="mark">Cek Cengiz</h1>
-    <p class="gate-sub">Erkek &amp; çocuk kuaförü</p>
-    <div class="gate-actions">
-      <a class="btn fill" href="#anasayfa">Ana sayfa</a>
-      <a class="btn line" href="#hizmetler">Hizmetler</a>
-    </div>
-  </div>
-  <p class="gate-foot">Hayat Plaza, Yakuplu</p>
-</div>
 
 <header class="top" id="top">
   <div class="wrap">
@@ -418,7 +411,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   <a href="#anasayfa">Ana sayfa</a>
       <a href="#hizmetler">Hizmetler</a>
       <a href="#iletisim">Randevu</a>
-  <p class="sheet-meta">Hayat Plaza, Yakuplu · Pazartesi–Cumartesi 08.30–21.00 · Pazar kapalı · <a href="tel:+902128767365" style="color:inherit">+90 212 876 73 65</a></p>
+  <p class="sheet-meta">Hayat Plaza, Yakuplu · Pazartesi–Cumartesi 08:30–21:00 · Pazar kapalı · <a href="tel:+902128767365" style="color:inherit">+90 212 876 73 65</a></p>
 </nav>
 
 <main>
@@ -430,7 +423,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         <p>Saç kesimi, saç ve cilt bakımı. Çocuklar için Cek Kids. Google’da 292 yorum.</p>
         <div class="hero-row">
           <a class="btn fill" href="#iletisim">Randevu alın</a>
-          <span class="open-now">Pazartesi–Cumartesi 08.30–21.00 · Pazar kapalı</span>
+          <span class="open-now">Pazartesi–Cumartesi 08:30–21:00 · Pazar kapalı</span>
         </div>
       </div>
     </div>
@@ -443,7 +436,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         
         
         
-        <ul class="pillars" style="--n:3"><li><h3>4,6 puan</h3><p>Google’da 292 yorum.</p></li><li><h3>Hayat Plaza</h3><p>Beylikdüzü.</p></li><li><h3>Haftanın 6 günü</h3><p>08.30–21.00, pazar kapalı.</p></li></ul>
+        <ul class="pillars" style="--n:3"><li><h3>4,6 puan</h3><p>Google’da 292 yorum.</p></li><li><h3>Hayat Plaza</h3><p>Beylikdüzü.</p></li><li><h3>Haftanın 6 günü</h3><p>08:30–21:00, pazar kapalı.</p></li></ul>
       </div>
     </section>
 
@@ -509,7 +502,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 id="visitHome">Sizi bekliyoruz</h2>
           <dl class="facts">
             <div><dt>Adres</dt><dd>Hayat Plaza, Hürriyet Blv. No:48/10<br>Yakuplu, Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 08.30–21.00 · Pazar kapalı</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 08:30–21:00 · Pazar kapalı</dd></div>
             <div><dt>Telefon</dt><dd><a href="tel:+902128767365">+90 212 876 73 65</a></dd></div>
             
           </dl>
@@ -525,8 +518,8 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   <section class="view" data-view="hizmetler" aria-labelledby="hizmetlerTitle" hidden>
     <div class="page-head"><div class="wrap"><h1 id="hizmetlerTitle">Hizmetler</h1></div></div>
     <div class="duz-kenar" aria-hidden="true"></div>
-    <div class="wrap split tek-sutun">
-      
+    <div class="wrap split">
+      <figure class="photo"><img src="img/04.jpg" alt="Cek Cengiz Erkek&amp;Çocuk Kuaförü" loading="lazy"></figure>
       <div>
         <p class="lead">Saç kesimi, saç ve cilt bakımı. Çocuklar için Cek Kids.</p>
         <ul class="svc"><li><h3>Saç kesimi</h3><span class="svc-yan"></span><p>Klasikten trend kesimlere.</p></li><li><h3>Cek Kids</h3><span class="svc-yan"></span><p>Çocuklar için ayrı köşe; bebeklerin ilk saç kesimi dahil.</p></li><li><h3>Saç bakımı</h3><span class="svc-yan"></span><p>Kesimden sonra bakım.</p></li><li><h3>Cilt bakımı</h3><span class="svc-yan"></span><p>Erkeklere özel cilt bakımı.</p></li></ul>
@@ -545,7 +538,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 style="color:var(--red)">Sizi bekliyoruz</h2>
           <dl class="facts visit-facts">
             <div><dt>Adres</dt><dd>Hayat Plaza, Hürriyet Blv. No:48/10<br>Yakuplu, Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 08.30–21.00 · Pazar kapalı</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 08:30–21:00 · Pazar kapalı</dd></div>
             <div><dt>Telefon</dt><dd><a href="tel:+902128767365">+90 212 876 73 65</a></dd></div>
             
           </dl>
@@ -597,7 +590,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </div>
     <div>
       <p class="foot-title">Saatler</p>
-      <p>Pazartesi–Cumartesi 08.30–21.00 · Pazar kapalı</p>
+      <p>Pazartesi–Cumartesi 08:30–21:00 · Pazar kapalı</p>
     </div>
     <div>
       <p class="foot-title">Takip edin</p>

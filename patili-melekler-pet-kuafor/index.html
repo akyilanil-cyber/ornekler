@@ -361,6 +361,11 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .hero h1 { max-width: min(11.5em, 46vw); }
   .hero p { max-width: min(30em, 42vw); }
 }
+/* duzen.genis: video bütün açılışı kaplar, yazı videonun üstünde (Anıl, 29.10: "videoyu büyüterek yazının arkasında") */
+@media (min-width: 1000px) {
+  .genis .hero .film { inset: 0; width: auto; }
+  .genis .hero .film::after { background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.08) 100%), linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 25%); }
+}
 @media (max-width: 900px) {
   .gal { grid-template-columns: 1fr 1fr; gap: 8px; }
   .pillars { grid-template-columns: 1fr 1fr; }
@@ -388,20 +393,8 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 }
 </style>
 </head>
-<body class="acilis-cerceve kapi-orta">
+<body class="acilis-tam kapi-orta genis">
 
-<div class="gate" id="gate" hidden>
-  <div class="film" aria-hidden="true"><video id="gateVideo" muted playsinline loop preload="metadata" poster="img/20.jpg"><source src="kapi.mp4" type="video/mp4"></video></div>
-  <div class="gate-inner gate-in">
-    <h1 class="mark">Patili Melekler</h1>
-    <p class="gate-sub">Evcil hayvan kuaförü</p>
-    <div class="gate-actions">
-      <a class="btn fill" href="#anasayfa">Ana sayfa</a>
-      <a class="btn line" href="#hizmetler">Hizmetler</a>
-    </div>
-  </div>
-  <p class="gate-foot">Yakuplu, Beylikdüzü</p>
-</div>
 
 <header class="top" id="top">
   <div class="wrap">
@@ -420,19 +413,19 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
       <a href="#hizmetler">Hizmetler</a>
       <a href="#galeri">Galeri</a>
       <a href="#iletisim">Randevu</a>
-  <p class="sheet-meta">Yakuplu, Beylikdüzü · Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00 · <a href="tel:+905424671474" style="color:inherit">+90 542 467 14 74</a></p>
+  <p class="sheet-meta">Yakuplu, Beylikdüzü · Pazartesi–Cumartesi 10:00–21:00 · Pazar 12:00–21:00 · <a href="tel:+905424671474" style="color:inherit">+90 542 467 14 74</a></p>
 </nav>
 
 <main>
   <section class="view home" data-view="anasayfa" aria-label="Ana sayfa">
     <div class="hero">
-      <div class="film" aria-hidden="true"><video id="heroVideo" muted playsinline loop preload="metadata" poster="img/21.jpg"><source src="acilis.mp4" type="video/mp4"></video></div>
+      <div class="film" aria-hidden="true"><video id="heroVideo" muted playsinline loop preload="metadata" poster="img/20.jpg"><source src="kapi.mp4" type="video/mp4"></video></div>
       <div class="wrap">
         <h1>Patili dostlarınız için sevgiyle bakım.</h1>
         <p>Yakuplu’da köpek ve kedi kuaförü. Tıraş, yıkama ve bakım; Seda Hanım ve Kerem Bey’le.</p>
         <div class="hero-row">
           <a class="btn fill" href="#iletisim">Randevu alın</a>
-          <span class="open-now">Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</span>
+          <span class="open-now">Pazartesi–Cumartesi 10:00–21:00 · Pazar 12:00–21:00</span>
         </div>
       </div>
     </div>
@@ -445,7 +438,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         
         
         
-        <ul class="pillars" style="--n:3"><li><h3>4,9 puan</h3><p>Google’da 151 yorum.</p></li><li><h3>Kedi ve köpek</h3><p>Tıraş, yıkama ve bakım.</p></li><li><h3>Her gün açık</h3><p>Pazar günü 12.00’den itibaren.</p></li></ul>
+        <ul class="pillars" style="--n:3"><li><h3>4,9 puan</h3><p>Google’da 151 yorum.</p></li><li><h3>Kedi ve köpek</h3><p>Tıraş, yıkama ve bakım.</p></li><li><h3>Her gün açık</h3><p>Pazar günü 12:00’den itibaren.</p></li></ul>
       </div>
     </section>
 
@@ -511,7 +504,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 id="visitHome">Sizi bekliyoruz</h2>
           <dl class="facts">
             <div><dt>Adres</dt><dd>Yakuplu, Hürriyet Blv. 38-1 D:28<br>Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 10:00–21:00 · Pazar 12:00–21:00</dd></div>
             <div><dt>Telefon / WhatsApp</dt><dd><a href="tel:+905424671474">+90 542 467 14 74</a></dd></div>
             <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ppatili.meleklerr/" target="_blank" rel="noopener">@ppatili.meleklerr</a></dd></div>
           </dl>
@@ -551,6 +544,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         <button type="button" data-photo="img/10.jpg" data-caption="Patili Melekler Pet Kuaför" aria-label="Fotoğrafı büyüt"><img src="img/10.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy"></button>
         <button type="button" data-photo="img/11.jpg" data-caption="Patili Melekler Pet Kuaför" aria-label="Fotoğrafı büyüt"><img src="img/11.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy"></button>
         <button type="button" data-photo="img/12.jpg" data-caption="Patili Melekler Pet Kuaför" aria-label="Fotoğrafı büyüt"><img src="img/12.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy"></button>
+        <button type="button" data-photo="img/21.jpg" data-caption="Patili Melekler Pet Kuaför" aria-label="Fotoğrafı büyüt"><img src="img/21.jpg" alt="Patili Melekler Pet Kuaför" loading="lazy"></button>
       </div>
       <p class="center gal-more"><a class="btn red" href="https://www.instagram.com/ppatili.meleklerr/" target="_blank" rel="noopener">Instagram’da daha fazlası</a></p>
     </div>
@@ -565,7 +559,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 style="color:var(--red)">Sizi bekliyoruz</h2>
           <dl class="facts visit-facts">
             <div><dt>Adres</dt><dd>Yakuplu, Hürriyet Blv. 38-1 D:28<br>Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cumartesi 10:00–21:00 · Pazar 12:00–21:00</dd></div>
             <div><dt>Telefon / WhatsApp</dt><dd><a href="tel:+905424671474">+90 542 467 14 74</a></dd></div>
             <div><dt>Instagram</dt><dd><a href="https://www.instagram.com/ppatili.meleklerr/" target="_blank" rel="noopener">@ppatili.meleklerr</a></dd></div>
           </dl>
@@ -617,7 +611,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </div>
     <div>
       <p class="foot-title">Saatler</p>
-      <p>Pazartesi–Cumartesi 10.00–21.00 · Pazar 12.00–21.00</p>
+      <p>Pazartesi–Cumartesi 10:00–21:00 · Pazar 12:00–21:00</p>
     </div>
     <div>
       <p class="foot-title">Takip edin</p>

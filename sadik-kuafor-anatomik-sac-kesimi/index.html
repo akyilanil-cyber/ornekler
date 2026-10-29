@@ -361,6 +361,11 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .hero h1 { max-width: min(11.5em, 46vw); }
   .hero p { max-width: min(30em, 42vw); }
 }
+/* duzen.genis: video bütün açılışı kaplar, yazı videonun üstünde (Anıl, 29.10: "videoyu büyüterek yazının arkasında") */
+@media (min-width: 1000px) {
+  .genis .hero .film { inset: 0; width: auto; }
+  .genis .hero .film::after { background: linear-gradient(90deg, rgba(0,0,0,.62) 0%, rgba(0,0,0,.38) 45%, rgba(0,0,0,.08) 100%), linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,0) 25%); }
+}
 @media (max-width: 900px) {
   .gal { grid-template-columns: 1fr 1fr; gap: 8px; }
   .pillars { grid-template-columns: 1fr 1fr; }
@@ -416,7 +421,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
 <nav class="sheet" id="sheet" aria-label="Bölümler" hidden>
   <a href="#anasayfa">Ana sayfa</a>
       <a href="#iletisim">Randevu</a>
-  <p class="sheet-meta">Kavaklı, Beylikdüzü · Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı · <a href="tel:+905357467939" style="color:inherit">+90 535 746 79 39</a></p>
+  <p class="sheet-meta">Kavaklı, Beylikdüzü · Pazartesi–Cuma 09:00–22:30 · Cumartesi 08:00–23:30 · Pazar kapalı · <a href="tel:+905357467939" style="color:inherit">+90 535 746 79 39</a></p>
 </nav>
 
 <main>
@@ -428,7 +433,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         <p>Kavaklı Konakları’nda erkek kuaförü. Google’da 502 yorum, 4,9 puan.</p>
         <div class="hero-row">
           <a class="btn fill" href="#iletisim">Randevu alın</a>
-          <span class="open-now">Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı</span>
+          <span class="open-now">Pazartesi–Cuma 09:00–22:30 · Cumartesi 08:00–23:30 · Pazar kapalı</span>
         </div>
       </div>
     </div>
@@ -478,7 +483,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 id="visitHome">Sizi bekliyoruz</h2>
           <dl class="facts">
             <div><dt>Adres</dt><dd>Kavaklı Konakları, Kavaklı Cd.<br>Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cuma 09:00–22:30 · Cumartesi 08:00–23:30 · Pazar kapalı</dd></div>
             <div><dt>Telefon / WhatsApp</dt><dd><a href="tel:+905357467939">+90 535 746 79 39</a></dd></div>
             
           </dl>
@@ -500,7 +505,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
           <h2 style="color:var(--red)">Sizi bekliyoruz</h2>
           <dl class="facts visit-facts">
             <div><dt>Adres</dt><dd>Kavaklı Konakları, Kavaklı Cd.<br>Beylikdüzü / İstanbul</dd></div>
-            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı</dd></div>
+            <div><dt>Çalışma saatleri</dt><dd>Pazartesi–Cuma 09:00–22:30 · Cumartesi 08:00–23:30 · Pazar kapalı</dd></div>
             <div><dt>Telefon / WhatsApp</dt><dd><a href="tel:+905357467939">+90 535 746 79 39</a></dd></div>
             
           </dl>
@@ -552,7 +557,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     </div>
     <div>
       <p class="foot-title">Saatler</p>
-      <p>Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı</p>
+      <p>Pazartesi–Cuma 09:00–22:30 · Cumartesi 08:00–23:30 · Pazar kapalı</p>
     </div>
     <div>
       <p class="foot-title">Takip edin</p>
