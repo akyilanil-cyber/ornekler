@@ -58,6 +58,16 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
   .pano3 .pol:nth-child(3) { grid-column: 1 / -1; width: 64%; justify-self: center; margin-top: 6px; }
   .pol figcaption { font-size: 1.25rem; }
 }
+/* Geniş ekranda fotoğraflar başlığın yanına geçer, ilk ekran boş kalmaz */
+@media (min-width: 1100px) {
+  .hero { padding-bottom: 72px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; align-items: center; min-height: calc(100svh - 110px); }
+  .hero h1 { font-size: clamp(2.9rem, 3.9vw, 3.9rem); }
+  .hero .pano3 { margin: 0; justify-self: center; width: min(100%, calc((100svh - 150px) * .9)); grid-template-columns: 1fr 1fr; gap: 20px 22px; }
+  .hero .pano3 .pol:nth-child(2) { margin-top: 30px; }
+  .hero .pano3 .pol:nth-child(3) { grid-column: 1 / -1; width: 50%; justify-self: center; margin-top: -18px; }
+  .hero .pol figcaption { font-size: 1.25rem; }
+}
 
 /* Kahve */
 .kahve { background: var(--duvar); color: var(--beyaz); padding: clamp(56px, 9vw, 100px) 0; }
@@ -122,11 +132,13 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); }
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <h1>On yıldır kahvemizi kendimiz kavuruyor, pastalarımızı kendimiz yapıyoruz.</h1>
-      <p>Derya ve Fatih’in Beylikdüzü’ndeki kahve ve pasta evi. Kolejler bölgesinde, Çalışlar Caddesi’nde küçük, sıcak bir köşe.</p>
-      <div class="btns">
-        <a class="btn dolu" href="#gel">Nerede, ne zaman?</a>
-        <a class="btn" href="#pasta">Pastalarımız</a>
+      <div class="hero-metin">
+        <h1>On yıldır kahvemizi kendimiz kavuruyor, pastalarımızı kendimiz yapıyoruz.</h1>
+        <p>Derya ve Fatih’in Beylikdüzü’ndeki kahve ve pasta evi. Kolejler bölgesinde, Çalışlar Caddesi’nde küçük, sıcak bir köşe.</p>
+        <div class="btns">
+          <a class="btn dolu" href="#gel">Nerede, ne zaman?</a>
+          <a class="btn" href="#pasta">Pastalarımız</a>
+        </div>
       </div>
       <div class="pano3">
         <figure class="pol sol"><img src="img/00.jpg" alt="Latte art yapılan bir fincan kahve"><figcaption>kendi kavurduğumuz kahve</figcaption></figure>
