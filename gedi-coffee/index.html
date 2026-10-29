@@ -31,20 +31,11 @@ a { color: inherit; }
 :focus-visible { outline: 2px solid var(--fener); outline-offset: 3px; }
 .wrap { width: min(1120px, 100% - 40px); margin-inline: auto; }
 
-/* Karşılama */
-.gate { position: fixed; inset: 0; z-index: 50; display: grid; align-items: end; transition: opacity .8s ease, visibility .8s; }
-.gate.out { opacity: 0; visibility: hidden; }
-.gate[hidden] { display: none; }
-.gate video, .gate img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.gate::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(31,27,51,.1) 0%, rgba(31,27,51,.15) 45%, rgba(31,27,51,.92) 100%); }
-.gate-in { position: relative; z-index: 1; padding: 0 24px calc(34px + env(safe-area-inset-bottom)); width: min(560px, 100%); }
 .wordmark { font: 800 clamp(4.2rem, 22vw, 8rem)/.82 var(--display); letter-spacing: -.04em; }
 .wordmark small { display: block; font-weight: 400; font-size: .28em; letter-spacing: .02em; margin: .5em 0 0 .08em; color: var(--duman); }
-.gate p { margin: 18px 0 26px; font-size: 1.1rem; max-width: 26ch; }
 .btns { display: flex; flex-wrap: wrap; gap: 12px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 600 1rem var(--text); text-decoration: none; border: 1.5px solid var(--kagit); cursor: pointer; background: none; color: var(--kagit); }
 .btn.dolu { background: var(--fener); border-color: var(--fener); color: var(--gece); }
-.gate-saat { margin-top: 22px; font-size: .9rem; color: var(--duman); }
 
 /* Açılış */
 .hero { position: relative; min-height: 100svh; display: grid; align-items: end; overflow: hidden; }
@@ -53,6 +44,15 @@ a { color: inherit; }
 .hero-in { position: relative; z-index: 1; padding-bottom: clamp(40px, 8vh, 80px); }
 .hero h1 { font: 800 clamp(2.6rem, 9.5vw, 6rem)/.95 var(--display); letter-spacing: -.035em; max-width: 11ch; }
 .hero p { margin-top: 18px; max-width: 34ch; color: var(--kagit); font-size: 1.12rem; }
+/* Masaüstünde dikey video (720 px) tam ekrana gerilince pikselleniyordu (Anıl, 29.10: "çok piksel"): sağ yarıda kendi boyutuna yakın durur */
+@media (min-width: 900px) {
+  .hero { align-items: center; min-height: 0; height: 100svh; max-height: 980px; }
+  .hero video { left: auto; width: min(50%, 760px); }
+  .hero::after { background: linear-gradient(90deg, var(--gece) 0%, var(--gece) calc(100% - min(50%, 760px)), rgba(31,27,51,.55) calc(100% - min(50%, 760px) + 1px), rgba(31,27,51,0) calc(100% - min(50%, 760px) + 22%)), linear-gradient(180deg, rgba(31,27,51,.5) 0%, rgba(31,27,51,0) 18%); }
+  .hero-in { padding-bottom: 0; padding-top: 60px; }
+  .hero h1, .hero p { max-width: min(11ch, 44vw); }
+  .hero p { max-width: min(34ch, 40vw); }
+}
 .ust { position: fixed; top: 0; inset-inline: 0; z-index: 20; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; background: linear-gradient(180deg, rgba(31,27,51,.75), rgba(31,27,51,0)); }
 .ust .marka { font: 800 1.45rem/1 var(--display); letter-spacing: -.03em; text-decoration: none; }
 .ust a.ara { font: 600 .92rem var(--text); text-decoration: none; padding: 9px 16px; border-radius: 999px; background: rgba(247,234,219,.14); backdrop-filter: blur(6px); }
@@ -189,10 +189,8 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
   .masa-izgara { margin: 0; grid-column: 2; grid-row: 1; grid-template-rows: 1fr 1fr; min-height: 500px; }
   .masa-izgara img { aspect-ratio: auto; min-height: 0; }
   .bil dl { grid-template-columns: repeat(3, 1fr); }
-  .gate-in { padding-left: 6vw; }
 }
 @media (max-width: 420px) { .liste { columns: 1; } }
-@media (prefers-reduced-motion: reduce) { .gate { transition: none; } }
 /* yorum-kaydir */
 .yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
 .yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
@@ -208,19 +206,6 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
 </head>
 <body>
 
-<div class="gate" id="gate">
-  <video id="gateVideo" muted playsinline loop autoplay preload="metadata" poster="img/00.jpg"><source src="kapi.mp4" type="video/mp4"></video>
-  <div class="gate-in">
-    <h1 class="wordmark">Gedi<small>coffee</small></h1>
-    <p>Beykent’in tepesinde manzara, ateş başı ve film geceleri.</p>
-    <div class="btns">
-      <button class="btn dolu" type="button" id="gir">Siteye gir</button>
-      <a class="btn" href="https://maps.app.goo.gl/PWPBkDoZTWgHQEaW8" target="_blank" rel="noopener">Yol tarifi al</a>
-    </div>
-    <p class="gate-saat">Her gün 17:00’den 02:00’ye kadar açık</p>
-  </div>
-</div>
-
 <header class="ust">
   <a class="marka" href="#top">Gedi</a>
   <a class="ara" href="tel:+905356168955">Ara</a>
@@ -228,7 +213,7 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
 
 <main id="top">
   <section class="hero">
-    <video id="heroVideo" muted playsinline loop preload="metadata" poster="img/01.jpg"><source src="acilis.mp4" type="video/mp4"></video>
+    <video id="heroVideo" muted playsinline loop autoplay preload="metadata" poster="img/01.jpg"><source src="acilis.mp4" type="video/mp4"></video>
     <div class="wrap hero-in">
       <h1>Gün batarken gel, ateş yanarken kal.</h1>
       <p>Seyir terası, ateş başında sohbet ve açık havada film geceleri. Kahven elinde, Beykent ayaklarının altında.</p>
@@ -447,19 +432,11 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
 </footer>
 
 <script>
+// Açılış videosu sayfa açılır açılmaz oynar (hareket azaltma açıksa durur)
 (function () {
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var gate = document.getElementById('gate'), gv = document.getElementById('gateVideo'), hv = document.getElementById('heroVideo');
-  function oynat(v, on) { if (!v) return; if (on && !reduce) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } else v.pause(); }
-  document.body.style.overflow = 'hidden';
-  oynat(gv, true);
-  function kapat() {
-    gate.classList.add('out'); document.body.style.overflow = '';
-    oynat(gv, false); oynat(hv, true);
-    setTimeout(function () { gate.hidden = true; }, reduce ? 0 : 800);
-  }
-  document.getElementById('gir').addEventListener('click', kapat);
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !gate.hidden) kapat(); });
+  var hv = document.getElementById('heroVideo');
+  if (!hv || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var p = hv.play(); if (p && p.catch) p.catch(function () {});
 })();
 </script>
 <script>
