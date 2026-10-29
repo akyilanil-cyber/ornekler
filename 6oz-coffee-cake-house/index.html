@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>6OZ Coffee &amp; Cake House | Beylikdüzü</title>
+<meta name="description" content="10 yıldır Beylikdüzü'nde: kendi kavurduğumuz kahve, ev yapımı pastalar, San Sebastian. Çalışlar Caddesi, Adnan Kahveci.">
+<meta name="theme-color" content="#1E6B66">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;700;800&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pano: #E6EFEC;     /* açık deniz yeşili zemin */
+  --duvar: #1E6B66;    /* duvar resmindeki turkuaz */
+  --alti: #D3262E;     /* logodaki kırmızı 6 */
+  --kahve: #2B1D17;    /* yazı */
+  --soluk: #56645F;
+  --beyaz: #FFFFFF;
+  --bant: rgba(244, 214, 120, .78);
+  --sans: "Gabarito", system-ui, sans-serif;
+  --el: "Caveat", "Segoe Print", cursive;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--pano); color: var(--kahve); font: 400 1.07rem/1.6 var(--sans); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--alti); outline-offset: 3px; }
+.wrap { width: min(1100px, 100% - 40px); margin-inline: auto; }
+
+.logo { display: inline-flex; align-items: baseline; gap: 2px; text-decoration: none; font-weight: 800; letter-spacing: -.02em; }
+.logo b { color: var(--alti); font-size: 1.35em; }
+.logo small { font-weight: 500; font-size: .5em; letter-spacing: .01em; margin-left: 8px; color: var(--soluk); }
+header .wrap { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; font-size: 1.6rem; }
+header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; background: var(--duvar); color: var(--beyaz); padding: 10px 16px; border-radius: 10px; }
+
+/* Polaroid: sayfanın imzası */
+.pol { background: var(--beyaz); padding: 10px 10px 14px; box-shadow: 0 2px 4px rgba(43,29,23,.08), 0 14px 28px -10px rgba(43,29,23,.35); position: relative; margin: 0; }
+.pol img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+.pol figcaption { font: 700 1.45rem/1.1 var(--el); margin-top: 10px; text-align: center; color: var(--kahve); }
+.pol::before { content: ""; position: absolute; top: -12px; left: 50%; width: 92px; height: 26px; background: var(--bant); transform: translateX(-50%) rotate(-3deg); }
+.sol { transform: rotate(-3deg); } .sag { transform: rotate(2.5deg); } .duz { transform: rotate(-.8deg); }
+
+/* Açılış */
+.hero { padding: 14px 0 clamp(56px, 9vw, 100px); }
+.hero h1 { font: 800 clamp(2.3rem, 8vw, 4.6rem)/1.02 var(--sans); letter-spacing: -.03em; max-width: 15ch; }
+.hero p { margin-top: 16px; max-width: 40ch; font-size: 1.12rem; color: var(--soluk); }
+.hero .btns { margin-top: 24px; }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; min-height: 50px; padding: 0 22px; border-radius: 12px; font: 700 1rem var(--sans); text-decoration: none; border: 2px solid var(--kahve); }
+.btn.dolu { background: var(--alti); border-color: var(--alti); color: var(--beyaz); }
+.pano3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; align-items: start; }
+.pano3 .pol:nth-child(2) { margin-top: 36px; }
+@media (max-width: 700px) {
+  .pano3 { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+  .pano3 .pol:nth-child(2) { margin-top: 28px; }
+  .pano3 .pol:nth-child(3) { grid-column: 1 / -1; width: 64%; justify-self: center; margin-top: 6px; }
+  .pol figcaption { font-size: 1.25rem; }
+}
+
+/* Kahve */
+.kahve { background: var(--duvar); color: var(--beyaz); padding: clamp(56px, 9vw, 100px) 0; }
+.kahve .wrap { display: grid; gap: 34px; align-items: center; }
+.kahve h2, .pasta h2, .gelenek h2, .gel h2 { font: 800 clamp(2rem, 6vw, 3.3rem)/1.03 var(--sans); letter-spacing: -.03em; max-width: 16ch; }
+.kahve p { margin-top: 14px; max-width: 42ch; color: #CFE6E2; }
+.kahve ul { list-style: none; padding: 0; margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.kahve li { background: rgba(255,255,255,.12); padding: 7px 13px; border-radius: 999px; font-size: .95rem; }
+.kahve .pol { max-width: 360px; justify-self: center; }
+@media (min-width: 860px) { .kahve .wrap { grid-template-columns: 1.2fr .8fr; } }
+
+/* Pasta evi */
+.pasta { padding: clamp(56px, 9vw, 110px) 0; }
+.pasta > .wrap > p { margin-top: 12px; max-width: 46ch; color: var(--soluk); }
+.pasta-pano { display: grid; grid-template-columns: repeat(4, 1fr); gap: 34px 22px; margin-top: 46px; }
+.pasta-pano .pol:nth-child(4n+1) { transform: rotate(-2.5deg); }
+.pasta-pano .pol:nth-child(4n+2) { transform: rotate(1.8deg); margin-top: 18px; }
+.pasta-pano .pol:nth-child(4n+3) { transform: rotate(-1deg); }
+.pasta-pano .pol:nth-child(4n) { transform: rotate(2.6deg); margin-top: 12px; }
+@media (max-width: 860px) { .pasta-pano { grid-template-columns: 1fr 1fr; gap: 28px 16px; } }
+.dahasi { margin-top: 40px; font: 700 1.6rem/1.3 var(--el); max-width: 40ch; }
+
+/* Gelenekler */
+.gelenek { background: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
+.gelenek-izgara { display: grid; gap: 26px; margin-top: 34px; }
+.gelenek article { background: var(--pano); border-radius: 18px; padding: 24px 22px; }
+.gelenek h3 { font: 700 1.45rem/1.15 var(--sans); }
+.gelenek article p { margin-top: 8px; color: var(--soluk); }
+.gelenek .pol { margin: 22px auto 0; max-width: 300px; }
+@media (min-width: 860px) { .gelenek-izgara { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+
+/* Yorumlar */
+.yorum { padding: clamp(56px, 9vw, 100px) 0; }
+.yorum .wrap { display: grid; gap: 22px; }
+.yorum figure { margin: 0; background: var(--beyaz); border-radius: 18px; padding: 24px 22px; }
+.yorum blockquote { font-size: 1.15rem; line-height: 1.5; }
+.yorum figcaption { margin-top: 12px; color: var(--soluk); font-size: .95rem; }
+@media (min-width: 860px) { .yorum .wrap { grid-template-columns: repeat(3, 1fr); } }
+
+/* Gel */
+.gel { background: var(--kahve); color: var(--beyaz); padding: clamp(56px, 9vw, 100px) 0; }
+.gel .wrap { display: grid; gap: 32px; }
+.saatler { margin-top: 20px; display: grid; gap: 0; max-width: 420px; }
+.saatler div { display: flex; justify-content: space-between; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.18); }
+.gel address { font-style: normal; margin-top: 20px; color: #E5DCD6; }
+.gel .btn { border-color: var(--beyaz); color: var(--beyaz); }
+.gel .btn.dolu { border-color: var(--alti); }
+@media (min-width: 860px) { .gel .wrap { grid-template-columns: 1fr 1fr; gap: 64px; } }
+footer { text-align: center; padding: 34px 20px calc(30px + env(safe-area-inset-bottom)); color: var(--soluk); font-size: .88rem; }
+footer .logo { font-size: 1.8rem; color: var(--kahve); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top"><b>6</b>OZ<small>coffee &amp; cake house</small></a>
+    <a class="wa" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>On yıldır kahvemizi kendimiz kavuruyor, pastalarımızı kendimiz yapıyoruz.</h1>
+      <p>Derya ve Fatih’in Beylikdüzü’ndeki kahve ve pasta evi. Kolejler bölgesinde, Çalışlar Caddesi’nde küçük, sıcak bir köşe.</p>
+      <div class="btns">
+        <a class="btn dolu" href="#gel">Nerede, ne zaman?</a>
+        <a class="btn" href="#pasta">Pastalarımız</a>
+      </div>
+      <div class="pano3">
+        <figure class="pol sol"><img src="img/00.jpg" alt="Latte art yapılan bir fincan kahve"><figcaption>kendi kavurduğumuz kahve</figcaption></figure>
+        <figure class="pol sag"><img src="img/01.jpg" alt="Bir dilim San Sebastian cheesecake"><figcaption>en çok sorulan: San Sebastian</figcaption></figure>
+        <figure class="pol duz"><img src="img/02.jpg" alt="Şans kurabiyelerine bakan bir köpek"><figcaption>şans kurabiyesi bekleyen dostumuz</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="kahve" aria-labelledby="kahveBaslik">
+    <div class="wrap">
+      <div>
+        <h2 id="kahveBaslik">Fincanın içindeki kahveyi biz kavurduk</h2>
+        <p>Kahve çekirdeklerimizi kendimiz kavuruyoruz. Müşterilerimiz en çok fincanların büyüklüğünü ve her gelişte değişmeyen tadı anlatıyor.</p>
+        <ul>
+          <li>Espresso</li><li>Americano</li><li>Latte</li><li>Cappuccino</li><li>Flat white</li><li>Mocha</li><li>Filtre kahve</li><li>Türk kahvesi</li><li>Frozen</li><li>Milkshake</li><li>Karadut smoothie</li><li>El yapımı limonata</li>
+        </ul>
+      </div>
+      <figure class="pol sag"><img src="img/03.jpg" alt="6OZ fincanında köpüklü kahve" loading="lazy"><figcaption>sabah 07.30’dan itibaren</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="pasta" id="pasta" aria-labelledby="pastaBaslik">
+    <div class="wrap">
+      <h2 id="pastaBaslik">Pasta evi tarafı</h2>
+      <p>Hepsi bizim mutfağımızdan, ev yapımı. Vitrin güne göre değişir; bugün ne olduğunu WhatsApp’tan sorabilirsiniz.</p>
+      <div class="pasta-pano">
+        <figure class="pol"><img src="img/04.jpg" alt="Bademli Alman pastası" loading="lazy"><figcaption>Alman pastası</figcaption></figure>
+        <figure class="pol"><img src="img/05.jpg" alt="Oz Chocolate pastasından bir dilim" loading="lazy"><figcaption>yeni: Oz Chocolate</figcaption></figure>
+        <figure class="pol"><img src="img/06.jpg" alt="Brownie" loading="lazy"><figcaption>brownie</figcaption></figure>
+        <figure class="pol"><img src="img/07.jpg" alt="Apple crumble" loading="lazy"><figcaption>apple crumble</figcaption></figure>
+        <figure class="pol"><img src="img/08.jpg" alt="Mango görünümlü tatlılar" loading="lazy"><figcaption>Cedric yorumumuz: mango</figcaption></figure>
+        <figure class="pol"><img src="img/09.jpg" alt="Kahve çekirdeği görünümlü tatlılar" loading="lazy"><figcaption>Cedric yorumumuz: kahveli</figcaption></figure>
+        <figure class="pol"><img src="img/12.jpg" alt="Vegan kurabiyeler" loading="lazy"><figcaption>vegan kurabiye</figcaption></figure>
+        <figure class="pol"><img src="img/11.jpg" alt="Tost ve portakal suyu" loading="lazy"><figcaption>tostlarımız</figcaption></figure>
+      </div>
+      <p class="dahasi">Bir de çikolatalı vişneli pasta, fıstıklı Cedric, kruvasan, biscotti ve susamlı kurabiye var.</p>
+    </div>
+  </section>
+
+  <section class="gelenek" aria-labelledby="gelenekBaslik">
+    <div class="wrap">
+      <h2 id="gelenekBaslik">On yılda biriken küçük geleneklerimiz</h2>
+      <div class="gelenek-izgara">
+        <article>
+          <h3>Şans kurabiyeleri</h3>
+          <p>On yıldır her yıl sonunda raflara şans kurabiyelerimiz çıkar. Bir dilek tutup şansınızı denersiniz. Çabuk tükenir.</p>
+        </article>
+        <article>
+          <h3>Çarşamba kitap günü</h3>
+          <p>Çarşambaları kitabınızı alıp gelin. O gün burada sadece kitap okunur.</p>
+        </article>
+        <article>
+          <h3>Sokak dostlarımız</h3>
+          <p>Mahallenin köpekleri bizim de dostumuz. Kapıda mamaları ve suları hep hazır, içeride kanepede uyuyakaldıkları da olur.</p>
+          <figure class="pol sol"><img src="img/10.jpg" alt="Kafedeki kanepede dinlenen iki sokak köpeği" loading="lazy"><figcaption>öğle uykusu</figcaption></figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-label="Misafir yorumları">
+    <div class="wrap">
+      <figure><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption>Arzu, Google yorumu</figcaption></figure>
+      <figure><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption>Cumhur, Google yorumu</figcaption></figure>
+      <figure><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption>Utku, Google yorumu</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="gel" id="gel" aria-labelledby="gelBaslik">
+    <div class="wrap">
+      <div>
+        <h2 id="gelBaslik">Uğrayın, bir kahve içelim</h2>
+        <address>Adnan Kahveci Mah. Çalışlar Cad. No:10/9, Beylikdüzü</address>
+        <div class="saatler">
+          <div><span>Pazartesi–Cuma</span><span>07.30–21.00</span></div>
+          <div><span>Cumartesi</span><span>09.30–20.30</span></div>
+          <div><span>Pazar</span><span>13.00–18.00</span></div>
+        </div>
+      </div>
+      <div>
+        <p>Terasımız var, paket servis de yapıyoruz. Google’da 4,7 puan, 343 yorum.</p>
+        <div class="btns" style="margin-top:20px">
+          <a class="btn dolu" href="https://www.google.com/maps/search/?api=1&amp;query=6OZ%20COFFEE%20%26%20CAKE%20HOUSE&amp;query_place_id=ChIJo1MuoURftRQRww_PlWYxh60" target="_blank" rel="noopener">Yol tarifi al</a>
+          <a class="btn" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
+          <a class="btn" href="tel:+905323364263">0532 336 42 63</a>
+          <a class="btn" href="https://www.instagram.com/6ozcoffee/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="logo" href="#top"><b>6</b>OZ</a>
+  <p>Coffee &amp; Cake House · Beylikdüzü</p>
+  <p style="margin-top:8px;font-size:.78rem">Bu sayfa 6OZ Coffee &amp; Cake House için hazırlanmış bir örnek tasarımdır.</p>
+</footer>
+</body>
+</html>

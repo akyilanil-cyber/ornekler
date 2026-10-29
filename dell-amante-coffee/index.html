@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dell’Amante Coffee | Beylikdüzü</title>
+<meta name="description" content="Kendi üretimimiz kruvasanlar, imza tatlılar ve kahve. Alya Residence, Beylikdüzü. Her gün 07.30–01.00.">
+<meta name="theme-color" content="#0F4A3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --zumrut: #0F4A3A;   /* bardak yeşili */
+  --murekkep: #0C2B22; /* yazı */
+  --fistik: #E7EEE5;   /* zemin */
+  --beyaz: #FBFCFA;
+  --pirinc: #B08D57;   /* vitrin rafı */
+  --domates: #C9312A;  /* isim kartı */
+  --soluk: #4E6A60;
+  --serif: "Bodoni Moda", Georgia, serif;
+  --sans: "Figtree", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+body { background: var(--fistik); color: var(--murekkep); font: 400 1.05rem/1.65 var(--sans); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--domates); outline-offset: 3px; }
+.wrap { width: min(1160px, 100% - 40px); margin-inline: auto; }
+
+header { position: sticky; top: 0; z-index: 20; background: rgba(231,238,229,.92); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(12,43,34,.1); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+.marka { font: 500 1.35rem/1 var(--serif); letter-spacing: .02em; text-decoration: none; }
+header nav { display: flex; gap: 6px; }
+header nav a { font: 500 .92rem var(--sans); text-decoration: none; padding: 8px 12px; border-radius: 8px; }
+header nav a:hover { background: rgba(15,74,58,.08); }
+header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
+@media (max-width: 640px) { header nav a:not(.yol) { display: none; } }
+
+/* Açılış */
+.hero { display: grid; background: var(--zumrut); color: var(--beyaz); }
+.hero-video { position: relative; height: 64svh; min-height: 380px; overflow: hidden; }
+.hero-video video { width: 100%; height: 100%; object-fit: cover; }
+.hero-metin { padding: 34px 22px 44px; }
+.hero h1 { font: 400 clamp(2.4rem, 8.5vw, 5rem)/1.02 var(--serif); letter-spacing: -.01em; max-width: 13ch; }
+.hero p { margin-top: 18px; max-width: 36ch; color: #D3E3DB; font-size: 1.1rem; }
+.bilgi { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.bilgi span { font-size: .92rem; padding: 7px 13px; border: 1px solid rgba(251,252,250,.35); border-radius: 999px; }
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.05fr .95fr; min-height: calc(100svh - 62px); }
+  .hero-video { order: 2; height: auto; }
+  .hero-metin { align-self: end; padding: 0 clamp(32px, 5vw, 72px) clamp(48px, 9vh, 90px); }
+}
+
+/* Vitrin: imza tatlılar pastane rafında */
+.vitrin { padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 6vw, 72px); }
+.baslik { font: 400 clamp(2rem, 6vw, 3.4rem)/1.05 var(--serif); max-width: 16ch; }
+.giris { margin-top: 12px; max-width: 46ch; color: var(--soluk); }
+.raf { display: grid; grid-auto-flow: column; grid-auto-columns: min(74vw, 300px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 34px max(20px, calc((100vw - 1160px) / 2)) 30px; margin-top: 8px; scrollbar-width: thin; }
+.tatli { scroll-snap-align: start; position: relative; padding-bottom: 22px; }
+.tatli::after { content: ""; position: absolute; left: -9px; right: -9px; bottom: 0; height: 7px; border-radius: 2px; background: linear-gradient(180deg, #CDB07C, var(--pirinc) 60%, #8A6C3E); box-shadow: 0 10px 18px -8px rgba(12,43,34,.45); }
+.tatli img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px 6px 0 0; }
+.kart { position: absolute; right: 12px; bottom: 34px; max-width: 78%; background: var(--beyaz); padding: 10px 14px 11px; border-radius: 4px; box-shadow: 0 6px 16px rgba(12,43,34,.18); transform: rotate(-2deg); }
+.kart strong { display: block; font: 500 1.15rem/1.15 var(--serif); }
+.kart span { display: block; font-size: .85rem; color: var(--soluk); margin-top: 3px; line-height: 1.35; }
+.kart::before { content: ""; position: absolute; left: 14px; top: -6px; width: 26px; height: 6px; background: var(--domates); border-radius: 2px 2px 0 0; }
+.ipucu { color: var(--soluk); font-size: .9rem; }
+
+/* Kruvasan */
+.kruvasan { background: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
+.kruvasan .wrap { display: grid; gap: 30px; }
+.kruvasan img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.kalem { list-style: none; padding: 0; margin-top: 20px; }
+.kalem li { padding: 13px 0; border-top: 1px solid rgba(12,43,34,.12); display: grid; gap: 2px; }
+.kalem li strong { font-weight: 600; }
+.kalem li span { color: var(--soluk); font-size: .95rem; }
+@media (min-width: 860px) { .kruvasan .wrap { grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; } }
+
+/* Bardakta */
+.bardak { padding: clamp(56px, 9vw, 110px) 0; }
+.bardak .wrap { display: grid; gap: 30px; }
+.bardak video { width: 100%; max-width: 360px; aspect-ratio: 9/16; object-fit: cover; border-radius: 6px; }
+.icecek { columns: 2; column-gap: 28px; list-style: none; padding: 0; margin-top: 22px; }
+.icecek li { break-inside: avoid; padding: 9px 0; border-bottom: 1px solid rgba(12,43,34,.12); }
+@media (min-width: 860px) { .bardak .wrap { grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; } .bardak video { justify-self: end; } }
+@media (max-width: 380px) { .icecek { columns: 1; } }
+
+/* Mekân */
+.mekan { background: var(--zumrut); color: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
+.mekan .giris { color: #CFE0D7; }
+.mekan-foto { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 30px; }
+.mekan-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; aspect-ratio: 3/4; }
+.mekan-foto img:first-child { grid-column: span 2; aspect-ratio: 16/10; }
+@media (min-width: 860px) { .mekan-foto { grid-template-columns: 2fr 1fr 1fr; } .mekan-foto img:first-child { grid-column: auto; aspect-ratio: auto; } }
+.ozellik { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.ozellik span { font-size: .92rem; padding: 7px 13px; border-radius: 999px; background: rgba(251,252,250,.12); }
+
+/* Yorumlar */
+.yorum { padding: clamp(56px, 9vw, 100px) 0; }
+.yorum .wrap { display: grid; gap: 18px; }
+.yorum blockquote { font: 400 clamp(1.35rem, 3.6vw, 1.9rem)/1.3 var(--serif); max-width: 30ch; }
+.yorum figcaption { margin-top: 10px; color: var(--soluk); font-size: .95rem; }
+.yorum figure { margin: 0; padding: 26px 0; border-top: 1px solid rgba(12,43,34,.15); }
+@media (min-width: 860px) { .yorum .wrap { grid-template-columns: 1fr 1fr; gap: 48px; } }
+
+/* Ziyaret */
+.ziyaret { background: var(--beyaz); }
+.ziyaret .wrap { display: grid; gap: 28px; padding: clamp(56px, 9vw, 100px) 0; }
+.ziyaret img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; }
+.ziyaret dl { display: grid; gap: 14px; margin: 18px 0 24px; }
+.ziyaret dt { font-size: .85rem; color: var(--soluk); }
+.ziyaret dd { font-size: 1.05rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 8px; font: 600 .98rem var(--sans); text-decoration: none; border: 1.5px solid var(--zumrut); color: var(--zumrut); margin: 0 8px 10px 0; }
+.btn.dolu { background: var(--zumrut); color: var(--beyaz); }
+@media (min-width: 860px) { .ziyaret .wrap { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
+footer { background: var(--murekkep); color: #B9CCC3; text-align: center; padding: 40px 20px calc(30px + env(safe-area-inset-bottom)); font-size: .88rem; }
+footer .marka { color: var(--beyaz); display: block; font-size: 1.6rem; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marka" href="#top">Dell’Amante</a>
+    <nav aria-label="Bölümler">
+      <a href="#vitrin">Tatlılar</a>
+      <a href="#kruvasan">Kruvasan</a>
+      <a href="#bardak">İçecekler</a>
+      <a class="yol" href="#ziyaret">Bizi bulun</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-video"><video id="heroVideo" muted playsinline loop autoplay preload="metadata" poster="img/00.jpg"><source src="acilis.mp4" type="video/mp4"></video></div>
+    <div class="hero-metin">
+      <h1>Kruvasanı kahveye batırmanın tam yeri.</h1>
+      <p>Kruvasanlarımız, tatlılarımız ve sandviçlerimiz kendi mutfağımızdan, her gün taze. Alya Residence’ta, sabahtan gece yarısına.</p>
+      <div class="bilgi"><span>Her gün 07.30–01.00</span><span>Alya Residence, Beylikdüzü</span><span>Google’da 4,6</span></div>
+    </div>
+  </section>
+
+  <section class="vitrin" id="vitrin" aria-labelledby="vitrinBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="vitrinBaslik">Vitrinimizde bu hafta</h2>
+      <p class="giris">Hepsi kendi üretimimiz. Meyve görünümlü tatlılarımızı Fransız pastacı Cedric Grolet’nin tarzından ilham alarak yapıyoruz.</p>
+    </div>
+    <div class="raf" tabindex="0" aria-label="İmza tatlılar, yana kaydırın">
+      <figure class="tatli"><img src="img/01.jpg" alt="Çilek görünümlü Çilek Cedric tatlısı" loading="lazy"><figcaption class="kart"><strong>Çilek Cedric</strong><span>Kendi reçetemiz, el yapımı</span></figcaption></figure>
+      <figure class="tatli"><img src="img/02.jpg" alt="Domates görünümlü Cedric tatlısı" loading="lazy"><figcaption class="kart"><strong>Cedric domates</strong><span>Hiç bu kadar tatlı bir domates yemediniz</span></figcaption></figure>
+      <figure class="tatli"><img src="img/03.jpg" alt="Kahve çekirdeği görünümlü tatlı" loading="lazy"><figcaption class="kart"><strong>Kahve tatlısı</strong><span>Görünüşü sade, içi sürprizli</span></figcaption></figure>
+      <figure class="tatli"><img src="img/04.jpg" alt="Üzerine Belçika çikolatası dökülen San Sebastian cheesecake ve latte" loading="lazy"><figcaption class="kart"><strong>San Sebastian</strong><span>Belçika çikolatasıyla</span></figcaption></figure>
+      <figure class="tatli"><img src="img/05.jpg" alt="Kapta dondurma" loading="lazy"><figcaption class="kart"><strong>Dondurma</strong><span>Yaz aylarında</span></figcaption></figure>
+    </div>
+    <div class="wrap"><p class="ipucu">Yana kaydırın. Dubai Ball’u da sorun: dışı tel tel çıtır, içi yumuşacık.</p></div>
+  </section>
+
+  <section class="kruvasan" id="kruvasan" aria-labelledby="kruvasanBaslik">
+    <div class="wrap">
+      <img src="img/08.jpg" alt="Tezgâhta kruvasan ve sandviç çeşitleri" loading="lazy">
+      <div>
+        <h2 class="baslik" id="kruvasanBaslik">Her sabah taze kruvasan</h2>
+        <p class="giris">Kahvenin en iyi arkadaşı. Sabah 07.30’da tezgâhta.</p>
+        <ul class="kalem">
+          <li><strong>Kruvasan çeşitleri</strong><span>Sade ya da dolgulu, günlük taze</span></li>
+          <li><strong>Avokado ve yumurtalı</strong><span>Kendi hazırladığımız sandviçlerden</span></li>
+          <li><strong>Kapya biber ve köz patlıcanlı</strong><span>Kendi hazırladığımız sandviçlerden</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="bardak" id="bardak" aria-labelledby="bardakBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="bardakBaslik">Bardakta neler var?</h2>
+        <p class="giris">Klasik kahvelerin yanında imza içeceklerimiz.</p>
+        <ul class="icecek">
+          <li>Spanish latte</li>
+          <li>Ice latte</li>
+          <li>Sıcak çikolata</li>
+          <li>Beyaz sıcak çikolata</li>
+          <li>Chilli Mango</li>
+          <li>Ocean</li>
+          <li>Sunrise</li>
+          <li>Çarkıfelek, frambuaz ve hibiskuslu limonata</li>
+        </ul>
+      </div>
+      <video id="bardakVideo" muted playsinline loop preload="none" poster="img/07.jpg" aria-label="Buzlu latte hazırlanırken"><source src="bardak.mp4" type="video/mp4"></video>
+    </div>
+  </section>
+
+  <section class="mekan" aria-labelledby="mekanBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="mekanBaslik">Kahveni al, istediğin kadar otur</h2>
+      <p class="giris">Kitaplığın önünde çalışma tezgâhı, uzun masalar ve teras. Dizüstü bilgisayarınla gelmek için de uygun.</p>
+      <div class="mekan-foto">
+        <img src="img/09.jpg" alt="Dell’Amante’nin logolu duvarı ve uzun masaları" loading="lazy">
+        <img src="img/10.jpg" alt="Duvar resmi olan oturma alanı" loading="lazy">
+        <img src="img/11.jpg" alt="Kitaplık önündeki çalışma tezgâhı" loading="lazy">
+      </div>
+      <div class="ozellik"><span>Teras</span><span>Çalışmaya uygun</span><span>Paket servis</span><span>Adrese servis</span></div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-label="Misafir yorumları">
+    <div class="wrap">
+      <figure><blockquote>Beylikdüzü’nde en lezzetli ve taze tatlıları yiyebileceğiniz bir kafe. Temizliğe çok dikkat eden bir yönetim.</blockquote><figcaption>Haluk, Google yorumu</figcaption></figure>
+      <figure><blockquote>Barista hanımefendinin önerisiyle Spanish latte denedim ve çok beğendim. Kesinlikle tekrar geleceğim.</blockquote><figcaption>Zeynep, Google yorumu</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="ziyaret" id="ziyaret" aria-labelledby="ziyaretBaslik">
+    <div class="wrap">
+      <img src="img/12.jpg" alt="Alya Residence’taki Dell’Amante Coffee cephesi" loading="lazy">
+      <div>
+        <h2 class="baslik" id="ziyaretBaslik">Bizi bulun</h2>
+        <dl>
+          <div><dt>Adres</dt><dd>Alya Residence, Adnan Kahveci Mah. Büyükdere Cad. No: 2/8, Beylikdüzü</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 07.30–01.00</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+908503052111">0850 305 21 11</a></dd></div>
+        </dl>
+        <a class="btn dolu" href="https://www.google.com/maps/search/?api=1&amp;query=DELL'AMANTE%20COFFEE&amp;query_place_id=ChIJ27yspghftRQRav4n3quI2zE" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn" href="https://wa.me/908503052111" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
+        <a class="btn" href="https://www.instagram.com/dellamantecoffee/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="marka">Dell’Amante</span>
+  Alya Residence, Beylikdüzü · Her gün 07.30–01.00
+  <p style="margin-top:10px;font-size:.78rem">Bu sayfa Dell’Amante Coffee için hazırlanmış bir örnek tasarımdır.</p>
+</footer>
+
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); }); return; }
+  // İçecek videosu sadece göründüğünde oynar
+  var b = document.getElementById('bardakVideo');
+  new IntersectionObserver(function (g) { g.forEach(function (x) { if (x.isIntersecting) { var p = b.play(); if (p && p.catch) p.catch(function () {}); } else b.pause(); }); }, { threshold: .3 }).observe(b);
+})();
+</script>
+</body>
+</html>
