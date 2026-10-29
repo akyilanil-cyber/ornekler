@@ -100,6 +100,29 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 .gelenek .pol { margin: 0 auto; width: min(100%, 380px); transform: rotate(2deg); }
 @media (min-width: 860px) { .gelenek .wrap { grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; } }
 
+/* Hikâyemiz */
+.hikaye { padding: clamp(64px, 10vw, 120px) 0; }
+.hikaye .wrap { display: grid; gap: 40px; }
+.hikaye h2 { font: 800 clamp(2rem, 6vw, 3.3rem)/1.03 var(--sans); letter-spacing: -.03em; }
+.hikaye .el { font: 700 clamp(1.7rem, 4.5vw, 2.3rem)/1.15 var(--el); color: var(--alti); margin-top: 14px; }
+.hikaye p:not(.el) { margin-top: 16px; max-width: 50ch; color: var(--soluk); }
+.sayac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: center; }
+.sayac li { background: var(--beyaz); border-radius: 18px; padding: 22px 16px; text-align: center; display: grid; justify-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(43,29,23,.06); }
+.sayac svg { width: 44px; height: 44px; stroke: var(--duvar); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.sayac li:hover svg, .sayac li.dondu svg { transform: rotateY(360deg); }
+.sayac b { font: 800 2rem/1 var(--sans); color: var(--kahve); letter-spacing: -.02em; }
+.sayac span { font-size: .92rem; color: var(--soluk); }
+@media (min-width: 860px) { .hikaye .wrap { grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; } }
+@media (prefers-reduced-motion: reduce) { .sayac svg { transition: none; } }
+
+/* Galeri */
+.galeri { background: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.galeri h2 { font: 800 clamp(2rem, 6vw, 3.3rem)/1.03 var(--sans); letter-spacing: -.03em; }
+.galeri-izgara { list-style: none; padding: 0; margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galeri-izgara img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 14px; }
+.galeri-alt { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; color: var(--soluk); }
+@media (min-width: 860px) { .galeri-izgara { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
 /* Yorumlar */
 .yorum { padding: clamp(56px, 9vw, 100px) 0; }
 .yorum .wrap { display: grid; gap: 22px; }
@@ -205,6 +228,23 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
     </div>
   </section>
 
+  <section class="hikaye" id="hikaye" aria-labelledby="hikayeBaslik">
+    <div class="wrap">
+      <div>
+        <h2 id="hikayeBaslik">Hikâyemiz</h2>
+        <p class="el">“Dolu dolu 10. senemize girdik.”</p>
+        <p>6OZ’u Ocak 2017’de Çalışlar Caddesi’nde açtık. O günden beri kahvemizi kendimiz kavuruyor, pastalarımızı kendi mutfağımızda yapıyoruz.</p>
+        <p>Bu yıllarda müdavimlerimiz, çarşamba kitap günlerimiz ve kapımızdaki dört ayaklı dostlarımızla büyüdük.</p>
+      </div>
+      <ul class="sayac">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>2017</b><span>Açılış yılı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.7">4,7</b><span>Google puanı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="343">343</b><span>Google yorumu</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 20h22v10a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z"/><path d="M34 23h3a4 4 0 0 1 0 8h-3M17 8c0 3 3 3 3 6M24 8c0 3 3 3 3 6"/></svg><b>07.30</b><span>Hafta içi açılış</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="gelenek" id="gelenek" aria-labelledby="gelenekBaslik">
     <div class="wrap">
       <div>
@@ -225,6 +265,24 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
       </div>
       </div>
       <figure class="pol"><img src="img/10.jpg" alt="Kafedeki kanepede dinlenen iki sokak köpeği" loading="lazy"><figcaption>Öğle uykusu</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri" aria-labelledby="galeriBaslik">
+    <div class="wrap">
+      <h2 id="galeriBaslik">6OZ’dan kareler</h2>
+      <ul class="galeri-izgara">
+        <li><img src="img/13.jpg" alt="6OZ’un duvarındaki kahve içen kadın resmi" loading="lazy"></li>
+        <li><img src="img/14.jpg" alt="Pudra şekerli çikolatalı kek ve çay" loading="lazy"></li>
+        <li><img src="img/15.jpg" alt="Kalp desenli cappuccino ve bitki" loading="lazy"></li>
+        <li><img src="img/16.jpg" alt="Ev yapımı biscotti" loading="lazy"></li>
+        <li><img src="img/17.jpg" alt="Sarı koltuklu köşede kahve ve kurabiye" loading="lazy"></li>
+        <li><img src="img/18.jpg" alt="Çalışlar Caddesi’ndeki 6OZ’un kırmızı cephesi" loading="lazy"></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Günün pastaları ve sokak dostlarımızdan haberler Instagram’da.</span>
+        <a class="btn" href="https://www.instagram.com/6ozcoffee/" target="_blank" rel="noopener">Instagram’da daha fazlası</a>
+      </div>
     </div>
   </section>
 
@@ -296,5 +354,21 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
   </div>
   <p class="wrap alt-not">Bu sayfa 6OZ Coffee &amp; Cake House için hazırlanmış bir örnek tasarımdır. · Hazırlayan: Anıl Akyıl</p>
 </footer>
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Sayaçlar ekrana girince ikon bir kez döner, sayılar sıfırdan sayarak gelir
+  var gozle = new IntersectionObserver(function (g) { g.forEach(function (x) {
+    if (!x.isIntersecting) return;
+    var li = x.target; li.classList.add('dondu'); gozle.unobserve(li);
+    var b = li.querySelector('[data-say]'); if (!b) return;
+    var hedef = parseFloat(b.getAttribute('data-say')), ondalik = hedef % 1 !== 0, bas = null;
+    function adim() { var z = Date.now(); if (!bas) bas = z; var o = Math.min(1, (z - bas) / 1200), d = hedef * (1 - Math.pow(1 - o, 3));
+      b.textContent = ondalik ? d.toFixed(1).replace('.', ',') : Math.round(d).toLocaleString('tr-TR'); if (o >= 1) clearInterval(zam); }
+    var zam = setInterval(adim, 30); adim();
+  }); }, { threshold: .6 });
+  document.querySelectorAll('.sayac li').forEach(function (li) { gozle.observe(li); });
+})();
+</script>
 </body>
 </html>

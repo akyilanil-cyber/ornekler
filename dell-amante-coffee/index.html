@@ -53,6 +53,29 @@ header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
   .hero-metin { align-self: center; padding: 0 clamp(32px, 5vw, 72px) clamp(48px, 9vh, 90px); }
 }
 
+/* Hikâyemiz: sayılar gerçek (açılış, Google puanı, yorum, saat); ikon fareyle ya da ekrana girince döner */
+.hikaye { background: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.hikaye .wrap { display: grid; gap: 40px; }
+.hikaye blockquote { font: 400 clamp(1.6rem, 4.2vw, 2.4rem)/1.2 var(--serif); color: var(--zumrut); border-left: 3px solid var(--pirinc); padding-left: 20px; margin-top: 22px; max-width: 24ch; }
+.hikaye-metin p { margin-top: 18px; max-width: 52ch; color: var(--soluk); }
+.sayac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: center; }
+.sayac li { background: var(--fistik); border-radius: 10px; padding: 22px 18px; text-align: center; display: grid; justify-items: center; gap: 6px; }
+.sayac svg { width: 44px; height: 44px; stroke: var(--pirinc); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.sayac li:hover svg, .sayac li.dondu svg { transform: rotateY(360deg); }
+.sayac b { font: 500 2.1rem/1 var(--serif); color: var(--murekkep); }
+.sayac span { font-size: .92rem; color: var(--soluk); }
+@media (min-width: 900px) { .hikaye .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } }
+@media (prefers-reduced-motion: reduce) { .sayac svg { transition: none; } }
+
+/* Galeri */
+.galeri { padding: clamp(64px, 10vw, 120px) 0; }
+.galeri .baslik { max-width: none; }
+.galeri-izgara { list-style: none; padding: 0; margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galeri-izgara img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.galeri-alt { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; color: var(--soluk); }
+.galeri-alt .btn { margin: 0; }
+@media (min-width: 900px) { .galeri-izgara { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
 /* Vitrin: imza tatlılar pastane rafında */
 .vitrin { padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 6vw, 72px); }
 .baslik { font: 400 clamp(2rem, 6vw, 3.4rem)/1.05 var(--serif); max-width: 16ch; }
@@ -183,6 +206,23 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
     </div>
   </section>
 
+  <section class="hikaye" id="hikaye" aria-labelledby="hikayeBaslik">
+    <div class="wrap">
+      <div class="hikaye-metin">
+        <h2 class="baslik" id="hikayeBaslik">Hikâyemiz</h2>
+        <blockquote>Önce bir hayaldi, bugün dostların buluşma noktası.</blockquote>
+        <p>Dell’Amante, Ekim 2023’te Alya Residence’ta açıldı. İlk günden beri kruvasanlarımızı, sandviçlerimizi ve vitrindeki tatlıları kendi mutfağımızda yapıyoruz.</p>
+        <p>İkinci yaşımızı 1 Ekim Dünya Kahve Günü’nde, misafirlerimize kahve ve pasta ikram ederek kutladık.</p>
+      </div>
+      <ul class="sayac">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>2023</b><span>Açılış yılı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.6">4,6</b><span>Google puanı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="535">535</b><span>Google yorumu</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>07.30</b><span>Her gün açılış saati</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="vitrin" id="vitrin" aria-labelledby="vitrinBaslik">
     <div class="wrap">
       <h2 class="baslik" id="vitrinBaslik">Vitrinimizde bu hafta</h2>
@@ -249,6 +289,24 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <img src="img/09.jpg" alt="Dell’Amante’nin logolu duvarı ve uzun masaları" loading="lazy">
         <img src="img/10.jpg" alt="Duvar resmi olan oturma alanı" loading="lazy">
         <img src="img/11.jpg" alt="Kitaplık önündeki çalışma tezgâhı" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri" aria-labelledby="galeriBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="galeriBaslik">Dell’Amante’den kareler</h2>
+      <ul class="galeri-izgara">
+        <li><img src="img/14.jpg" alt="Meyve görünümlü tatlılarla dolu vitrin" loading="lazy"></li>
+        <li><img src="img/15.jpg" alt="Bardakta latte ve su" loading="lazy"></li>
+        <li><img src="img/16.jpg" alt="Kakaolu katmanlı tatlı" loading="lazy"></li>
+        <li><img src="img/17.jpg" alt="Fındıklı brownie ve çay" loading="lazy"></li>
+        <li><img src="img/18.jpg" alt="Dell’Amante logolu ikinci yaş pastası" loading="lazy"></li>
+        <li><img src="img/19.jpg" alt="İkinci yaş kutlamasında Dell’Amante ekibi" loading="lazy"></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Yeni tatlılar ve kampanyalar Instagram’da.</span>
+        <a class="btn" href="https://www.instagram.com/dellamantecoffee/" target="_blank" rel="noopener">Instagram’da daha fazlası</a>
       </div>
     </div>
   </section>
@@ -336,6 +394,16 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 <script>
 (function () {
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); }); return; }
+  var gozle = new IntersectionObserver(function (g) { g.forEach(function (x) {
+    if (!x.isIntersecting) return;
+    var li = x.target; li.classList.add('dondu'); gozle.unobserve(li);
+    var b = li.querySelector('[data-say]'); if (!b) return;
+    var hedef = parseFloat(b.getAttribute('data-say')), ondalik = hedef % 1 !== 0, bas = null;
+    function adim() { var z = Date.now(); if (!bas) bas = z; var o = Math.min(1, (z - bas) / 1200), d = hedef * (1 - Math.pow(1 - o, 3));
+      b.textContent = ondalik ? d.toFixed(1).replace('.', ',') : Math.round(d).toLocaleString('tr-TR'); if (o >= 1) clearInterval(zam); }
+    var zam = setInterval(adim, 30); adim();
+  }); }, { threshold: .6 });
+  document.querySelectorAll('.sayac li').forEach(function (li) { gozle.observe(li); });
   // İçecek videosu sadece göründüğünde oynar
   var b = document.getElementById('bardakVideo');
   new IntersectionObserver(function (g) { g.forEach(function (x) { if (x.isIntersecting) { var p = b.play(); if (p && p.catch) p.catch(function () {}); } else b.pause(); }); }, { threshold: .3 }).observe(b);

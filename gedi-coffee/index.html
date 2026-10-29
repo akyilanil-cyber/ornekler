@@ -98,6 +98,35 @@ a { color: inherit; }
 .not { color: var(--duman); font-size: .95rem; margin-top: 16px; max-width: 46ch; }
 
 /* Bilmen gerekenler */
+/* Hakkımızda */
+.hakkinda { padding: clamp(64px, 10vw, 120px) 0; }
+.hakkinda .wrap { display: grid; gap: 40px; }
+.hakkinda h2 { font: 800 clamp(2.2rem, 7vw, 4rem)/1 var(--display); letter-spacing: -.03em; }
+.hakkinda-metin > p { margin-top: 16px; max-width: 48ch; color: var(--duman); font-size: 1.08rem; }
+.mevsim { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+.mevsim div { border-radius: 20px; padding: 18px 18px 16px; }
+.mevsim strong { display: block; font: 700 1.2rem/1.1 var(--display); margin-bottom: 6px; }
+.mevsim .yaz { background: linear-gradient(150deg, var(--gunbatimi), #C96A62); color: var(--gece); }
+.mevsim .ates { background: linear-gradient(150deg, var(--fener), var(--kor)); color: var(--gece); }
+@media (max-width: 520px) { .mevsim { grid-template-columns: 1fr; } }
+.sayac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; }
+.sayac li { background: var(--alaca); border-radius: 20px; padding: 22px 16px; text-align: center; display: grid; justify-items: center; gap: 6px; }
+.sayac svg { width: 44px; height: 44px; stroke: var(--fener); fill: none; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.sayac li:hover svg, .sayac li.dondu svg { transform: rotateY(360deg); }
+.sayac b { font: 800 2.1rem/1 var(--display); color: var(--kagit); letter-spacing: -.02em; }
+.sayac span { font-size: .92rem; color: var(--duman); }
+@media (min-width: 860px) { .hakkinda .wrap { grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; } }
+@media (prefers-reduced-motion: reduce) { .sayac svg { transition: none; } }
+
+/* Galeri */
+.galeri { padding: clamp(56px, 9vw, 110px) 0; }
+.galeri h2 { font: 800 clamp(2rem, 6vw, 3.4rem)/1 var(--display); letter-spacing: -.03em; }
+.galeri-izgara { list-style: none; padding: 0; margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galeri-izgara img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 20px; }
+.galeri-alt { margin-top: 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; color: var(--duman); }
+.galeri-alt .btn { color: var(--kagit); border-color: rgba(247,234,219,.5); }
+@media (min-width: 860px) { .galeri-izgara { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
 /* Yorumlar */
 .yorum { padding: clamp(20px, 4vw, 40px) 0 clamp(48px, 8vw, 90px); }
 .yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 8px 24px; }
@@ -189,6 +218,25 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
     </div>
   </section>
 
+  <section class="hakkinda" id="hakkinda" aria-labelledby="hakkindaBaslik">
+    <div class="wrap">
+      <div class="hakkinda-metin">
+        <h2 id="hakkindaBaslik">Hakkımızda</h2>
+        <p>Gedi, Beykent’in tepesinde, manzaraya bakan terasıyla bir akşam kahvecisi. Kahveni alıp istediğin köşeye geçiyorsun; gerisini manzara, ateş ve film geceleri hallediyor.</p>
+        <div class="mevsim">
+          <div class="yaz"><strong>Yaz</strong>Seyir terası ve yıldızların altında açık hava sineması.</div>
+          <div class="ates"><strong>Sonbahar ve kış</strong>Ateş başı sezonu: sıcak kahve, marshmallow, uzun sohbetler.</div>
+        </div>
+      </div>
+      <ul class="sayac">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.8">4,8</b><span>Google puanı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="705">705</b><span>Google yorumu</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="28" r="9"/><path d="M24 8v6M10 14l4 4M38 14l-4 4M6 28h4M38 28h4M8 40h32"/></svg><b>17.00</b><span>Her gün açılış</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M30 8a16 16 0 1 0 10 26A13 13 0 0 1 30 8z"/></svg><b>02.00</b><span>Gece kapanış</span></li>
+      </ul>
+    </div>
+  </section>
+
   <section class="aksam" id="aksam" aria-labelledby="aksamBaslik">
     <div class="wrap">
       <h2 id="aksamBaslik">Gedi’de bir akşam böyle geçer</h2>
@@ -249,6 +297,24 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
         <img src="img/05.jpg" alt="Frambuazlı tart" loading="lazy">
         <img src="img/06.jpg" alt="Tepside meyveli pasta dilimi, kavanoz tatlı ve buzlu içecek" loading="lazy">
         <img src="img/03.jpg" alt="Gedi Coffee bardağında kahve" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri" aria-labelledby="galeriBaslik">
+    <div class="wrap">
+      <h2 id="galeriBaslik">Gedi’den kareler</h2>
+      <ul class="galeri-izgara">
+        <li><img src="img/07.jpg" alt="Gece ışıklı fenerlerle kaplı teras" loading="lazy"></li>
+        <li><img src="img/08.jpg" alt="Fenerlerin arasından gün batımı ve deniz" loading="lazy"></li>
+        <li><img src="img/09.jpg" alt="Film gecesinde patlamış mısır ve perde" loading="lazy"></li>
+        <li><img src="img/10.jpg" alt="Ateşte marshmallow kızartılırken" loading="lazy"></li>
+        <li><img src="img/11.jpg" alt="Bambu duvar önünde melek heykeli" loading="lazy"></li>
+        <li><img src="img/12.jpg" alt="Işıklarla süslü terasın yukarıdan görünüşü" loading="lazy"></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Film geceleri ve yeni kareler Instagram’da.</span>
+        <a class="btn" href="https://www.instagram.com/gedicoffe/" target="_blank" rel="noopener">Instagram’da daha fazlası</a>
       </div>
     </div>
   </section>
@@ -348,6 +414,22 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
   }
   document.getElementById('gir').addEventListener('click', kapat);
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !gate.hidden) kapat(); });
+})();
+</script>
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // Sayaçlar ekrana girince ikon bir kez döner, sayılar sıfırdan sayarak gelir
+  var gozle = new IntersectionObserver(function (g) { g.forEach(function (x) {
+    if (!x.isIntersecting) return;
+    var li = x.target; li.classList.add('dondu'); gozle.unobserve(li);
+    var b = li.querySelector('[data-say]'); if (!b) return;
+    var hedef = parseFloat(b.getAttribute('data-say')), ondalik = hedef % 1 !== 0, bas = null;
+    function adim() { var z = Date.now(); if (!bas) bas = z; var o = Math.min(1, (z - bas) / 1200), d = hedef * (1 - Math.pow(1 - o, 3));
+      b.textContent = ondalik ? d.toFixed(1).replace('.', ',') : Math.round(d).toLocaleString('tr-TR'); if (o >= 1) clearInterval(zam); }
+    var zam = setInterval(adim, 30); adim();
+  }); }, { threshold: .6 });
+  document.querySelectorAll('.sayac li').forEach(function (li) { gozle.observe(li); });
 })();
 </script>
 </body>
