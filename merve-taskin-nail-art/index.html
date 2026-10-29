@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Merve Taşkın Nail Art | Beylikdüzü – Esenyurt</title>
-<meta name="description" content="Protez tırnak, jel güçlendirme, kalıcı oje ve nail art. Cumhuriyet Mahallesi metrobüs durağı yanı, Çebi Natura Green Office. Her gün 10.00–18.00.">
+<meta name="description" content="Protez tırnak, jel güçlendirme, kalıcı oje ve nail art. Cumhuriyet Mahallesi metrobüs durağı yanı, Çebi Natura Green Office. Her gün 10:00–18:00.">
 <meta name="theme-color" content="#D0213A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,6 +143,17 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 @media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
 @media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* yorum-kaydir */
+.yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
+.yorum-izgara[data-kaydir] > figure { scroll-snap-align: start; }
+@media (min-width: 700px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:hover { opacity: 1; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
+.yorum-ok button:focus-visible, .yorum-izgara[data-kaydir]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -169,7 +180,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <a class="btn dolu" href="https://wa.me/905434430952" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
           <a class="btn" href="#modeller">Modellere bakın</a>
         </div>
-        <p class="bilgi"><span><b>5,0</b> Google’da 28 yorum</span><span><b>Her gün</b> 10.00–18.00</span></p>
+        <p class="bilgi"><span><b>5,0</b> Google’da 28 yorum</span><span><b>Her gün</b> 10:00–18:00</span></p>
       </div>
       <div class="yelpaze" aria-hidden="true">
         <img src="img/00.jpg" alt="">
@@ -185,13 +196,13 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
       <p class="giris">Salonumuzda yapılan modellerden birkaçı. Pinterest’te gördüğünüz bir modeli de getirebilirsiniz.</p>
       <ul class="modeller">
         <li><img src="img/03.jpg" alt="Klasik beyaz french tırnaklar" loading="lazy"><div><i style="--renk:#FFFFFF"></i><strong>French</strong><span>Klasik ve tertemiz</span></div></li>
-        <li><img src="img/04.jpg" alt="Tereyağı sarısı french tırnaklar" loading="lazy"><div><i style="--renk:#F3DD8B"></i><strong>Tereyağı sarısı</strong><span>Yazın aranan french</span></div></li>
+        <li><img src="img/04.jpg" alt="Tereyağ sarısı french tırnaklar" loading="lazy"><div><i style="--renk:#F3DD8B"></i><strong>Tereyağ sarısı french</strong><span>Aranan yaz tırnakları</span></div></li>
         <li><img src="img/05.jpg" alt="Pembe, sarı ve mavi uçlu renkli french" loading="lazy"><div><i style="--renk:#9FD6D9"></i><strong>Renkli french</strong><span>Her parmağa ayrı renk</span></div></li>
         <li><img src="img/06.jpg" alt="Pembe cat eye tırnaklar" loading="lazy"><div><i style="--renk:#E9B3C0"></i><strong>Cat eye</strong><span>Işıkta parlayan pembe</span></div></li>
         <li><img src="img/07.jpg" alt="Beyazdan pembeye ombre tırnaklar" loading="lazy"><div><i style="--renk:#F6E3E3"></i><strong>Ombre</strong><span>Yumuşak geçişli</span></div></li>
         <li><img src="img/08.jpg" alt="Minik kurdele detaylı açık pembe tırnaklar" loading="lazy"><div><i style="--renk:#F4C6CE"></i><strong>Kurdele</strong><span>Minik bir dokunuş</span></div></li>
         <li><img src="img/09.jpg" alt="Doğal görünümlü jel güçlendirme" loading="lazy"><div><i style="--renk:#EBC9B9"></i><strong>Jel güçlendirme</strong><span>Kendi tırnağınız, daha güçlü</span></div></li>
-        <li><img src="img/10.jpg" alt="Tırnak yeme bakımı yapılan kısa doğal tırnaklar" loading="lazy"><div><i style="--renk:#E2B8A6"></i><strong>Tırnak yeme bakımı</strong><span>Yeme ve et koparmaya karşı</span></div></li>
+        <li><img src="img/10.jpg" alt="Tırnak yeme tedavisi uygulanmış kısa doğal tırnaklar" loading="lazy"><div><i style="--renk:#E2B8A6"></i><strong>Tırnak yeme tedavisi</strong><span>Tırnak yeme ve et koparmaya karşı</span></div></li>
       </ul>
       <div class="kartela-alt">
         <span>Cat eye’dan Halloween’a, yeni modeller Instagram’da.</span>
@@ -210,7 +221,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="16" y="16" width="16" height="24" rx="4"/><path d="M20 16V8h8v8"/></svg><strong>Kalıcı oje</strong><span>Manikürle birlikte, uzun süre canlı renk.</span></li>
           <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8l3 9h9l-7 6 3 9-8-6-8 6 3-9-7-6h9z"/></svg><strong>Nail art</strong><span>French, cat eye, ombre ve çizim tasarımlar.</span></li>
           <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 30c4-10 24-10 28 0"/><path d="M14 30v8M22 28v10M30 28v10M36 30v8"/></svg><strong>Manikür ve pedikür</strong><span>Hijyene dikkat edilerek, özenle.</span></li>
-          <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40c-8-5-14-11-14-19a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 8-6 14-14 19z"/></svg><strong>Tırnak yeme bakımı</strong><span>Tırnak yeme ve et koparma alışkanlığı olan tırnaklar için.</span></li>
+          <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40c-8-5-14-11-14-19a8 8 0 0 1 14-5 8 8 0 0 1 14 5c0 8-6 14-14 19z"/></svg><strong>Tırnak yeme tedavisi</strong><span>Tırnak yeme ve et koparma alışkanlığı olan tırnaklar için.</span></li>
         </ul>
       </div>
       <video id="frenchVideo" muted playsinline loop preload="none" poster="img/12.jpg" aria-label="Yakından french tırnaklar"><source src="french.mp4" type="video/mp4"></video>
@@ -240,7 +251,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
         <p class="puan"><b>5,0</b>Google’da 28 yorum</p>
       </div>
-      <div class="yorum-izgara">
+      <div class="yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Kızlar, gönül rahatlığıyla tercih edebileceğiniz bir yer. İstediğim model birebir aynı oldu. İşlerini çok titiz ve güzel yapıyorlar, hijyene önem veren bir işletme.</blockquote>
@@ -256,7 +267,28 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <blockquote>Bugün manikür pedikür yaptırdım. Çok tatlı çalışanlar, işlemleri çok iyi. Çayım kahvem eksik olmadı, bol dedikodulu bir seans geçirdik resmen.</blockquote>
           <figcaption><span class="harf" aria-hidden="true">S</span><span><strong>Sevgi K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Kalıcı oje için geldim, tırnaklarıma resmen yeni bir hayat verildi. Hem ortam pırıl pırıl hem de işçilik aşırı özenli.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">T</span><span><strong>Tutku Ş.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Her gidişimde aynı özen, kalite ve güler yüzle karşılanıyorum. İşçiliği gerçekten çok başarılı; tırnaklarım tam istediğim gibi oluyor. Salonun ortamı çok şık, ferah ve tertemiz.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">S</span><span><strong>Sanem E.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Bugün ilk kez geldim ve gerçekten çok memnun kaldım. Yaptıkları işe verdikleri özen, mekânın ferahlığı, hijyene dikkat etmeleri… En önemlisi memnun ayrılmanıza gösterdikleri özen çok kıymetli.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">İ</span><span><strong>İrem</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Dün ilk defa gittim, Melike Hanım ilgilendi benimle. Ortam, yaklaşım ve iş konusundaki titizliği çok beğendim. Düzenli olarak gideceğim bir yer oldu.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeynep F.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
       </div>
+      <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
     </div>
   </section>
 
@@ -266,7 +298,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="gelBaslik">Nasıl gelinir?</h2>
         <dl>
           <div><dt>Adres</dt><dd>Çebi Natura Green Office, Barbaros Hayrettin Paşa Mah. 1994. Sk. No: 2, Kat 4, Daire 39, Esenyurt</dd></div>
-          <div><dt>Açık</dt><dd>Her gün 10.00–18.00</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 10:00–18:00</dd></div>
           <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905434430952">0543 443 09 52</a></dd></div>
         </dl>
       </div>
@@ -299,7 +331,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
     </div>
     <div>
       <p class="alt-baslik">Açık</p>
-      <p>Her gün<br>10.00–18.00</p>
+      <p>Her gün<br>10:00–18:00</p>
     </div>
     <div>
       <p class="alt-baslik">İletişim</p>
@@ -336,6 +368,19 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
   }); }, { threshold: .5 });
   document.querySelectorAll('.sayac li, .liste li').forEach(function (li) { gozle.observe(li); });
 })();
+</script>
+<script>
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var b = ok.querySelectorAll('button');
+  function durum() { b[0].disabled = iz.scrollLeft < 4; b[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  b.forEach(function (d) { d.addEventListener('click', function () { iz.scrollBy({ left: d.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>

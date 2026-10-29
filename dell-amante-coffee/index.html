@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Dell’Amante Coffee | Beylikdüzü</title>
-<meta name="description" content="Kendi üretimimiz kruvasanlar, imza tatlılar ve kahve. Alya Residence, Beylikdüzü. Her gün 07.30–01.00.">
+<meta name="description" content="Kendi üretimimiz kruvasanlar, imza tatlılar ve kahve. Alya Residence, Beylikdüzü. Her gün 07:30–01:00.">
 <meta name="theme-color" content="#0F4A3A">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -130,8 +130,12 @@ header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
 .imza .ocean { --renk: #2FB4D6; background: #D8F0F6; }
 .imza .sunrise { --renk: #E2483A; background: #F9DCD7; }
 .imza .limon { --renk: #B9417A; background: #F3DCE7; }
-.klasik { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.klasik li { font: 500 1.05rem var(--serif); padding: 9px 16px; border: 1.5px solid rgba(12,43,34,.18); border-radius: 999px; background: var(--beyaz); }
+.imza.klasik li { min-height: 96px; }
+.imza.klasik strong { max-width: 12ch; }
+.imza .spanish { --renk: #C98A4B; background: #F3E3D0; }
+.imza .ice { --renk: #7FA9C2; background: #E2ECF2; }
+.imza .kakao { --renk: #6B3F2A; background: #ECDDD3; }
+.imza .beyaz { --renk: #E3CF9E; background: #F8F1E2; }
 @media (min-width: 860px) { .bardak .wrap { grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; } }
 
 /* Mekân */
@@ -181,6 +185,17 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 @media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
 @media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 .kaynak { display: flex !important; align-items: center; gap: 5px; }
+/* yorum-kaydir */
+.yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
+.yorum-izgara[data-kaydir] > figure { scroll-snap-align: start; }
+@media (min-width: 700px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:hover { opacity: 1; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
+.yorum-ok button:focus-visible, .yorum-izgara[data-kaydir]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -202,7 +217,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
     <div class="hero-metin">
       <h1>Kruvasanı kahveye batırmanın tam yeri.</h1>
       <p>Kruvasanlarımız, tatlılarımız ve sandviçlerimiz kendi mutfağımızdan, her gün taze. Alya Residence’ta, sabahtan gece yarısına.</p>
-      <div class="bilgi"><span>Her gün 07.30–01.00</span><span>Alya Residence, Beylikdüzü</span><span>Google’da 4,6</span></div>
+      <div class="bilgi"><span>Her gün 07:30–01:00</span><span>Alya Residence, Beylikdüzü</span><span>Google’da 4,6</span></div>
     </div>
   </section>
 
@@ -218,7 +233,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>2023</b><span>Açılış yılı</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.6">4,6</b><span>Google puanı</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="535">535</b><span>Google yorumu</span></li>
-        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>07.30</b><span>Her gün açılış saati</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>07:30</b><span>Her gün açılış saati</span></li>
       </ul>
     </div>
   </section>
@@ -245,7 +260,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <img class="yakin" src="img/13.jpg" alt="Yakından kat kat kruvasanlar" loading="lazy">
       </div>
       <div>
-        <p class="saat"><b>07.30</b><span>Kapıyı açtığımızda tezgâhta</span></p>
+        <p class="saat"><b>07:30</b><span>Kapıyı açtığımızda tezgâhta</span></p>
         <h2 class="baslik" id="kruvasanBaslik">Her sabah taze kruvasan</h2>
         <p class="giris">Kahvenin en iyi arkadaşı. Sandviçlerimizi de kendi mutfağımızda hazırlıyoruz.</p>
         <ul class="kalem">
@@ -269,12 +284,12 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <li class="sunrise"><strong>Sunrise</strong><span>Kıpkırmızı ve buzlu</span></li>
           <li class="limon"><strong>Limonata</strong><span>Çarkıfelek, frambuaz ve hibiskus</span></li>
         </ul>
-        <p class="alt-bas">Her zaman</p>
-        <ul class="klasik">
-          <li>Spanish latte</li>
-          <li>Ice latte</li>
-          <li>Sıcak çikolata</li>
-          <li>Beyaz sıcak çikolata</li>
+        <p class="alt-bas">Klasikler</p>
+        <ul class="imza klasik">
+          <li class="spanish"><strong>Spanish latte</strong><span>Yoğunlaştırılmış sütle</span></li>
+          <li class="ice"><strong>Ice latte</strong><span>Espresso, süt ve buz</span></li>
+          <li class="kakao"><strong>Sıcak çikolata</strong><span>Sıcacık, kakaolu</span></li>
+          <li class="beyaz"><strong>Beyaz sıcak çikolata</strong><span>Beyaz çikolatayla</span></li>
         </ul>
       </div>
       <video id="bardakVideo" muted playsinline loop preload="none" poster="img/07.jpg" aria-label="Buzlu latte hazırlanırken"><source src="bardak.mp4" type="video/mp4"></video>
@@ -317,7 +332,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
         <p class="puan-ozet"><b>4,6</b><span>5 üzerinden<br>Google’da 535 yorum</span></p>
       </div>
-      <div class="yorum-izgara">
+      <div class="yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Beylikdüzü’nde en lezzetli ve taze tatlıları yiyebileceğiniz bir kafe. Temizliğe çok dikkat eden bir yönetim. Sık sık gittiğim, güzel, nezih bir mekân.</blockquote>
@@ -333,7 +348,33 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <blockquote>Sakin, nezih ve kahveleri güzel.</blockquote>
           <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mustafa Ç.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Sürekli geldiğim ve tüm arkadaşlarımı getirdiğim bir yer. Çalışanlar ilgili, kahve güzel, atmosfer oldukça hoş. Çok sesli müzik yok; gerek çalışmaya gerek buluşmaya gayet uygun.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">N</span><span><strong>Nazlı S.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Keyifle çalıştığım bir alan. Kahveleri çok lezzetli, kruvasan kahvaltıları mükemmel, tatlıları ise günlük taze çıkıyor.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Ş</span><span><strong>Şimal E.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Türkiye’de içtiğim en güzel kahve. Mimar olarak mekânı değerlendirmek isterim: tasarım çok iyi; sohbet alanları, toplantı alanı, açık ve kapalı alanlar, her şey düşünülmüş.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">N</span><span><strong>Natyra L.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Lezzetin ve kalitenin adresi. İşletme sahibi Yasemin Hanım’a güler yüzü için teşekkür ederim. Mutlaka gelinmesi gereken bir yer, özellikle Cedric Grolet tatlısı efsane.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Abdulkerim Y.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Güler yüzlü ekibi, lezzetli ve bol çeşitli kahve seçenekleri, şık iç tasarımıyla çok keyifli, ferah ve temiz bir işletme. Cortado önerimizdir.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeynep B.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
       </div>
+      <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
     </div>
   </section>
 
@@ -344,7 +385,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="ziyaretBaslik">Bizi bulun</h2>
         <dl>
           <div><dt>Adres</dt><dd>Alya Residence, Adnan Kahveci Mah. Büyükdere Cad. No: 2/8, Beylikdüzü</dd></div>
-          <div><dt>Açık</dt><dd>Her gün 07.30–01.00</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 07:30–01:00</dd></div>
           <div><dt>Telefon</dt><dd><a href="tel:+908503052111">0850 305 21 11</a></dd></div>
         </dl>
         <a class="btn dolu" href="https://www.google.com/maps/search/?api=1&amp;query=DELL'AMANTE%20COFFEE&amp;query_place_id=ChIJ27yspghftRQRav4n3quI2zE" target="_blank" rel="noopener">Yol tarifi al</a>
@@ -372,7 +413,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
     </div>
     <div>
       <p class="alt-baslik">Açık</p>
-      <p>Her gün<br>07.30–01.00</p>
+      <p>Her gün<br>07:30–01:00</p>
     </div>
     <div>
       <p class="alt-baslik">İletişim</p>
@@ -408,6 +449,19 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
   var b = document.getElementById('bardakVideo');
   new IntersectionObserver(function (g) { g.forEach(function (x) { if (x.isIntersecting) { var p = b.play(); if (p && p.catch) p.catch(function () {}); } else b.pause(); }); }, { threshold: .3 }).observe(b);
 })();
+</script>
+<script>
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var b = ok.querySelectorAll('button');
+  function durum() { b[0].disabled = iz.scrollLeft < 4; b[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  b.forEach(function (d) { d.addEventListener('click', function () { iz.scrollBy({ left: d.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>

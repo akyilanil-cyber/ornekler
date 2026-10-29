@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Tual Tattoo &amp; Nails | Beylikdüzü</title>
-<meta name="description" content="Gerçekçi siyah-gri, ince çizgi, yazı dövmeleri ve titanyum piercing. Kubist Park, Beylikdüzü. Her gün 10.00–21.00.">
+<meta name="description" content="Realistik, fine line ve lettering dövmeler ve titanyum piercing. Kubist Park, Beylikdüzü. Her gün 10:00–21:00.">
 <meta name="theme-color" content="#131115">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,6 +177,17 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
 @media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
 @media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* yorum-kaydir */
+.yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
+.yorum-izgara[data-kaydir] > figure { scroll-snap-align: start; }
+@media (min-width: 700px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:hover { opacity: 1; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
+.yorum-ok button:focus-visible, .yorum-izgara[data-kaydir]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -197,13 +208,13 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
   <section class="hero">
     <div class="hero-video"><video muted playsinline loop autoplay preload="metadata" poster="img/15.jpg" aria-label="El üstünde Poseidon dövmesi"><source src="acilis.mp4" type="video/mp4"></video></div>
     <div class="hero-metin">
-      <h1>Ömür boyu taşıyacağınız işi <i>özenle</i> çizeriz.</h1>
-      <p>Gerçekçi siyah-gri, ince çizgi ve yazı dövmeleri, titanyum piercing. Beylikdüzü’nde, Kubist Park’ta.</p>
+      <h1>Bir ömür taşıyacağınız dövmeyi <i>özenle</i> çizeriz.</h1>
+      <p>Realistik, fine line ve lettering dövmeler, titanyum piercing. Beylikdüzü’nde, Kubist Park’ta.</p>
       <div class="btns">
         <a class="btn dolu" href="https://wa.me/905414283628" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
         <a class="btn" href="#calismalar">Çalışmalara bakın</a>
       </div>
-      <p class="bilgi"><span><b>5,0</b> Google’da 34 yorum</span><span><b>Her gün</b> 10.00–21.00</span></p>
+      <p class="bilgi"><span><b>5,0</b> Google’da 34 yorum</span><span><b>Her gün</b> 10:00–21:00</span></p>
     </div>
   </section>
 
@@ -212,17 +223,17 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
       <h2 class="baslik" id="stilBaslik">Hangi stil size göre?</h2>
       <p class="giris">Stüdyoda en çok yapılan dört iş. Kartın üstüne gelin ya da dokunun, arkasında kısa bir açıklama var.</p>
       <ul class="kartlar">
-        <li class="don"><button type="button" aria-label="Gerçekçi siyah-gri: açıklamayı göster">
-          <span class="yuz"><img src="img/00.jpg" alt="Kükreyen aslan, gerçekçi siyah-gri dövme" loading="lazy"><span>Gerçekçi siyah-gri</span></span>
-          <span class="arka"><strong>Gerçekçi siyah-gri</strong><span>Portre, aslan, mitoloji. Gölgelerle derinlik veren, fotoğraf gibi işler.</span></span>
+        <li class="don"><button type="button" aria-label="Realistik: açıklamayı göster">
+          <span class="yuz"><img src="img/00.jpg" alt="Kükreyen aslan, realistik dövme" loading="lazy"><span>Realistik</span></span>
+          <span class="arka"><strong>Realistik</strong><span>Portre, hayvan ve mitoloji figürleri. Siyah-gri gölgelerle fotoğraf gibi derinlik.</span></span>
         </button></li>
-        <li class="don"><button type="button" aria-label="İnce çizgi: açıklamayı göster">
-          <span class="yuz"><img src="img/01.jpg" alt="Uyuyan yavru kaplan, ince çizgi dövme" loading="lazy"><span>İnce çizgi</span></span>
-          <span class="arka"><strong>İnce çizgi</strong><span>Küçük, sade ve zarif. İlk dövme için de sık tercih edilir.</span></span>
+        <li class="don"><button type="button" aria-label="Fine line: açıklamayı göster">
+          <span class="yuz"><img src="img/01.jpg" alt="Uyuyan yavru kaplan, fine line dövme" loading="lazy"><span>Fine line</span></span>
+          <span class="arka"><strong>Fine line</strong><span>Tek iğneyle atılan ince çizgiler. Minimal tasarımlar, ilk dövme için de sık tercih edilir.</span></span>
         </button></li>
-        <li class="don"><button type="button" aria-label="Yazı: açıklamayı göster">
-          <span class="yuz"><img src="img/02.jpg" alt="Only the strong survive yazılı kol dövmesi" loading="lazy"><span>Yazı</span></span>
-          <span class="arka"><strong>Yazı</strong><span>Anlamlı bir cümle, bir isim ya da tarih. Harfler sizin için çizilir.</span></span>
+        <li class="don"><button type="button" aria-label="Lettering: açıklamayı göster">
+          <span class="yuz"><img src="img/02.jpg" alt="Only the strong survive lettering kol dövmesi" loading="lazy"><span>Lettering</span></span>
+          <span class="arka"><strong>Lettering</strong><span>Bir isim, tarih ya da anlamlı bir cümle. Yazı stili size göre çizilir.</span></span>
         </button></li>
         <li class="don"><button type="button" aria-label="Piercing: açıklamayı göster">
           <span class="yuz"><img src="img/03.jpg" alt="Taşlı takılarla kulak piercingleri" loading="lazy"><span>Piercing</span></span>
@@ -239,12 +250,12 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
       <ul class="galeri">
         <li><figure><img src="img/04.jpg" alt="Zambaklar arasında tavşan dövmesi" loading="lazy"><figcaption>Tavşan ve zambak</figcaption></figure></li>
         <li><figure><img src="img/05.jpg" alt="Kleopatra portresi dövmesi" loading="lazy"><figcaption>Kleopatra</figcaption></figure></li>
-        <li><figure><img src="img/06.jpg" alt="Kahküllü kadın portresi kol dövmesi" loading="lazy"><figcaption>Kadın portresi</figcaption></figure></li>
+        <li><figure><img src="img/06.jpg" alt="Realistik kadın portresi kol dövmesi" loading="lazy"><figcaption>Realistik portre</figcaption></figure></li>
         <li><figure><img src="img/07.jpg" alt="Kanatlı melek kol dövmesi" loading="lazy"><figcaption>Melek</figcaption></figure></li>
         <li><figure><img src="img/08.jpg" alt="Kılıçlı iki melek dövmesi" loading="lazy"><figcaption>Melekler</figcaption></figure></li>
-        <li><figure><img src="img/09.jpg" alt="Kırmızı ince çizgi çiçek dövmesi" loading="lazy"><figcaption>Kırmızı çiçekler</figcaption></figure></li>
-        <li><figure><img src="img/10.jpg" alt="Göz, eller ve pusula, ince çizgi dövmeler" loading="lazy"><figcaption>Küçük ince çizgiler</figcaption></figure></li>
-        <li><figure><img src="img/11.jpg" alt="Göğüste büyük siyah-gri dövme" loading="lazy"><figcaption>Göğüs çalışması</figcaption></figure></li>
+        <li><figure><img src="img/09.jpg" alt="Kırmızı fine line çiçek dövmesi" loading="lazy"><figcaption>Kırmızı fine line</figcaption></figure></li>
+        <li><figure><img src="img/10.jpg" alt="Göz, eller ve pusula, minimal fine line dövmeler" loading="lazy"><figcaption>Minimal fine line</figcaption></figure></li>
+        <li><figure><img src="img/11.jpg" alt="Göğüste realistik dövme" loading="lazy"><figcaption>Realistik göğüs dövmesi</figcaption></figure></li>
       </ul>
       <div class="galeri-alt">
         <span>Daha fazla çalışma Instagram hesabımızda.</span>
@@ -265,7 +276,7 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="5">5,0</b><span>Google puanı</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="34">34</b><span>Google yorumu</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M34 6l8 8-20 20-10 2 2-10z"/><path d="M28 12l8 8M6 42h14"/></svg><b>Özel</b><span>Kişiye özel çizim</span></li>
-        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>7 gün</b><span>10.00–21.00 açık</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>7 gün</b><span>10:00–21:00 açık</span></li>
       </ul>
     </div>
   </section>
@@ -307,7 +318,7 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
         <h2 class="baslik" id="yorumBaslik">Yaptıranlar ne diyor?</h2>
         <p class="puan"><b>5,0</b>Google’da 34 yorum</p>
       </div>
-      <div class="yorum-izgara">
+      <div class="yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Aleyna Hanım’a teşekkür ediyorum. İlk defa dövme yaptırdım ve devamı geldi. El becerisine diyecek bir şey yok.</blockquote>
@@ -323,7 +334,28 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
           <blockquote>Kolumu kaplattım, iç dış çok iyi oldu. Sırtıma da yazı yazdırdım. Çok memnun kaldım, ellerinize sağlık.</blockquote>
           <figcaption><span class="harf" aria-hidden="true">F</span><span><strong>Furkan K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Dövmelerimi Aleyna Hanım’a yaptırıyorum. Çok ince işçilik, titizlikle çalışıyor. Stüdyo ortamı çok rahat ve temiz. Kız arkadaşım da tırnaklarını yaptırıyor, ikimiz de çok memnunuz.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">K</span><span><strong>Kazım A.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Aleyna Hanım’dan aldığım hizmetten çok memnun kaldım. Süreç boyunca gösterilen özen, ilgi ve anlayış için teşekkür ederim.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Meltem K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Sırtıma kurt dövmesi yaptık, çok iyi oldu. Teşekkürler.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">H</span><span><strong>Harun K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Aleyna Hanım’a bayıldım! Hem ilgisi hem işçiliği mükemmel. Tırnaklarım harika oldu; dövme çalışmalarını da görünce ileride mutlaka yaptırmak istedim.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">G</span><span><strong>Gizem K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
       </div>
+      <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
     </div>
   </section>
 
@@ -333,7 +365,7 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
         <h2 class="baslik" id="gelBaslik">Kubist Park, 2. kat</h2>
         <dl>
           <div><dt>Adres</dt><dd>Kubist Rezidans, Beykent Avrupa Cad., Adnan Kahveci Mah., Kat 2 Daire 183, Beylikdüzü</dd></div>
-          <div><dt>Açık</dt><dd>Her gün 10.00–21.00</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 10:00–21:00</dd></div>
           <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905414283628">0541 428 36 28</a></dd></div>
         </dl>
       </div>
@@ -363,7 +395,7 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
     </div>
     <div>
       <p class="alt-baslik">Açık</p>
-      <p>Her gün<br>10.00–21.00</p>
+      <p>Her gün<br>10:00–21:00</p>
     </div>
     <div>
       <p class="alt-baslik">İletişim</p>
@@ -408,6 +440,19 @@ footer a:hover { color: var(--kagit); text-decoration: underline; }
   var k = document.getElementById('kolVideo');
   new IntersectionObserver(function (g) { g.forEach(function (x) { if (x.isIntersecting) { var p = k.play(); if (p && p.catch) p.catch(function () {}); } else k.pause(); }); }, { threshold: .3 }).observe(k);
 })();
+</script>
+<script>
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var b = ok.querySelectorAll('button');
+  function durum() { b[0].disabled = iz.scrollLeft < 4; b[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  b.forEach(function (d) { d.addEventListener('click', function () { iz.scrollBy({ left: d.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>

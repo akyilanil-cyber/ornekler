@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gülçin Güç Güzellik | Beylikdüzü</title>
-<meta name="description" content="Cilt bakımı, lazer epilasyon, kalıcı makyaj, kirpik lifting ve bölgesel incelme. Prestij Marina, Kavaklı, Beylikdüzü. Pazartesi–Cumartesi 10.00–19.00.">
+<meta name="description" content="Cilt bakımı, lazer epilasyon, kalıcı makyaj, kirpik lifting ve bölgesel incelme. Prestij Marina, Kavaklı, Beylikdüzü. Pazartesi–Cumartesi 10:00–19:00.">
 <meta name="theme-color" content="#3B2A28">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -50,7 +50,7 @@ header nav a.randevu { background: var(--espresso); color: var(--beyaz); font-we
 /* Açılış: portre bölümün boyunu belirlemez */
 .hero { display: grid; }
 .hero-foto { position: relative; height: 62svh; min-height: 380px; overflow: hidden; }
-.hero-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
 .hero-metin { padding: 34px 20px 48px; }
 .hero-metin .soz { font: 400 clamp(2.4rem, 7.5vw, 4.4rem)/1.08 var(--baslikF); max-width: 14ch; }
 .hero-metin .soz span { color: var(--altin); }
@@ -160,6 +160,17 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 @media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } .alt-izgara > div:nth-child(3) { grid-column: 1 / -1; order: 5; } }
 @media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1.2fr 1fr; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+/* yorum-kaydir */
+.yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
+.yorum-izgara[data-kaydir] > figure { scroll-snap-align: start; }
+@media (min-width: 700px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:hover { opacity: 1; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
+.yorum-ok button:focus-visible, .yorum-izgara[data-kaydir]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 </style>
 </head>
 <body>
@@ -170,6 +181,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
       <a href="#yontem">Nasıl çalışıyoruz</a>
       <a href="#hizmetler">Hizmetler</a>
       <a href="#hakkinda">Hakkımızda</a>
+      <a href="#galeri">Galeri</a>
       <a href="#gel">İletişim</a>
       <a class="randevu" href="https://wa.me/905543640997" target="_blank" rel="noopener">Randevu al</a>
     </nav>
@@ -178,7 +190,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 
 <main id="top">
   <section class="hero">
-    <div class="hero-foto"><img src="img/00.jpg" alt="Gülçin Güç salonunda" fetchpriority="high"></div>
+    <div class="hero-foto"><img src="img/00.jpg" alt="Gülçin Güç, logolu duvarın önünde" fetchpriority="high"></div>
     <div class="hero-metin">
       <h1 class="soz">Doğru bakım, <span>doğru analizle</span> başlar.</h1>
       <p class="kim">Gülçin Güç, salonun kurucusu</p>
@@ -187,7 +199,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <a class="btn dolu" href="https://wa.me/905543640997" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
         <a class="btn" href="#hizmetler">Hizmetlere bakın</a>
       </div>
-      <p class="bilgi"><span><b>5,0</b> Google’da 62 yorum</span><span><b>Pzt–Cmt</b> 10.00–19.00</span></p>
+      <p class="bilgi"><span><b>5,0</b> Google’da 62 yorum</span><span><b>Pzt–Cmt</b> 10:00–19:00</span></p>
     </div>
   </section>
 
@@ -256,7 +268,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
       <h2 class="baslik" id="galeriBaslik">Salonumuzdan</h2>
       <ul class="galeri-izgara">
         <li><figure><img src="img/02.jpg" alt="Kirpik lifting sonrası kıvrık kirpikler" loading="lazy"><figcaption>Kirpik lifting</figcaption></figure></li>
-        <li><figure><img src="img/03.jpg" alt="Lazer epilasyon cihazının başında Gülçin Güç" loading="lazy"><figcaption>Lazer epilasyon</figcaption></figure></li>
+        <li><figure><img src="img/03.jpg" alt="Lazer epilasyon cihazının ekranına bakan Gülçin Güç" loading="lazy"><figcaption>Lazer epilasyon</figcaption></figure></li>
         <li><figure><img src="img/04.jpg" alt="Dipliner uygulanmış göz" loading="lazy"><figcaption>Dipliner</figcaption></figure></li>
         <li><figure><img src="img/05.jpg" alt="Salondaki çiçek duvarının önünde sohbet" loading="lazy"><figcaption>Salonumuzun çiçekli köşesi</figcaption></figure></li>
         <li><figure><img src="img/06.jpg" alt="Cilt bakımı sırasında yüz uygulaması" loading="lazy"><figcaption>Cilt bakımı</figcaption></figure></li>
@@ -275,7 +287,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
         <p class="puan"><b>5,0</b>Google’da 62 yorum</p>
       </div>
-      <div class="yorum-izgara">
+      <div class="yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Gülçin Hanım işini çok titizlikle yapıyor. Güzellik merkezlerinde sürekli bir şey satmak isteyenlerden yılmış biriydim; Gülçin Hanım gittiğim bütün o yerlerden çok farklı.</blockquote>
@@ -291,7 +303,23 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
           <blockquote>Arkadaşımın tavsiyesiyle tanıştım. Leke protokolü ve lazer epilasyon yaptırdım, çok memnun kaldım. Temiz ve hijyenik olması benim için bir artı.</blockquote>
           <figcaption><span class="harf" aria-hidden="true">P</span><span><strong>Pınar D.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Hem ortam çok temiz ve huzurluydu hem de çalışanlar oldukça ilgili ve profesyoneldi. Uygulama sırasında her adımı detaylıca anlattılar, kendimi çok rahat hissettim.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Ayşe Ç.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Aldığım her hizmetinden memnun kaldığım bir yer. Aklımda hiç soru işareti bırakmıyorlar ve ihtiyaca göre çözüm sunuyorlar.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Ş</span><span><strong>Şeyma E.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Lazer ve cilt bakımı yaptırdım. Yaptırdığım tüm işlemlerden çok memnun kaldım. Gülçin Hanım’a bilgisi, tecrübesi ve ilgisi için çok teşekkür ediyorum.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">E</span><span><strong>Ebru</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
       </div>
+      <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
     </div>
   </section>
 
@@ -301,7 +329,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <h2 class="baslik" id="gelBaslik">Randevu ve iletişim</h2>
         <dl>
           <div><dt>Adres</dt><dd>Prestij Marina, Kavaklı Mah. Kocatepe Cad. No: 319 C, No: 11, Beylikdüzü</dd></div>
-          <div><dt>Açık</dt><dd class="saat"><span>Pazartesi–Cumartesi</span><span>10.00–19.00</span><span>Pazar</span><span>Kapalı</span></dd></div>
+          <div><dt>Açık</dt><dd class="saat"><span>Pazartesi–Cumartesi</span><span>10:00–19:00</span><span>Pazar</span><span>Kapalı</span></dd></div>
           <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905543640997">0554 364 09 97</a></dd></div>
         </dl>
       </div>
@@ -326,12 +354,13 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <li><a href="#yontem">Nasıl çalışıyoruz</a></li>
         <li><a href="#hizmetler">Hizmetler</a></li>
         <li><a href="#hakkinda">Hakkımızda</a></li>
+        <li><a href="#galeri">Galeri</a></li>
         <li><a href="#gel">İletişim</a></li>
       </ul>
     </div>
     <div>
       <p class="alt-baslik">Açık</p>
-      <p class="alt-saat"><span>Pzt–Cmt</span><span>10.00–19.00</span><span>Pazar</span><span>Kapalı</span></p>
+      <p class="alt-saat"><span>Pzt–Cmt</span><span>10:00–19:00</span><span>Pazar</span><span>Kapalı</span></p>
     </div>
     <div>
       <p class="alt-baslik">İletişim</p>
@@ -365,6 +394,19 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
   }); }, { threshold: .5 });
   document.querySelectorAll('.sayac li, .kartlar li').forEach(function (li) { gozle.observe(li); });
 })();
+</script>
+<script>
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var b = ok.querySelectorAll('button');
+  function durum() { b[0].disabled = iz.scrollLeft < 4; b[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  b.forEach(function (d) { d.addEventListener('click', function () { iz.scrollBy({ left: d.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>

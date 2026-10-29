@@ -33,7 +33,13 @@ a { color: inherit; }
 .logo b { color: var(--alti); font-size: 1.35em; }
 .logo small { font-weight: 500; font-size: .5em; letter-spacing: .01em; margin-left: 8px; color: var(--soluk); }
 header .wrap { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; font-size: 1.6rem; }
-header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; background: var(--duvar); color: var(--beyaz); padding: 10px 16px; border-radius: 10px; }
+header nav { display: flex; align-items: center; gap: 4px; font-size: .95rem; font-weight: 700; }
+header nav a { text-decoration: none; padding: 10px 10px; border-radius: 10px; color: var(--kahve); }
+header nav a:not(.wa):hover { background: rgba(43,29,23,.07); }
+header nav a[href="#kahve"] { display: none; }
+header a.wa { background: var(--duvar); color: var(--beyaz); padding: 10px 16px; margin-left: 6px; display: none; }
+@media (min-width: 620px) { header nav a[href="#kahve"] { display: inline-block; } }
+@media (min-width: 760px) { header nav a.wa { display: inline-block; } header nav { gap: 8px; } }
 
 /* Polaroid: sayfanın imzası */
 .pol { background: var(--beyaz); padding: 10px 10px 14px; box-shadow: 0 2px 4px rgba(43,29,23,.08), 0 14px 28px -10px rgba(43,29,23,.35); position: relative; margin: 0; }
@@ -138,7 +144,7 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 .yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 8px 24px; grid-column: 1 / -1; }
 .yorum-ust h2 { font: 800 clamp(1.8rem, 5vw, 2.6rem)/1.05 var(--sans); letter-spacing: -.02em; }
 .yorum-ust p { color: var(--soluk); }
-@media (min-width: 860px) { .yorum .wrap { grid-template-columns: repeat(3, 1fr); } }
+
 
 /* Gel */
 .gel { background: var(--kahve); color: var(--beyaz); padding: clamp(56px, 9vw, 100px) 0; }
@@ -148,7 +154,12 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 .gel address { font-style: normal; margin-top: 20px; color: #E5DCD6; }
 .gel .btn { border-color: var(--beyaz); color: var(--beyaz); }
 .gel .btn.dolu { border-color: var(--alti); }
-@media (min-width: 860px) { .gel .wrap { grid-template-columns: 1fr 1fr; gap: 64px; } }
+.gel-not { margin-top: 22px; color: #E5DCD6; }
+.gel-btn { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 18px; max-width: 460px; }
+.gel-btn .btn { justify-content: center; padding: 0 12px; text-align: center; }
+.cephe { margin: 0; border-radius: 18px; overflow: hidden; aspect-ratio: 1 / 1; }
+.cephe img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
+@media (min-width: 860px) { .gel .wrap { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
 
 /* Alt bilgi */
 footer { padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem; background: var(--beyaz); color: var(--soluk); }
@@ -168,13 +179,30 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
 @media (max-width: 699px) { .alt-izgara > div:nth-child(3) { grid-column: 1 / -1; order: 5; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 .kaynak { display: flex !important; align-items: center; gap: 5px; }
+/* yorum-kaydir */
+.yorum-izgara[data-kaydir] { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; padding-bottom: 4px; }
+.yorum-izgara[data-kaydir]::-webkit-scrollbar { display: none; }
+.yorum-izgara[data-kaydir] > figure { scroll-snap-align: start; }
+@media (min-width: 700px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .yorum-izgara[data-kaydir] { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: inherit; font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:hover { opacity: 1; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
+.yorum-ok button:focus-visible, .yorum-izgara[data-kaydir]:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
     <a class="logo" href="#top"><b>6</b>OZ<small>coffee &amp; cake house</small></a>
-    <a class="wa" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp</a>
+    <nav aria-label="Bölümler">
+      <a href="#kahve">Kahve</a>
+      <a href="#pasta">Pastalar</a>
+      <a href="#galeri">Galeri</a>
+      <a href="#gel">İletişim</a>
+      <a class="wa" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
   </div>
 </header>
 
@@ -206,7 +234,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
           <li>Espresso</li><li>Americano</li><li>Latte</li><li>Cappuccino</li><li>Flat white</li><li>Mocha</li><li>Filtre kahve</li><li>Türk kahvesi</li><li>Frozen</li><li>Milkshake</li><li>Karadut smoothie</li><li>El yapımı limonata</li>
         </ul>
       </div>
-      <figure class="pol sag"><img src="img/03.jpg" alt="6OZ fincanında köpüklü kahve" loading="lazy"><figcaption>Sabah 07.30’dan itibaren</figcaption></figure>
+      <figure class="pol sag"><img src="img/03.jpg" alt="6OZ fincanında köpüklü kahve" loading="lazy"><figcaption>Sabah 07:30’dan itibaren</figcaption></figure>
     </div>
   </section>
 
@@ -240,7 +268,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>2017</b><span>Açılış yılı</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.7">4,7</b><span>Google puanı</span></li>
         <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="343">343</b><span>Google yorumu</span></li>
-        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 20h22v10a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z"/><path d="M34 23h3a4 4 0 0 1 0 8h-3M17 8c0 3 3 3 3 6M24 8c0 3 3 3 3 6"/></svg><b>07.30</b><span>Hafta içi açılış</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M12 20h22v10a9 9 0 0 1-9 9h-4a9 9 0 0 1-9-9z"/><path d="M34 23h3a4 4 0 0 1 0 8h-3M17 8c0 3 3 3 3 6M24 8c0 3 3 3 3 6"/></svg><b>07:30</b><span>Hafta içi açılış</span></li>
       </ul>
     </div>
   </section>
@@ -277,7 +305,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
         <li><img src="img/15.jpg" alt="Kalp desenli cappuccino ve bitki" loading="lazy"></li>
         <li><img src="img/16.jpg" alt="Ev yapımı biscotti" loading="lazy"></li>
         <li><img src="img/17.jpg" alt="Sarı koltuklu köşede kahve ve kurabiye" loading="lazy"></li>
-        <li><img src="img/18.jpg" alt="Çalışlar Caddesi’ndeki 6OZ’un kırmızı cephesi" loading="lazy"></li>
+        <li><img src="img/20.jpg" alt="Ahşap terasta kırmızı sandalyeler" loading="lazy"></li>
       </ul>
       <div class="galeri-alt">
         <span>Günün pastaları ve sokak dostlarımızdan haberler Instagram’da.</span>
@@ -289,9 +317,17 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
   <section class="yorum" aria-labelledby="yorumBaslik">
     <div class="wrap">
       <div class="yorum-ust"><h2 id="yorumBaslik">Misafirlerimiz ne diyor?</h2><p>Google’da 4,7 puan, 343 yorum</p></div>
+      <div class="yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
       <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Arzu A.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
       <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption><span class="harf" aria-hidden="true">C</span><span><strong>Cumhur N.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
       <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption><span class="harf" aria-hidden="true">U</span><span><strong>Utku K.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Tatlıları ve kahveleri efsane! Özellikle San Sebastian’ı aşırı beğendim, uzun zamandır bu kadar iyisini yememiştim. Kafe sahipleri Derya Hanım ve Fatih Bey çok güler yüzlü; çok samimi, sıcak bir yer olmuş.</blockquote><figcaption><span class="harf" aria-hidden="true">İ</span><span><strong>İlayda T.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Yaklaşık dört senedir her zaman gittiğim bir yer. Kaliteden hiçbir zaman ödün vermiyorlar. Ders çalışmaya çok müsait, çok sıcak bir atmosferi var. Aynı zamanda hayvan dostu bir mekân.</blockquote><figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Aden E.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>İçeri girdiğiniz andan itibaren o samimiyeti, içtenliği hissediyorsunuz. Yaptıkları her ürün ev yapımı ve çok lezzetli.</blockquote><figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Münevver M.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Enfes lezzetleri, mis kokulu gerçek kahve çeşitleri, güler yüzlü ve misafirperver çalışanları, sıcak ve samimi atmosferiyle kesinlikle deneyimlenmesi gereken bir mekân.</blockquote><figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Merve D.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Hayatımda yediğim en güzel San Sebastian’dı. Americanoları da gerçekten harikaydı; kahve oranı yüksek ama asla acı değil!</blockquote><figcaption><span class="harf" aria-hidden="true">Y</span><span><strong>Yurdanur Y.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+    </div>
+    <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
     </div>
   </section>
 
@@ -301,20 +337,19 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
         <h2 id="gelBaslik">Uğrayın, bir kahve içelim</h2>
         <address>Adnan Kahveci Mah. Çalışlar Cad. No:10/9, Beylikdüzü</address>
         <div class="saatler">
-          <div><span>Pazartesi–Cuma</span><span>07.30–21.00</span></div>
-          <div><span>Cumartesi</span><span>09.30–20.30</span></div>
-          <div><span>Pazar</span><span>13.00–18.00</span></div>
+          <div><span>Pazartesi–Cuma</span><span>07:30–21:00</span></div>
+          <div><span>Cumartesi</span><span>09:30–20:30</span></div>
+          <div><span>Pazar</span><span>13:00–18:00</span></div>
         </div>
-      </div>
-      <div>
-        <p>Terasımız var, paket servis de yapıyoruz. Google’da 4,7 puan, 343 yorum.</p>
-        <div class="btns" style="margin-top:20px">
+        <p class="gel-not">Terasımız var, paket servis de yapıyoruz.</p>
+        <div class="btns gel-btn">
           <a class="btn dolu" href="https://www.google.com/maps/search/?api=1&amp;query=6OZ%20COFFEE%20%26%20CAKE%20HOUSE&amp;query_place_id=ChIJo1MuoURftRQRww_PlWYxh60" target="_blank" rel="noopener">Yol tarifi al</a>
-          <a class="btn" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
+          <a class="btn" href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn" href="tel:+905323364263">0532 336 42 63</a>
           <a class="btn" href="https://www.instagram.com/6ozcoffee/" target="_blank" rel="noopener">Instagram</a>
         </div>
       </div>
+      <figure class="cephe"><img src="img/19.jpg" alt="Akşam ışıklarıyla 6OZ Coffee’nin terası ve tabelası" loading="lazy"></figure>
     </div>
   </section>
 </main>
@@ -336,7 +371,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
     </div>
     <div>
       <p class="alt-baslik">Açık</p>
-      <p class="alt-saat"><span>Pzt–Cuma</span><span>07.30–21.00</span><span>Cumartesi</span><span>09.30–20.30</span><span>Pazar</span><span>13.00–18.00</span></p>
+      <p class="alt-saat"><span>Pzt–Cuma</span><span>07:30–21:00</span><span>Cumartesi</span><span>09:30–20:30</span><span>Pazar</span><span>13:00–18:00</span></p>
     </div>
     <div>
       <p class="alt-baslik">İletişim</p>
@@ -369,6 +404,19 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
   }); }, { threshold: .6 });
   document.querySelectorAll('.sayac li').forEach(function (li) { gozle.observe(li); });
 })();
+</script>
+<script>
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var b = ok.querySelectorAll('button');
+  function durum() { b[0].disabled = iz.scrollLeft < 4; b[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  b.forEach(function (d) { d.addEventListener('click', function () { iz.scrollBy({ left: d.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>

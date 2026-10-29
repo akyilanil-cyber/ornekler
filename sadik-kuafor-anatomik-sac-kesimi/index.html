@@ -8,7 +8,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sadık Kuaför anatomik saç kesimi">
 <meta property="og:title" content="Sadık Kuaför anatomik saç kesimi · Kavaklı">
-<meta property="og:description" content="Kavaklı Konakları’nda erkek kuaförü. Google’da 499 yorum, 4,9 puan.">
+<meta property="og:description" content="Kavaklı Konakları’nda erkek kuaförü. Google’da 502 yorum, 4,9 puan.">
 <meta property="og:url" content="https://akyilanil-cyber.github.io/ornekler/sadik-kuafor-anatomik-sac-kesimi/">
 <meta property="og:image" content="https://akyilanil-cyber.github.io/ornekler/sadik-kuafor-anatomik-sac-kesimi/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1F2A2E">
-<meta name="description" content="Kavaklı Konakları’nda erkek kuaförü. Google’da 499 yorum, 4,9 puan.">
+<meta name="description" content="Kavaklı Konakları’nda erkek kuaförü. Google’da 502 yorum, 4,9 puan.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Crect width=%2740%27 height=%2740%27 fill=%27%231F2A2E%27/%3E%3Ctext x=%2720%27 y=%2727%27 font-family=%27Georgia%27 font-size=%2720%27 text-anchor=%27middle%27 fill=%27%23F7F3EA%27%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,6 +59,8 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 
 .film { position: absolute; inset: 0; overflow: hidden; background: var(--red-deep); }
 .film video, .film img { width: 100%; height: 100%; object-fit: cover; }
+/* Dikey videoda yüz/kafa genelde üst üçte birde: geniş ekranda kesilmesin (Anıl, 29.10: "köpeğin kafası gözükmüyor") */
+.film video { object-position: 50% 22%; }
 .film::after { content: ""; position: absolute; inset: 0; }
 
 .gate { position: fixed; inset: 0; z-index: 60; color: var(--on-red); display: grid; grid-template-rows: 1fr auto; transition: opacity .7s ease, visibility .7s; }
@@ -163,7 +165,21 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .rev blockquote { margin: 0; font: italic 400 1.05rem/1.6 var(--serif-text); color: color-mix(in srgb, var(--ink) 82%, var(--porcelain)); flex: 1; }
 .rev figcaption { display: flex; align-items: center; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); font-size: .9rem; font-weight: 500; }
 .rev-av { width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--red-soft); color: var(--red); display: grid; place-items: center; font: 400 .95rem var(--serif); }
-.rev-stars { display: block; color: var(--red); letter-spacing: .12em; font-size: .78rem; }
+.rev-stars { display: block; color: var(--red); letter-spacing: .12em; font-size: .9rem; }
+.rev figcaption strong { display: block; font-weight: 600; }
+.rev-kaynak { display: flex; align-items: center; gap: 5px; font-size: .82rem; font-weight: 400; opacity: .75; }
+.rev-av { flex: none; }
+.rev-puan { margin: -18px 0 28px; color: var(--ink); }
+.rev-puan b { font: 400 2rem/1 var(--serif); margin-right: 6px; }
+/* Kaydırmalı yorumlar: telefonda parmakla, masaüstünde oklarla */
+.rev-row.yorum-izgara { display: grid; grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 86%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; margin-bottom: 0; padding-bottom: 4px; }
+.rev-row.yorum-izgara::-webkit-scrollbar { display: none; }
+.rev-row.yorum-izgara > .rev { scroll-snap-align: start; }
+@media (min-width: 700px) { .rev-row.yorum-izgara { grid-auto-columns: calc((100% - 16px) / 2); } }
+@media (min-width: 1000px) { .rev-row.yorum-izgara { grid-auto-columns: calc((100% - 32px) / 3); } }
+.yorum-ok { display: flex; justify-content: flex-end; gap: 10px; margin: 18px 0 20px; }
+.yorum-ok button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid currentColor; background: transparent; color: var(--ink); font: 400 1.6rem/1 sans-serif; cursor: pointer; opacity: .8; }
+.yorum-ok button:disabled { opacity: .25; cursor: default; }
 
 .visit { background: var(--red); color: var(--on-red); padding: clamp(48px, 8vw, 96px) 0; }
 .visit .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 6vw, 80px); align-items: center; }
@@ -234,14 +250,17 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .lead { font: 400 clamp(1.25rem, 3vw, 1.6rem)/1.45 var(--serif-text); color: var(--ink); margin-bottom: 22px; }
 .prose p + p { margin-top: 14px; }
 .prose p { color: color-mix(in srgb, var(--ink) 82%, var(--porcelain)); }
-.svc { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); counter-reset: svc; }
-.svc li { display: grid; grid-template-columns: 2.6rem 1fr auto; gap: 4px 14px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid var(--line); counter-increment: svc; }
-.svc li::before { content: counter(svc, decimal-leading-zero); font: 500 .8rem var(--sans); letter-spacing: .12em; color: var(--red-soft); }
-.svc h3 { font: 400 clamp(1.3rem, 3vw, 1.6rem)/1.25 var(--serif-text); color: var(--ink); }
-.svc .svc-yan { font-size: .9rem; color: var(--mute); white-space: nowrap; text-align: end; }
-.svc p { grid-column: 2 / -1; color: var(--mute); font-size: .95rem; }
+/* Hizmetler: sırası olmayan işler numarasız kartlarda (Anıl, 29.10: "sırasıyla yapılıyormuş gibi duruyor") */
+.svc { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.svc li { background: var(--porcelain); border: 1px solid var(--line); border-radius: 14px; padding: 20px 20px 18px; display: grid; gap: 6px; align-content: start; }
+.svc h3 { font: 400 clamp(1.3rem, 3vw, 1.5rem)/1.2 var(--serif-text); color: var(--ink); }
+.svc .svc-yan { font-size: .9rem; color: var(--mute); }
+.svc .svc-yan:empty { display: none; }
+.svc p { color: var(--mute); font-size: .95rem; }
+@media (min-width: 560px) { .svc { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .svc { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 .services { padding: clamp(56px, 9vw, 104px) 0; background: var(--paper); }
-.services-in { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 6vw, 88px); align-items: start; }
+.services-in { display: grid; grid-template-columns: 1fr; gap: 28px; align-items: start; }
 .services h2, .steps h2 { font: 400 clamp(2.2rem, 6vw, 3.4rem)/1.05 var(--serif); color: var(--ink); margin-bottom: 18px; }
 .services-in > div:first-child p { color: var(--mute); margin-bottom: 26px; max-width: 26em; }
 .steps { padding: clamp(56px, 9vw, 104px) 0; text-align: center; }
@@ -271,7 +290,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 @media (min-width: 901px) {
   .acilis-bolunmus .hero { grid-template-columns: 5fr 6fr; min-height: 100svh; }
   .acilis-bolunmus .hero .film { order: 2; height: auto; }
-  .acilis-bolunmus .hero .wrap { align-self: end; padding: 0 clamp(28px, 5vw, 72px) clamp(48px, 9vh, 96px); width: auto; }
+  .acilis-bolunmus .hero .wrap { align-self: center; padding: clamp(32px, 6vh, 64px) clamp(28px, 5vw, 72px); width: auto; }
 }
 /* Açılış: çerçeve (başlık üstte, foto altta çerçeve içinde) */
 .acilis-cerceve .hero { height: auto; min-height: 0; display: flex; flex-direction: column-reverse; align-items: stretch; background: var(--porcelain); color: var(--ink); padding-top: calc(var(--head) + clamp(24px, 5vw, 56px)); }
@@ -287,7 +306,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 .kapi-alt .gate .mark { margin-right: 0; }
 .kapi-alt .gate-foot { text-align: start; padding-inline: clamp(20px, 6vw, 72px); }
 .kapi-alt .gate .film::after { background: linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.2) 45%, rgba(0,0,0,.82) 100%); }
-
+.home > .reviews { order: 1; }
 .plain { list-style: none; margin: 30px 0 0; padding: 0; border-top: 1px solid var(--line); }
 .plain li { padding: 18px 0; border-bottom: 1px solid var(--line); }
 .plain strong { display: block; font: 400 1.25rem/1.3 var(--serif-text); color: var(--red); margin-bottom: 4px; }
@@ -350,7 +369,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
   .pillars li:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .sig-row { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 72%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin-inline: -20px; padding-inline: 20px; }
   .sig { scroll-snap-align: start; }
-  .rev-row { grid-template-columns: 1fr; }
+  .rev-row:not(.yorum-izgara) { grid-template-columns: 1fr; }
   .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px 20px; }
   .foot-brand { grid-column: 1 / -1; }
 }
@@ -406,7 +425,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
       <div class="film" aria-hidden="true"><img src="img/04.jpg" alt="" style="object-position:50% 50%"></div>
       <div class="wrap">
         <h1>Anatomik saç kesimi, Kavaklı’da.</h1>
-        <p>Kavaklı Konakları’nda erkek kuaförü. Google’da 499 yorum, 4,9 puan.</p>
+        <p>Kavaklı Konakları’nda erkek kuaförü. Google’da 502 yorum, 4,9 puan.</p>
         <div class="hero-row">
           <a class="btn fill" href="#iletisim">Randevu alın</a>
           <span class="open-now">Pazartesi–Cuma 09.00–22.30 · Cumartesi 08.00–23.30 · Pazar kapalı</span>
@@ -422,7 +441,7 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         
         
         
-        <ul class="pillars" style="--n:4"><li><h3>Anatomik kesim</h3><p>Adımızı veren kesim, her müşteriye.</p></li><li><h3>4,9 puan</h3><p>Google’da 499 müşteri yorumu.</p></li><li><h3>Haftanın 6 günü</h3><p>Pazartesiden cumartesiye açığız.</p></li><li><h3>Kavaklı Konakları</h3><p>Kavaklı Caddesi üzerinde.</p></li></ul>
+        <ul class="pillars" style="--n:4"><li><h3>Anatomik kesim</h3><p>Adımızı veren kesim, her müşteriye.</p></li><li><h3>4,9 puan</h3><p>Google’da 502 müşteri yorumu.</p></li><li><h3>Haftanın 6 günü</h3><p>Pazartesiden cumartesiye açığız.</p></li><li><h3>Kavaklı Konakları</h3><p>Kavaklı Caddesi üzerinde.</p></li></ul>
       </div>
     </section>
 
@@ -431,6 +450,24 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
         <p class="kicker">Randevu</p>
         <h2 id="stepsTitle">Nasıl çalışıyoruz?</h2>
         <ol style="--n:3"><li><h3>Hizmeti ve günü seçin</h3><p>Formu doldurun ya da WhatsApp’tan yazın.</p></li><li><h3>Saati onaylayalım</h3><p>Size uygun saati WhatsApp’tan bildirelim.</p></li><li><h3>Randevu saatinde gelin</h3><p>Sıra beklemeden.</p></li></ol>
+      </div>
+    </section>
+
+    <section class="reviews" aria-labelledby="revTitle">
+      <div class="wrap">
+        <p class="kicker">Müşterilerimiz</p>
+        <h2 id="revTitle">Misafirlerimizin sözleri</h2>
+        <p class="rev-puan"><b>4,9</b> Google’da 502 yorum</p>
+        <div class="rev-row yorum-izgara" data-kaydir tabindex="0" aria-label="Google yorumları, yana kaydırın">
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Sadık Abi işini özenle yapıyor, saçın yapısına ve yüz anatomisine göre kesim yaptı. İlk kez anatomik saç kesimi deneyimledim, farkı gerçekten hissediliyor.</blockquote><figcaption><span class="rev-av" aria-hidden="true">E</span><span><strong>Emirhan A.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Saçlarım seyrek olduğu için istediğim görüntüyü yakalamakta zorlanıyordum. Sadık Bey yaptığı kesimle saçlarımı çok daha dolgun ve düzenli gösterdi. Sonuçtan çok memnun kaldım.</blockquote><figcaption><span class="rev-av" aria-hidden="true">Z</span><span><strong>Zeki A.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Yüz anatomisi, saçın doğal yönü ve kafa yapısına göre yapılan kesim gerçekten üst seviye. Kesim sonrası saçın doğal duruşu bile farkını belli ediyor.</blockquote><figcaption><span class="rev-av" aria-hidden="true">F</span><span><strong>Furkan Ç.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Saç kesimi ve sakal tıraşı tam istediğim gibi kusursuz oldu. Ustanın eli çok hafif; salonun temizliği ve hijyeni de gerçekten takdiri hak ediyor.</blockquote><figcaption><span class="rev-av" aria-hidden="true">C</span><span><strong>Cem G.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Saç kesiminden ve yüzüme en uygun saç stili önerisinden çok memnun kaldım. Saçım hem daha rahat şekil alıyor hem de yüzüme daha uygun oldu.</blockquote><figcaption><span class="rev-av" aria-hidden="true">E</span><span><strong>Emrah E.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+          <figure class="rev"><span class="rev-stars" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Saçlarım uzun olduğu için biraz çekinceli gittim ama sonunda muazzam bir iş çıkardı. Özellikle uzun saç kullananlar saçlarını güvenle teslim edebilir.</blockquote><figcaption><span class="rev-av" aria-hidden="true">G</span><span><strong>Gökhan F.</strong><small class="rev-kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+        </div>
+        <div class="yorum-ok"><button type="button" data-yon="-1" aria-label="Önceki yorumlar">&#8249;</button><button type="button" data-yon="1" aria-label="Sonraki yorumlar">&#8250;</button></div>
+        <p class="center"><a class="link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Sad%C4%B1k%20Kuaf%C3%B6r%20anatomik%20sa%C3%A7%20kesimi%20Beylikd%C3%BCz%C3%BC">Google’daki tüm yorumlar</a></p>
       </div>
     </section>
 
@@ -682,6 +719,17 @@ footer a:hover { color: var(--on-red); text-decoration: underline; text-underlin
     });
   }
 })();
+// Yorum kaydırma okları: bir ekran ilerler, uçta pasif olur
+document.querySelectorAll('.yorum-izgara[data-kaydir]').forEach(function (iz) {
+  var ok = iz.parentNode.querySelector('.yorum-ok');
+  if (!ok) return;
+  var d = ok.querySelectorAll('button');
+  function durum() { d[0].disabled = iz.scrollLeft < 4; d[1].disabled = iz.scrollLeft + iz.clientWidth > iz.scrollWidth - 4; }
+  d.forEach(function (t) { t.addEventListener('click', function () { iz.scrollBy({ left: t.getAttribute('data-yon') * iz.clientWidth, behavior: 'smooth' }); }); });
+  iz.addEventListener('scroll', durum, { passive: true });
+  window.addEventListener('resize', durum);
+  durum();
+});
 </script>
 </body>
 </html>
