@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gia Marin Beauty Studio | Beylikdüzü</title>
+<meta name="description" content="Protez tırnak ve nail art, Alby lazer epilasyon, cilt bakımı, ipek kirpik ve vücut bakımı. In Mari Sitesi, Beylikdüzü. Her gün 10.00–22.00.">
+<meta name="theme-color" content="#5B1E2D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --porselen: #F5F3F2;  /* salonun beyaz rafları */
+  --murekkep: #241A1E;
+  --bordo: #5B1E2D;     /* açılıştaki bordo oje, logodaki koyu ton */
+  --gul: #C99BA3;       /* pudra pembesi */
+  --gul-acik: #F1E4E6;
+  --deniz: #1E3A5C;     /* markanın mavi kalbi */
+  --soluk: #6E6268;
+  --beyaz: #FFFFFF;
+  --baslikF: "Gilda Display", Georgia, serif;
+  --metinF: "Jost", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--porselen); color: var(--murekkep); font: 400 1.05rem/1.65 var(--metinF); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--bordo); outline-offset: 3px; }
+.wrap { width: min(1160px, 100% - 40px); margin-inline: auto; }
+.baslik { font: 400 clamp(2.3rem, 7vw, 4rem)/1.05 var(--baslikF); letter-spacing: .01em; }
+.giris { margin-top: 14px; max-width: 50ch; color: var(--soluk); font-size: 1.08rem; }
+
+/* Üst bar */
+header { position: sticky; top: 0; z-index: 20; background: rgba(245,243,242,.92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(36,26,30,.06); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+.marka { text-decoration: none; display: grid; line-height: 1; }
+.marka b { font: 400 1.6rem/1 var(--baslikF); letter-spacing: .14em; color: var(--bordo); font-weight: 400; }
+.marka small { font-size: .68rem; letter-spacing: .32em; color: var(--soluk); margin-top: 4px; }
+header nav { display: flex; align-items: center; gap: 2px; }
+header nav a { text-decoration: none; font-size: .95rem; padding: 8px 12px; border-radius: 999px; color: var(--soluk); }
+header nav a:hover { color: var(--bordo); }
+header nav a.randevu { background: var(--bordo); color: var(--beyaz); font-weight: 500; padding: 9px 18px; }
+@media (max-width: 800px) { header nav a:not(.randevu) { display: none; } }
+
+/* Açılış: video bölümün boyunu belirlemez */
+.hero { display: grid; background: var(--porselen); }
+.hero-video { position: relative; height: 60svh; min-height: 360px; overflow: hidden; background: #1c2a24; }
+.hero-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-metin { padding: 34px 20px 48px; }
+.ust { font-size: .9rem; letter-spacing: .08em; color: var(--bordo); }
+.hero h1 { font: 400 clamp(2.8rem, 8.5vw, 5.2rem)/1.02 var(--baslikF); margin-top: 10px; max-width: 13ch; }
+.hero p.giris { font-size: 1.12rem; }
+.hero .btns { margin-top: 26px; }
+.bilgi { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 26px; color: var(--soluk); font-size: .95rem; }
+.bilgi b { color: var(--murekkep); font-weight: 600; }
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.1fr .9fr; height: calc(100svh - 66px); min-height: 560px; max-height: 940px; }
+  .hero-video { order: 2; height: auto; min-height: 0; }
+  .hero-metin { align-self: center; padding: 0 clamp(32px, 5vw, 80px) 0 max(20px, calc((100vw - 1160px) / 2)); }
+}
+@media (min-width: 1400px) { .hero { grid-template-columns: 1.15fr .85fr; } }
+
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 500 1rem var(--metinF); text-decoration: none; border: 1.5px solid var(--bordo); color: var(--bordo); background: none; }
+.btn.dolu { background: var(--bordo); color: var(--beyaz); }
+
+/* Hizmetler: sekmeli menü */
+.hizmet { background: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.sekmeler { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 30px; }
+.sekmeler button { font: 500 .98rem var(--metinF); padding: 10px 18px; border-radius: 999px; border: 1.5px solid rgba(91,30,45,.25); background: none; color: var(--murekkep); cursor: pointer; }
+.sekmeler button[aria-selected="true"] { background: var(--bordo); border-color: var(--bordo); color: var(--beyaz); }
+.panel { margin-top: 28px; display: grid; gap: 28px; }
+.panel[hidden] { display: none; }
+.kalem { list-style: none; padding: 0; display: grid; gap: 10px; align-content: start; }
+.kalem li { background: var(--porselen); border-radius: 14px; padding: 16px 20px; display: grid; gap: 2px; }
+.kalem strong { font: 400 1.45rem/1.15 var(--baslikF); color: var(--bordo); }
+.kalem span { color: var(--soluk); font-size: .96rem; }
+.panel-medya { border-radius: 18px; overflow: hidden; aspect-ratio: 4/5; max-height: 560px; width: 100%; background: var(--gul-acik); }
+.panel-medya img, .panel-medya video { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 900px) { .panel { grid-template-columns: 1.15fr .85fr; gap: 56px; align-items: center; } .panel-medya { justify-self: end; max-width: 440px; } }
+
+/* Hakkımızda */
+.hakkinda { padding: clamp(64px, 10vw, 120px) 0; }
+.hakkinda .wrap { display: grid; gap: 40px; }
+.hakkinda p { margin-top: 16px; max-width: 52ch; color: var(--soluk); font-size: 1.06rem; }
+.ekip { list-style: none; padding: 0; margin-top: 22px; display: flex; flex-wrap: wrap; gap: 8px; }
+.ekip li { background: var(--gul-acik); color: var(--bordo); border-radius: 999px; padding: 7px 14px; font-size: .92rem; }
+.sayac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; }
+.sayac li { background: var(--beyaz); border-radius: 18px; padding: 22px 16px; text-align: center; display: grid; justify-items: center; gap: 6px; }
+.sayac svg { width: 44px; height: 44px; stroke: var(--bordo); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.sayac li:hover svg, .sayac li.dondu svg { transform: rotateY(360deg); }
+.sayac b { font: 400 2.4rem/1 var(--baslikF); color: var(--murekkep); }
+.sayac span { font-size: .92rem; color: var(--soluk); }
+@media (min-width: 900px) { .hakkinda .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } }
+@media (prefers-reduced-motion: reduce) { .sayac svg { transition: none; } }
+
+/* Galeri */
+.galeri { background: var(--bordo); color: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.galeri .giris { color: #E6CFD3; }
+.galeri-izgara { list-style: none; padding: 0; margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galeri-izgara img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 14px; }
+.galeri-alt { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; color: #E6CFD3; }
+.galeri-alt .btn { color: var(--beyaz); border-color: rgba(255,255,255,.6); }
+@media (min-width: 900px) { .galeri-izgara { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+
+/* Yorumlar */
+.yorum { padding: clamp(64px, 10vw, 110px) 0; }
+.yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px 24px; }
+.puan { color: var(--soluk); }
+.puan b { font: 400 2.4rem/1 var(--baslikF); color: var(--murekkep); margin-right: 8px; }
+.yorum-izgara { display: grid; gap: 16px; margin-top: 30px; }
+.yorum figure { margin: 0; background: var(--beyaz); border-radius: 18px; padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 12px; }
+.yildiz { color: #C9932E; letter-spacing: 2px; }
+.yorum blockquote { flex: 1; font-size: 1.04rem; line-height: 1.6; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(36,26,30,.1); }
+.harf { width: 40px; height: 40px; border-radius: 50%; background: var(--gul-acik); color: var(--bordo); display: grid; place-items: center; font-weight: 600; flex: none; }
+.yorum figcaption strong { display: block; font-weight: 600; }
+.yorum figcaption small { display: flex; align-items: center; gap: 5px; color: var(--soluk); font-size: .85rem; }
+@media (min-width: 900px) { .yorum-izgara { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+/* İletişim */
+.gel { background: var(--beyaz); padding: clamp(64px, 10vw, 110px) 0; }
+.gel .wrap { display: grid; gap: 34px; }
+.gel dl { display: grid; gap: 16px; margin-top: 26px; }
+.gel dt { font-size: .88rem; color: var(--soluk); }
+.gel dd { font-size: 1.1rem; }
+.gel .btns { align-content: start; }
+@media (min-width: 900px) { .gel .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } }
+
+/* Alt bilgi */
+footer { background: var(--murekkep); color: #B9AEB2; padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--beyaz); text-decoration: underline; }
+.alt-izgara { display: grid; gap: 30px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-izgara .marka b { color: var(--beyaz); }
+.alt-izgara .marka { margin-bottom: 12px; }
+.alt-baslik { color: var(--beyaz); font-weight: 500; margin-bottom: 10px; }
+.alt-izgara ul { list-style: none; padding: 0; display: grid; gap: 6px; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(185,174,178,.2); font-size: .82rem; }
+.alt-not { margin-top: 14px; font-size: .75rem; opacity: .7; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marka" href="#top"><b>GIA MARIN</b><small>BEAUTY STUDIO</small></a>
+    <nav aria-label="Bölümler">
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#hakkinda">Hakkımızda</a>
+      <a href="#galeri">Tasarımlar</a>
+      <a href="#gel">İletişim</a>
+      <a class="randevu" href="https://wa.me/905537176997" target="_blank" rel="noopener">Randevu al</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-video"><video muted playsinline loop autoplay preload="metadata" poster="img/10.jpg" aria-label="Bordo protez tırnaklı eller"><source src="acilis.mp4" type="video/mp4"></video></div>
+    <div class="hero-metin">
+      <p class="ust">Kadın ve erkek misafirlerimize</p>
+      <h1>Size özel bir güzellik molası.</h1>
+      <p class="giris">Protez tırnak ve nail art, lazer epilasyon, cilt bakımı, ipek kirpik ve vücut bakımı. Hepsi In Mari Sitesi’ndeki stüdyomuzda.</p>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905537176997" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
+        <a class="btn" href="#hizmetler">Hizmetlere bakın</a>
+      </div>
+      <p class="bilgi"><span><b>4,9</b> Google’da 100 yorum</span><span><b>Her gün</b> 10.00–22.00</span></p>
+    </div>
+  </section>
+
+  <section class="hizmet" id="hizmetler" aria-labelledby="hizmetBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="hizmetBaslik">Hizmetlerimiz</h2>
+      <p class="giris">Bir başlık seçin, o alandaki uygulamaları görün. Fiyat ve uygunluk için WhatsApp’tan yazabilirsiniz.</p>
+      <div class="sekmeler" role="tablist" aria-label="Hizmet grupları">
+        <button type="button" role="tab" id="s-tirnak" aria-controls="p-tirnak" aria-selected="true">Tırnak</button>
+        <button type="button" role="tab" id="s-lazer" aria-controls="p-lazer" aria-selected="false">Lazer epilasyon</button>
+        <button type="button" role="tab" id="s-cilt" aria-controls="p-cilt" aria-selected="false">Cilt bakımı</button>
+        <button type="button" role="tab" id="s-kirpik" aria-controls="p-kirpik" aria-selected="false">Kaş ve kirpik</button>
+        <button type="button" role="tab" id="s-vucut" aria-controls="p-vucut" aria-selected="false">Vücut</button>
+      </div>
+
+      <div class="panel" id="p-tirnak" role="tabpanel" aria-labelledby="s-tirnak">
+        <ul class="kalem">
+          <li><strong>Protez tırnak</strong><span>Tırnak yatağınıza göre şekillendirilen, kişiye özel tasarım.</span></li>
+          <li><strong>Nail art</strong><span>Sade bir french’ten çizim tasarımlara kadar.</span></li>
+          <li><strong>Jel tırnak ve kalıcı oje</strong><span>Günlük kullanımda uzun süre bakımlı görünüm.</span></li>
+          <li><strong>Manikür ve pedikür</strong><span>Hijyen kurallarına uygun, özenli bakım.</span></li>
+        </ul>
+        <div class="panel-medya"><img src="img/09.jpg" alt="Gia Marin’de pedikür koltuğunda dinlenen misafir" loading="lazy"></div>
+      </div>
+
+      <div class="panel" id="p-lazer" role="tabpanel" aria-labelledby="s-lazer" hidden>
+        <ul class="kalem">
+          <li><strong>Alby Cold Diode lazer</strong><span>Soğutmalı başlıkla konforlu lazer epilasyon.</span></li>
+          <li><strong>Yaz aylarında da</strong><span>Cihaz ve cilt değerlendirmesine göre yaz aylarında da uygulanabiliyor.</span></li>
+          <li><strong>Kadın ve erkek</strong><span>Seans planı cilt ve kıl yapınıza göre birlikte çıkarılır.</span></li>
+        </ul>
+        <div class="panel-medya"><video muted playsinline loop preload="none" poster="img/12.jpg" aria-label="Alby lazer cihazıyla epilasyon"><source src="lazer.mp4" type="video/mp4"></video></div>
+      </div>
+
+      <div class="panel" id="p-cilt" role="tabpanel" aria-labelledby="s-cilt" hidden>
+        <ul class="kalem">
+          <li><strong>Hydrafacial</strong><span>Cildi temizleyen ve nemlendiren bakım.</span></li>
+          <li><strong>Pumpkin cilt bakımı</strong><span>Cildi arındırmaya ve ölü derilerden temizlemeye yardımcı olur.</span></li>
+          <li><strong>High Frequency</strong><span>Bakım rutinini destekleyen, bakım sonrası ferahlık veren uygulama.</span></li>
+          <li><strong>Profesyonel cilt bakımı</strong><span>Cilt tipinize göre seçilen ürünlerle.</span></li>
+        </ul>
+        <div class="panel-medya"><video muted playsinline loop preload="none" poster="img/11.jpg" aria-label="Işık altında yapılan cilt bakımı"><source src="cilt.mp4" type="video/mp4"></video></div>
+      </div>
+
+      <div class="panel" id="p-kirpik" role="tabpanel" aria-labelledby="s-kirpik" hidden>
+        <ul class="kalem">
+          <li><strong>İpek kirpik</strong><span>Siyah ya da kahverengi, doğal ya da yoğun görünüm.</span></li>
+          <li><strong>Microblading</strong><span>Kıl tekniğiyle doğal görünümlü, kalıcı kaş.</span></li>
+        </ul>
+        <div class="panel-medya"><img src="img/08.jpg" alt="Gia Marin’in tırnak ve cilt bakımı rafları" loading="lazy"></div>
+      </div>
+
+      <div class="panel" id="p-vucut" role="tabpanel" aria-labelledby="s-vucut" hidden>
+        <ul class="kalem">
+          <li><strong>G5 masajı</strong><span>Ritmik masaj hareketleriyle vücut bakımına destek.</span></li>
+          <li><strong>Bölgesel incelme</strong><span>Düzenli seanslarla bölgesel bakım süreci.</span></li>
+          <li><strong>Saten vücut germe</strong><span>Daha sıkı ve pürüzsüz görünen bir cilt için.</span></li>
+          <li><strong>Solaryum</strong><span>Bronz bir görünüm için.</span></li>
+        </ul>
+        <div class="panel-medya"><img src="img/13.jpg" alt="G5 masaj cihazıyla vücut bakımı" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hakkinda" id="hakkinda" aria-labelledby="hakkindaBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="hakkindaBaslik">Hakkımızda</h2>
+        <p>Gia Marin Beauty Studio, Beylikdüzü Marmara Mahallesi’nde, In Mari Sitesi’nde. Kadın ve erkek misafirlerine tırnaktan lazere, cilt bakımından vücut bakımına kadar pek çok hizmeti tek adreste sunuyor.</p>
+        <p>Yorumlarda en çok hijyen ve güler yüz konuşuluyor. Ekibimizden birkaç isim misafirlerimizin dilinden:</p>
+        <ul class="ekip">
+          <li>Nil Hanım, tırnak ve nail art</li>
+          <li>Fehime Hanım, protez tırnak</li>
+          <li>Aleyna Hanım, lazer</li>
+          <li>Begüm ve Gaye Hanım, karşılama</li>
+        </ul>
+      </div>
+      <ul class="sayac">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="4.9">4,9</b><span>Google puanı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="100">100</b><span>Google yorumu</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>7 gün</b><span>Her gün açık</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>22.00</b><span>Akşam kapanış</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri" aria-labelledby="galeriBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="galeriBaslik">Tırnak tasarımlarından</h2>
+      <p class="giris">Hepsi stüdyomuzda yapıldı.</p>
+      <ul class="galeri-izgara">
+        <li><img src="img/00.jpg" alt="Lacivert yıldız desenli tırnaklar" loading="lazy"></li>
+        <li><img src="img/01.jpg" alt="Çizgi karakterli renkli nail art" loading="lazy"></li>
+        <li><img src="img/02.jpg" alt="Mavi mermer desenli tırnaklar" loading="lazy"></li>
+        <li><img src="img/03.jpg" alt="Ayçiçeği tarlasında beyaz tırnaklar" loading="lazy"></li>
+        <li><img src="img/04.jpg" alt="Kırmızı ve lacivert örümcek desenli tırnaklar" loading="lazy"></li>
+        <li><img src="img/05.jpg" alt="Kahverengi ombre tırnaklar" loading="lazy"></li>
+        <li><img src="img/06.jpg" alt="Pastel renkli desenli tırnaklar" loading="lazy"></li>
+        <li><img src="img/14.jpg" alt="Gri tonlarında sade tırnaklar" loading="lazy"></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Yeni tasarımlar Instagram hesabımızda.</span>
+        <a class="btn" href="https://www.instagram.com/giamaringuzellik/" target="_blank" rel="noopener">Instagram’da daha fazlası</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-labelledby="yorumBaslik">
+    <div class="wrap">
+      <div class="yorum-ust">
+        <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
+        <p class="puan"><b>4,9</b>Google’da 100 yorum</p>
+      </div>
+      <div class="yorum-izgara">
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Tırnak yataklarım normalde çok dar ve çoğu işletme istediğim formda yapamıyordu. İncecik ve dar tırnak yatağıma uygun en güzel tırnağı çıkartıyorlar. Nail art işlemleri muazzam, insan çiziyor resmen Nil Hanım.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Ş</span><span><strong>Şeyda Ö.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>İpek kirpik, manikür, pedikür ve kalıcı oje işlemlerimin tamamını Nil Hanım yaptı ve her seferinde aynı özen, titizlik, hijyen ve profesyonellikle çalıştı.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mine İ.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Ortam tertemiz ve çok rahat. Gaye Hanım ve Begüm Hanım danışanlarla tek tek ilgilenip ne istediğini anlamaya çalışıyorlar. Lazer için de burayı tercih ediyorum, Aleyna Hanım işinde çok uzman.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zehra K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="gel" id="gel" aria-labelledby="gelBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="gelBaslik">Randevu ve iletişim</h2>
+        <dl>
+          <div><dt>Adres</dt><dd>Marmara Mah. Avrasya Cad. In Mari Sitesi B Blok No: 17 D: 2N, Beylikdüzü</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 10.00–22.00</dd></div>
+          <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905537176997">0553 717 69 97</a></dd></div>
+        </dl>
+      </div>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905537176997" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Gia%20Marin%20G%C3%BCzellik%20Salonu&amp;query_place_id=ChIJxyM1SKC7yhQRNN8aYAFM0-Y" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn" href="https://www.instagram.com/giamaringuzellik/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="marka" href="#top"><b>GIA MARIN</b><small>BEAUTY STUDIO</small></a>
+      <p>Beylikdüzü’nde tırnak, lazer, cilt ve vücut bakımı stüdyosu.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#hakkinda">Hakkımızda</a></li>
+        <li><a href="#galeri">Tasarımlar</a></li>
+        <li><a href="#gel">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p>Her gün<br>10.00–22.00</p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+905537176997">0553 717 69 97</a></li>
+        <li><a href="https://wa.me/905537176997" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/giamaringuzellik/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Gia%20Marin%20G%C3%BCzellik%20Salonu&amp;query_place_id=ChIJxyM1SKC7yhQRNN8aYAFM0-Y" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 Gia Marin Güzellik · Tüm hakları saklıdır</span>
+    <span>In Mari Sitesi, Marmara Mah., Beylikdüzü</span>
+  </div>
+  <p class="wrap alt-not">Bu sayfa Gia Marin Güzellik için hazırlanmış bir örnek tasarımdır. · Hazırlayan: Anıl Akyıl</p>
+</footer>
+
+<script>
+(function () {
+  // Hizmet sekmeleri: seçilen panel görünür, gizlenen paneldeki video durur
+  var sekmeler = document.querySelectorAll('.sekmeler [role="tab"]');
+  function sec(s) {
+    sekmeler.forEach(function (b) {
+      var acik = b === s, p = document.getElementById(b.getAttribute('aria-controls'));
+      b.setAttribute('aria-selected', acik ? 'true' : 'false');
+      b.tabIndex = acik ? 0 : -1;
+      p.hidden = !acik;
+      var v = p.querySelector('video');
+      if (v) { if (acik && !matchMedia('(prefers-reduced-motion: reduce)').matches) { var r = v.play(); if (r && r.catch) r.catch(function () {}); } else v.pause(); }
+    });
+  }
+  sekmeler.forEach(function (b, i) {
+    b.addEventListener('click', function () { sec(b); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      var y = sekmeler[(i + (e.key === 'ArrowRight' ? 1 : sekmeler.length - 1)) % sekmeler.length]; sec(y); y.focus();
+    });
+  });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); }); return; }
+  // Sayaçlar ekrana girince ikon bir kez döner, sayılar sıfırdan sayarak gelir
+  var gozle = new IntersectionObserver(function (g) { g.forEach(function (x) {
+    if (!x.isIntersecting) return;
+    var li = x.target; li.classList.add('dondu'); gozle.unobserve(li);
+    var b = li.querySelector('[data-say]'); if (!b) return;
+    var hedef = parseFloat(b.getAttribute('data-say')), virgul = b.textContent.indexOf(',') > -1, bas = null;
+    function adim() { var z = Date.now(); if (!bas) bas = z; var o = Math.min(1, (z - bas) / 1200), d = hedef * (1 - Math.pow(1 - o, 3));
+      b.textContent = virgul ? d.toFixed(1).replace('.', ',') : Math.round(d).toLocaleString('tr-TR'); if (o >= 1) clearInterval(zam); }
+    var zam = setInterval(adim, 30); adim();
+  }); }, { threshold: .6 });
+  document.querySelectorAll('.sayac li').forEach(function (li) { gozle.observe(li); });
+})();
+</script>
+</body>
+</html>

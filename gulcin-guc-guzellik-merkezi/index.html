@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gülçin Güç Güzellik | Beylikdüzü</title>
+<meta name="description" content="Cilt bakımı, lazer epilasyon, kalıcı makyaj, kirpik lifting ve bölgesel incelme. Prestij Marina, Kavaklı, Beylikdüzü. Pazartesi–Cumartesi 10.00–19.00.">
+<meta name="theme-color" content="#3B2A28">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --pudra: #F7EEEB;     /* salonun pudra tonu */
+  --pudra-koyu: #EBDAD4;
+  --altin: #A9824F;     /* GG logosunun altını */
+  --altin-acik: #D9C2A0;
+  --espresso: #3B2A28;  /* yazı */
+  --gul: #C98F8A;
+  --soluk: #6F5E5A;
+  --beyaz: #FFFFFF;
+  --baslikF: "Marcellus", Georgia, serif;
+  --metinF: "Manrope", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--pudra); color: var(--espresso); font: 400 1.04rem/1.65 var(--metinF); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--altin); outline-offset: 3px; }
+.wrap { width: min(1140px, 100% - 40px); margin-inline: auto; }
+.baslik { font: 400 clamp(2.1rem, 6.5vw, 3.6rem)/1.08 var(--baslikF); }
+.giris { margin-top: 14px; max-width: 50ch; color: var(--soluk); font-size: 1.06rem; }
+
+/* Üst bar */
+header { position: sticky; top: 0; z-index: 20; background: rgba(247,238,235,.94); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(169,130,79,.18); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 66px; gap: 16px; }
+.marka { text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.marka i { width: 38px; height: 38px; border-radius: 50%; border: 1.5px solid var(--altin); display: grid; place-items: center; font: normal 400 .95rem var(--baslikF); color: var(--altin); letter-spacing: .02em; }
+.marka span { display: grid; line-height: 1.1; }
+.marka b { font: 400 1.15rem var(--baslikF); letter-spacing: .12em; }
+.marka small { font-size: .66rem; letter-spacing: .28em; color: var(--altin); }
+header nav { display: flex; align-items: center; gap: 2px; }
+header nav a { text-decoration: none; font-size: .94rem; padding: 8px 12px; border-radius: 999px; color: var(--soluk); }
+header nav a:hover { color: var(--espresso); }
+header nav a.randevu { background: var(--espresso); color: var(--beyaz); font-weight: 600; padding: 9px 18px; }
+@media (max-width: 820px) { header nav a:not(.randevu) { display: none; } }
+
+/* Açılış: portre bölümün boyunu belirlemez */
+.hero { display: grid; }
+.hero-foto { position: relative; height: 62svh; min-height: 380px; overflow: hidden; }
+.hero-foto img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.hero-metin { padding: 34px 20px 48px; }
+.hero-metin .soz { font: 400 clamp(2.4rem, 7.5vw, 4.4rem)/1.08 var(--baslikF); max-width: 14ch; }
+.hero-metin .soz span { color: var(--altin); }
+.kim { margin-top: 14px; font-size: .95rem; color: var(--altin); letter-spacing: .04em; }
+.hero-metin p.giris { font-size: 1.1rem; }
+.hero .btns { margin-top: 26px; }
+.bilgi { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 24px; color: var(--soluk); font-size: .95rem; }
+.bilgi b { color: var(--espresso); font-weight: 700; }
+@media (min-width: 900px) {
+  .hero { grid-template-columns: .85fr 1.15fr; height: calc(100svh - 66px); min-height: 560px; max-height: 920px; }
+  .hero-foto { height: auto; min-height: 0; }
+  .hero-metin { align-self: center; padding: 0 max(20px, calc((100vw - 1140px) / 2)) 0 clamp(36px, 6vw, 90px); }
+}
+
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 24px; border-radius: 999px; font: 600 .98rem var(--metinF); text-decoration: none; border: 1.5px solid var(--espresso); color: var(--espresso); }
+.btn.dolu { background: var(--espresso); color: var(--beyaz); }
+
+/* Nasıl çalışıyoruz: gerçek bir sıra olduğu için numaralı */
+.yontem { background: var(--espresso); color: var(--pudra); padding: clamp(64px, 10vw, 120px) 0; }
+.yontem .giris { color: var(--altin-acik); }
+.adimlar { list-style: none; padding: 0; margin-top: 34px; display: grid; gap: 14px; counter-reset: adim; }
+.adimlar li { counter-increment: adim; border: 1px solid rgba(217,194,160,.3); border-radius: 18px; padding: 24px 22px; display: grid; gap: 8px; }
+.adimlar li::before { content: counter(adim, decimal-leading-zero); font: 400 2.2rem/1 var(--baslikF); color: var(--altin-acik); }
+.adimlar strong { font: 400 1.5rem/1.15 var(--baslikF); color: var(--beyaz); }
+.adimlar span { color: #DCCDC8; }
+.alinti { margin-top: 30px; padding: 22px 24px; border-radius: 18px; background: rgba(247,238,235,.08); display: grid; gap: 8px; }
+.alinti blockquote { font: 400 clamp(1.3rem, 3.4vw, 1.75rem)/1.35 var(--baslikF); color: var(--beyaz); }
+.alinti cite { font-style: normal; color: var(--altin-acik); font-size: .92rem; }
+@media (min-width: 900px) { .adimlar { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
+/* Hizmetler: ikon fareyle ya da ekrana girince döner */
+.hizmet { padding: clamp(64px, 10vw, 120px) 0; }
+.kartlar { list-style: none; padding: 0; margin-top: 32px; display: grid; gap: 14px; }
+.kartlar li { background: var(--beyaz); border-radius: 20px; padding: 24px 22px; display: grid; gap: 10px; align-content: start; }
+.kartlar svg { width: 46px; height: 46px; stroke: var(--altin); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.kartlar li:hover svg, .kartlar li.dondu svg { transform: rotateY(360deg); }
+.kartlar h3 { font: 400 1.45rem/1.15 var(--baslikF); }
+.kartlar p { color: var(--soluk); font-size: .98rem; }
+.etiketler { display: flex; flex-wrap: wrap; gap: 6px; }
+.etiketler span { font-size: .84rem; padding: 4px 11px; border-radius: 999px; background: var(--pudra); color: var(--espresso); }
+.hizmet .ek { margin-top: 18px; color: var(--soluk); }
+@media (min-width: 700px) { .kartlar { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .kartlar { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+@media (prefers-reduced-motion: reduce) { .kartlar svg, .sayac svg { transition: none; } }
+
+/* Hakkımızda */
+.hakkinda { background: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.hakkinda .wrap { display: grid; gap: 40px; }
+.hakkinda p { margin-top: 16px; max-width: 52ch; color: var(--soluk); font-size: 1.06rem; }
+.sayac { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center; }
+.sayac li { background: var(--pudra); border-radius: 18px; padding: 22px 16px; text-align: center; display: grid; justify-items: center; gap: 6px; }
+.sayac svg { width: 44px; height: 44px; stroke: var(--altin); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: transform .9s cubic-bezier(.3,.7,.2,1); }
+.sayac li:hover svg, .sayac li.dondu svg { transform: rotateY(360deg); }
+.sayac b { font: 400 2.3rem/1 var(--baslikF); }
+.sayac span { font-size: .92rem; color: var(--soluk); }
+@media (min-width: 900px) { .hakkinda .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } }
+
+/* Galeri */
+.galeri { padding: clamp(64px, 10vw, 120px) 0; }
+.galeri-izgara { list-style: none; padding: 0; margin-top: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.galeri-izgara figure { margin: 0; }
+.galeri-izgara img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 18px; }
+.galeri-izgara figcaption { margin-top: 8px; font-size: .92rem; color: var(--soluk); }
+.galeri-alt { margin-top: 26px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; color: var(--soluk); }
+@media (min-width: 900px) { .galeri-izgara { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+
+/* Yorumlar */
+.yorum { background: var(--pudra-koyu); padding: clamp(64px, 10vw, 110px) 0; }
+.yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px 24px; }
+.puan { color: var(--soluk); }
+.puan b { font: 400 2.3rem/1 var(--baslikF); color: var(--espresso); margin-right: 8px; }
+.yorum-izgara { display: grid; gap: 16px; margin-top: 30px; }
+.yorum figure { margin: 0; background: var(--beyaz); border-radius: 20px; padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 12px; }
+.yildiz { color: var(--altin); letter-spacing: 2px; }
+.yorum blockquote { flex: 1; font-size: 1.03rem; line-height: 1.6; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(59,42,40,.1); }
+.harf { width: 40px; height: 40px; border-radius: 50%; background: var(--espresso); color: var(--pudra); display: grid; place-items: center; font-weight: 700; flex: none; }
+.yorum figcaption strong { display: block; font-weight: 700; }
+.yorum figcaption small { display: flex; align-items: center; gap: 5px; color: var(--soluk); font-size: .85rem; }
+@media (min-width: 900px) { .yorum-izgara { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+/* İletişim */
+.gel { padding: clamp(64px, 10vw, 110px) 0; }
+.gel .wrap { display: grid; gap: 34px; }
+.gel dl { display: grid; gap: 16px; margin-top: 26px; }
+.gel dt { font-size: .88rem; color: var(--altin); }
+.gel dd { font-size: 1.1rem; }
+.saat { display: grid; grid-template-columns: auto auto; gap: 2px 18px; justify-content: start; }
+.gel .btns { align-content: start; }
+@media (min-width: 900px) { .gel .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } }
+
+/* Alt bilgi */
+footer { background: var(--espresso); color: #CDBDB8; padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--beyaz); text-decoration: underline; }
+.alt-izgara { display: grid; gap: 30px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-izgara .marka { margin-bottom: 12px; }
+.alt-izgara .marka b { color: var(--beyaz); }
+.alt-baslik { color: var(--beyaz); font-weight: 600; margin-bottom: 10px; }
+.alt-izgara ul { list-style: none; padding: 0; display: grid; gap: 6px; }
+.alt-saat { display: grid; grid-template-columns: auto auto; gap: 2px 14px; justify-content: start; }
+.alt-saat span { white-space: nowrap; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(205,189,184,.2); font-size: .82rem; }
+.alt-not { margin-top: 14px; font-size: .75rem; opacity: .7; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } .alt-izgara > div:nth-child(3) { grid-column: 1 / -1; order: 5; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1.2fr 1fr; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marka" href="#top"><i>GG</i><span><b>GÜLÇİN GÜÇ</b><small>GÜZELLİK</small></span></a>
+    <nav aria-label="Bölümler">
+      <a href="#yontem">Nasıl çalışıyoruz</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#hakkinda">Hakkımızda</a>
+      <a href="#gel">İletişim</a>
+      <a class="randevu" href="https://wa.me/905543640997" target="_blank" rel="noopener">Randevu al</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-foto"><img src="img/00.jpg" alt="Gülçin Güç salonunda" fetchpriority="high"></div>
+    <div class="hero-metin">
+      <h1 class="soz">Doğru bakım, <span>doğru analizle</span> başlar.</h1>
+      <p class="kim">Gülçin Güç, salonun kurucusu</p>
+      <p class="giris">Cilt bakımı, lazer epilasyon, kalıcı makyaj, kirpik lifting ve bölgesel incelme. Kavaklı’da, Prestij Marina’daki salonumuzda.</p>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905543640997" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
+        <a class="btn" href="#hizmetler">Hizmetlere bakın</a>
+      </div>
+      <p class="bilgi"><span><b>5,0</b> Google’da 62 yorum</span><span><b>Pzt–Cmt</b> 10.00–19.00</span></p>
+    </div>
+  </section>
+
+  <section class="yontem" id="yontem" aria-labelledby="yontemBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="yontemBaslik">Nasıl çalışıyoruz?</h2>
+      <p class="giris">Her cilt ve her yüz farklı. Bu yüzden önce dinliyor, sonra planlıyoruz.</p>
+      <ol class="adimlar">
+        <li><strong>Analiz</strong><span>Cildinize, kaş ve göz yapınıza, beklentinize birlikte bakıyoruz.</span></li>
+        <li><strong>Size özel plan</strong><span>Hangi uygulamanın, kaç seansla ve hangi aralıkla yapılacağını açıkça anlatıyoruz.</span></li>
+        <li><strong>Uygulama ve takip</strong><span>Seanslar arasında ara kontrol yapıyor, uygulama sonrası nelere dikkat etmeniz gerektiğini söylüyoruz.</span></li>
+      </ol>
+      <div class="alinti">
+        <blockquote>“Her şeyi en ince ayrıntısına kadar anlatıyor ve ihtiyacınız olmayan bir şeyi yapmıyor.”</blockquote>
+        <cite>Fatma Ş., Google yorumu</cite>
+      </div>
+    </div>
+  </section>
+
+  <section class="hizmet" id="hizmetler" aria-labelledby="hizmetBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="hizmetBaslik">Hizmetlerimiz</h2>
+      <p class="giris">Fiyat ve seans bilgisi için WhatsApp’tan yazabilirsiniz.</p>
+      <ul class="kartlar">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="22" r="13"/><path d="M18 20h.01M30 20h.01M19 27c3 3 7 3 10 0M24 35v6M17 41h14"/></svg>
+          <h3>Cilt bakımı</h3><p>Cilt analiziyle seçilen profesyonel protokoller.</p>
+          <div class="etiketler"><span>Green Peel</span><span>NAD + PDRN</span><span>Anti-aging bakım</span><span>Sırt bakımı</span></div></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M14 8h12l-2 14H16z"/><path d="M20 22v6M12 34l8-6 8 6M34 12l6-4M34 20h7M34 28l6 4"/></svg>
+          <h3>Lazer epilasyon</h3><p>Düzenli seanslarla, cilt ve kıl yapınıza göre planlanır.</p>
+          <div class="etiketler"><span>Kadın ve erkek</span><span>Seans planı</span></div></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 22c6-6 12-8 18-8s10 2 14 6"/><path d="M10 30c5-3 10-4 14-4M36 8l4 4-14 14-5 1 1-5z"/></svg>
+          <h3>Kalıcı makyaj</h3><p>Yüz oranına uygun, doğal görünüm hedefiyle.</p>
+          <div class="etiketler"><span>Microblading</span><span>Dipliner</span><span>Babyliner</span><span>Dudak renklendirme</span></div></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 26c6-8 30-8 36 0"/><path d="M10 26l-3-6M16 23l-2-7M24 22v-8M32 23l2-7M38 26l3-6"/><circle cx="24" cy="30" r="5"/></svg>
+          <h3>Kirpik ve kaş</h3><p>Kendi kirpik ve kaşlarınızın en bakımlı hâli.</p>
+          <div class="etiketler"><span>Kirpik lifting</span><span>İpek kirpik</span><span>Kaş laminasyonu</span><span>Kaş tasarımı</span></div></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M18 6c-2 8 2 12 2 18s-4 10-2 18M30 6c2 8-2 12-2 18s4 10 2 18"/><path d="M14 24h4M30 24h4"/></svg>
+          <h3>Bölgesel incelme</h3><p>Planlı seans programı ve ara kontrollerle.</p>
+          <div class="etiketler"><span>Selfodeep</span><span>G8</span></div></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6c-9 0-14 7-14 15v19M24 6c9 0 14 7 14 15v19M18 14c-2 6-2 16 0 26M30 14c2 6 2 16 0 26"/></svg>
+          <h3>Saç ve leke bakımı</h3><p>Saç derisi bakımı ve bölgesel ton eşitsizliği uygulamaları.</p>
+          <div class="etiketler"><span>İğnesiz mezoterapi</span><span>Saç vitamini</span><span>Leke protokolü</span></div></li>
+      </ul>
+      <p class="ek">Salonumuzda protez tırnak da yapılıyor.</p>
+    </div>
+  </section>
+
+  <section class="hakkinda" id="hakkinda" aria-labelledby="hakkindaBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="hakkindaBaslik">Hakkımızda</h2>
+        <p>Gülçin Güç Güzellik Salonu Nisan 2023’te açıldı. Salonun sahibi Gülçin Hanım; yorumlarda en çok onun bilgisi, dürüstlüğü ve nezaketi anılıyor.</p>
+        <p>Üçüncü yaşımızı bu yıl, bize güvenen misafirlerimizle birlikte kutladık.</p>
+      </div>
+      <ul class="sayac">
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="11" width="32" height="29" rx="3"/><path d="M8 19h32M16 7v8M32 7v8"/></svg><b>2023</b><span>Açılış yılı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 7l5 11 12 1-9 8 3 12-11-6-11 6 3-12-9-8 12-1z"/></svg><b data-say="5">5,0</b><span>Google puanı</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M9 11h30a3 3 0 0 1 3 3v16a3 3 0 0 1-3 3H22l-9 7v-7H9a3 3 0 0 1-3-3V14a3 3 0 0 1 3-3z"/></svg><b data-say="62">62</b><span>Google yorumu</span></li>
+        <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="16"/><path d="M24 15v10l7 4"/></svg><b>6 gün</b><span>Pazartesi–Cumartesi</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="galeri" id="galeri" aria-labelledby="galeriBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="galeriBaslik">Salonumuzdan</h2>
+      <ul class="galeri-izgara">
+        <li><figure><img src="img/02.jpg" alt="Kirpik lifting sonrası kıvrık kirpikler" loading="lazy"><figcaption>Kirpik lifting</figcaption></figure></li>
+        <li><figure><img src="img/03.jpg" alt="Lazer epilasyon cihazının başında Gülçin Güç" loading="lazy"><figcaption>Lazer epilasyon</figcaption></figure></li>
+        <li><figure><img src="img/04.jpg" alt="Dipliner uygulanmış göz" loading="lazy"><figcaption>Dipliner</figcaption></figure></li>
+        <li><figure><img src="img/05.jpg" alt="Salondaki çiçek duvarının önünde sohbet" loading="lazy"><figcaption>Salonumuzun çiçekli köşesi</figcaption></figure></li>
+        <li><figure><img src="img/06.jpg" alt="Cilt bakımı sırasında yüz uygulaması" loading="lazy"><figcaption>Cilt bakımı</figcaption></figure></li>
+        <li><figure><img src="img/07.jpg" alt="Selfodeep cihazının yanında Gülçin Güç" loading="lazy"><figcaption>Bölgesel incelme</figcaption></figure></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Uygulama videoları ve öncesi-sonrası paylaşımları Instagram’da.</span>
+        <a class="btn" href="https://www.instagram.com/gulcingucguzellik/" target="_blank" rel="noopener">Instagram’da daha fazlası</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-labelledby="yorumBaslik">
+    <div class="wrap">
+      <div class="yorum-ust">
+        <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
+        <p class="puan"><b>5,0</b>Google’da 62 yorum</p>
+      </div>
+      <div class="yorum-izgara">
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Gülçin Hanım işini çok titizlikle yapıyor. Güzellik merkezlerinde sürekli bir şey satmak isteyenlerden yılmış biriydim; Gülçin Hanım gittiğim bütün o yerlerden çok farklı.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Melike A.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Birçok yerde sonuç alamadığım epilasyonda burada gayet iyi sonuç aldım. Gülçin Hanım ve ekibine teşekkür ederim, gerçekten ilgili ve güler yüzlüler.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mert K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Arkadaşımın tavsiyesiyle tanıştım. Leke protokolü ve lazer epilasyon yaptırdım, çok memnun kaldım. Temiz ve hijyenik olması benim için bir artı.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">P</span><span><strong>Pınar D.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="gel" id="gel" aria-labelledby="gelBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="gelBaslik">Randevu ve iletişim</h2>
+        <dl>
+          <div><dt>Adres</dt><dd>Prestij Marina, Kavaklı Mah. Kocatepe Cad. No: 319 C, No: 11, Beylikdüzü</dd></div>
+          <div><dt>Açık</dt><dd class="saat"><span>Pazartesi–Cumartesi</span><span>10.00–19.00</span><span>Pazar</span><span>Kapalı</span></dd></div>
+          <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905543640997">0554 364 09 97</a></dd></div>
+        </dl>
+      </div>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905543640997" target="_blank" rel="noopener">WhatsApp’tan randevu</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=G%C3%BCl%C3%A7in%20G%C3%BC%C3%A7%20G%C3%BCzellik%20Merkezi&amp;query_place_id=ChIJAbIp5iNftRQR9Ff3je3GuNA" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn" href="https://www.instagram.com/gulcingucguzellik/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="marka" href="#top"><i>GG</i><span><b>GÜLÇİN GÜÇ</b><small>GÜZELLİK</small></span></a>
+      <p>Kavaklı’da cilt bakımı, lazer, kalıcı makyaj ve kirpik salonu.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#yontem">Nasıl çalışıyoruz</a></li>
+        <li><a href="#hizmetler">Hizmetler</a></li>
+        <li><a href="#hakkinda">Hakkımızda</a></li>
+        <li><a href="#gel">İletişim</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p class="alt-saat"><span>Pzt–Cmt</span><span>10.00–19.00</span><span>Pazar</span><span>Kapalı</span></p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+905543640997">0554 364 09 97</a></li>
+        <li><a href="https://wa.me/905543640997" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/gulcingucguzellik/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=G%C3%BCl%C3%A7in%20G%C3%BC%C3%A7%20G%C3%BCzellik%20Merkezi&amp;query_place_id=ChIJAbIp5iNftRQR9Ff3je3GuNA" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 Gülçin Güç Güzellik · Tüm hakları saklıdır</span>
+    <span>Prestij Marina, Kavaklı, Beylikdüzü</span>
+  </div>
+  <p class="wrap alt-not">Bu sayfa Gülçin Güç Güzellik için hazırlanmış bir örnek tasarımdır. · Hazırlayan: Anıl Akyıl</p>
+</footer>
+
+<script>
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  // İkonlar ekrana girince bir kez döner, sayılar sıfırdan sayarak gelir
+  var gozle = new IntersectionObserver(function (g) { g.forEach(function (x) {
+    if (!x.isIntersecting) return;
+    var li = x.target; li.classList.add('dondu'); gozle.unobserve(li);
+    var b = li.querySelector('[data-say]'); if (!b) return;
+    var hedef = parseFloat(b.getAttribute('data-say')), virgul = b.textContent.indexOf(',') > -1, bas = null;
+    function adim() { var z = Date.now(); if (!bas) bas = z; var o = Math.min(1, (z - bas) / 1200), d = hedef * (1 - Math.pow(1 - o, 3));
+      b.textContent = virgul ? d.toFixed(1).replace('.', ',') : Math.round(d).toLocaleString('tr-TR'); if (o >= 1) clearInterval(zam); }
+    var zam = setInterval(adim, 30); adim();
+  }); }, { threshold: .5 });
+  document.querySelectorAll('.sayac li, .kartlar li').forEach(function (li) { gozle.observe(li); });
+})();
+</script>
+</body>
+</html>
