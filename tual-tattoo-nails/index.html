@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tual Tattoo &amp; Nails | Beylikdüzü</title>
+<meta name="description" content="Gerçekçi siyah-gri, ince çizgi, yazı dövmeleri ve titanyum piercing. Kubist Park, Beylikdüzü. Her gün 10.00–21.00.">
+<meta name="theme-color" content="#131115">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --murekkep: #131115;   /* dövme mürekkebi */
+  --gece: #1E1B23;       /* koyu panel */
+  --kagit: #F2F0F5;      /* şablon kâğıdı */
+  --sablon: #6C4DB8;     /* deriye aktarılan şablonun moru */
+  --sablon-acik: #BBA8EE;
+  --kirmizi: #C0262D;    /* kırmızı mürekkep */
+  --soluk: #6B6574;
+  --soluk-k: #A8A1B2;    /* koyu zeminde soluk yazı */
+  --beyaz: #FFFFFF;
+  --serif: "Instrument Serif", Georgia, serif;
+  --sans: "Hanken Grotesk", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { background: var(--kagit); color: var(--murekkep); font: 400 1.05rem/1.6 var(--sans); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--sablon-acik); outline-offset: 3px; }
+.wrap { width: min(1160px, 100% - 40px); margin-inline: auto; }
+h1, h2 { font-family: var(--serif); font-weight: 400; letter-spacing: -.01em; }
+.baslik { font-size: clamp(2.3rem, 7vw, 4rem); line-height: 1; }
+.giris { margin-top: 14px; max-width: 48ch; color: var(--soluk); font-size: 1.1rem; }
+
+/* Üst bar */
+header { position: sticky; top: 0; z-index: 20; background: rgba(19,17,21,.92); backdrop-filter: blur(10px); color: var(--kagit); }
+header .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+.marka { font: 400 1.75rem/1 var(--serif); text-decoration: none; letter-spacing: .01em; }
+.marka i { font-style: italic; color: var(--sablon-acik); }
+header nav { display: flex; align-items: center; gap: 4px; }
+header nav a { text-decoration: none; font-size: .95rem; padding: 8px 12px; border-radius: 8px; color: var(--soluk-k); }
+header nav a:hover { color: var(--kagit); }
+header nav a.yaz { background: var(--sablon); color: var(--beyaz); font-weight: 600; }
+@media (max-width: 760px) { header nav a:not(.yaz) { display: none; } }
+
+/* Açılış: video bölümün boyunu belirlemez */
+.hero { display: grid; background: var(--murekkep); color: var(--kagit); }
+.hero-video { position: relative; height: 62svh; min-height: 360px; overflow: hidden; }
+.hero-video video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-metin { padding: 34px 20px 48px; }
+.hero h1 { font-size: clamp(2.8rem, 9vw, 5.6rem); line-height: .98; max-width: 13ch; }
+.hero h1 i { color: var(--sablon-acik); }
+.hero p { margin-top: 18px; max-width: 38ch; color: var(--soluk-k); font-size: 1.1rem; }
+.hero .btns { margin-top: 26px; }
+.bilgi { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 26px; font-size: .95rem; color: var(--soluk-k); }
+.bilgi b { color: var(--kagit); font-weight: 600; }
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.1fr .9fr; height: calc(100svh - 64px); min-height: 560px; max-height: 960px; }
+}
+@media (min-width: 1400px) {
+  .hero { grid-template-columns: 1.15fr .85fr; }
+  .hero h1 { font-size: 5.4rem; }
+  .hero-video { order: 2; height: auto; min-height: 0; }
+  .hero-metin { align-self: center; padding: 0 clamp(32px, 5vw, 80px) 0 max(20px, calc((100vw - 1160px) / 2)); }
+}
+
+.btns { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 50px; padding: 0 22px; border-radius: 10px; font: 600 1rem var(--sans); text-decoration: none; border: 1.5px solid currentColor; }
+.btn.dolu { background: var(--sablon); border-color: var(--sablon); color: var(--beyaz); }
+
+/* Stiller: dönen kartlar */
+.stiller { padding: clamp(64px, 10vw, 120px) 0; }
+.kartlar { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 34px; padding: 0; list-style: none; }
+.don { perspective: 1200px; aspect-ratio: 3/4; }
+.don button { all: unset; display: block; width: 100%; height: 100%; cursor: pointer; position: relative; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.7,.2,1); border-radius: 14px; }
+.don button:focus-visible { outline: 2px solid var(--sablon); outline-offset: 4px; }
+.don.acik button { transform: rotateY(180deg); }
+@media (hover: hover) { .don:hover button { transform: rotateY(180deg); } }
+.yuz, .arka { position: absolute; inset: 0; border-radius: 14px; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.yuz img { width: 100%; height: 100%; object-fit: cover; }
+.yuz span { position: absolute; left: 0; right: 0; bottom: 0; padding: 40px 16px 14px; background: linear-gradient(transparent, rgba(19,17,21,.85)); color: var(--beyaz); font: 400 1.5rem/1.1 var(--serif); }
+.arka { transform: rotateY(180deg); background: var(--sablon); color: var(--beyaz); padding: 22px 18px; display: flex; flex-direction: column; justify-content: center; gap: 10px; }
+.arka strong { font: 400 1.7rem/1.05 var(--serif); }
+.arka span { font-size: .98rem; line-height: 1.5; color: #ECE6FB; }
+.ipucu { margin-top: 16px; color: var(--soluk); font-size: .92rem; }
+@media (min-width: 900px) { .kartlar { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+@media (prefers-reduced-motion: reduce) { .don button { transition: none; } }
+
+/* Çalışmalar */
+.calisma { background: var(--murekkep); color: var(--kagit); padding: clamp(64px, 10vw, 120px) 0; }
+.calisma .giris { color: var(--soluk-k); }
+.galeri { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 34px; padding: 0; list-style: none; }
+.galeri figure { margin: 0; }
+.galeri img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 10px; }
+.galeri figcaption { margin-top: 8px; font-size: .92rem; color: var(--soluk-k); }
+@media (min-width: 900px) { .galeri { grid-template-columns: repeat(4, 1fr); gap: 18px; } }
+.galeri-alt { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; color: var(--soluk-k); }
+
+/* Süreç */
+.surec { padding: clamp(64px, 10vw, 120px) 0; }
+.surec .wrap { display: grid; gap: 40px; }
+.adimlar { list-style: none; padding: 0; margin-top: 30px; display: grid; gap: 12px; counter-reset: adim; }
+.adimlar li { counter-increment: adim; display: grid; grid-template-columns: 56px 1fr; gap: 4px 16px; background: var(--beyaz); border-radius: 14px; padding: 18px 20px; align-items: start; }
+.adimlar li::before { content: counter(adim, decimal-leading-zero); grid-row: span 2; font: 400 2.4rem/1 var(--serif); color: var(--sablon); }
+.adimlar strong { font-weight: 700; font-size: 1.08rem; }
+.adimlar span { color: var(--soluk); }
+.surec video { width: 100%; max-width: 360px; aspect-ratio: 9/16; object-fit: cover; border-radius: 14px; justify-self: center; }
+@media (min-width: 900px) { .surec .wrap { grid-template-columns: 1.2fr .8fr; gap: 72px; align-items: center; } }
+
+/* Piercing ve tırnak */
+.piercing { background: var(--sablon); color: var(--beyaz); padding: clamp(64px, 10vw, 120px) 0; }
+.piercing .wrap { display: grid; gap: 34px; }
+.piercing .giris { color: #E3DAFA; }
+.titanyum { margin-top: 26px; display: flex; align-items: baseline; gap: 12px; padding: 18px 22px; border: 1.5px solid rgba(255,255,255,.4); border-radius: 14px; }
+.titanyum b { font: 400 2rem/1 var(--serif); }
+.titanyum span { color: #E3DAFA; font-size: .95rem; }
+.p-foto { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.p-foto img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 12px; }
+.tirnak { margin-top: 12px; background: rgba(19,17,21,.22); border-radius: 14px; padding: 20px 22px; display: grid; gap: 6px; }
+.tirnak strong { font: 400 1.6rem/1.1 var(--serif); }
+.tirnak span { color: #E3DAFA; }
+@media (min-width: 900px) { .piercing .wrap { grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; } }
+
+/* Yorumlar */
+.yorum { padding: clamp(64px, 10vw, 110px) 0; }
+.yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 10px 24px; }
+.puan { color: var(--soluk); }
+.puan b { font: 400 2.2rem/1 var(--serif); color: var(--murekkep); margin-right: 8px; }
+.yorum-izgara { display: grid; gap: 16px; margin-top: 30px; }
+.yorum figure { margin: 0; background: var(--beyaz); border-radius: 14px; padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 12px; }
+.yildiz { color: #D99A1E; letter-spacing: 2px; }
+.yorum blockquote { flex: 1; font-size: 1.05rem; line-height: 1.55; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(19,17,21,.1); }
+.harf { width: 40px; height: 40px; border-radius: 50%; background: var(--sablon); color: var(--beyaz); display: grid; place-items: center; font-weight: 700; flex: none; }
+.yorum figcaption strong { display: block; }
+.yorum figcaption small { display: flex; align-items: center; gap: 5px; color: var(--soluk); font-size: .85rem; }
+@media (min-width: 900px) { .yorum-izgara { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
+/* İletişim */
+.gel { background: var(--gece); color: var(--kagit); padding: clamp(64px, 10vw, 110px) 0; }
+.gel .wrap { display: grid; gap: 34px; }
+.gel dl { display: grid; gap: 16px; margin-top: 26px; }
+.gel dt { font-size: .88rem; color: var(--soluk-k); }
+.gel dd { font-size: 1.1rem; }
+.gel .btns { align-content: start; }
+.gel .btn { color: var(--kagit); }
+@media (min-width: 900px) { .gel .wrap { grid-template-columns: 1.1fr .9fr; gap: 72px; align-items: center; } .gel .btns { justify-content: flex-start; } }
+
+/* Alt bilgi */
+footer { background: var(--murekkep); color: var(--soluk-k); padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem; }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--kagit); text-decoration: underline; }
+.alt-izgara { display: grid; gap: 30px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-izgara .marka { color: var(--kagit); display: inline-block; margin-bottom: 10px; }
+.alt-baslik { color: var(--kagit); font-weight: 600; margin-bottom: 10px; }
+.alt-izgara ul { list-style: none; padding: 0; display: grid; gap: 6px; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(168,161,178,.2); font-size: .82rem; }
+.alt-not { margin-top: 14px; font-size: .75rem; opacity: .7; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="marka" href="#top">The <i>Tual</i></a>
+    <nav aria-label="Bölümler">
+      <a href="#stiller">Stiller</a>
+      <a href="#calismalar">Çalışmalar</a>
+      <a href="#piercing">Piercing</a>
+      <a href="#gel">Nerede?</a>
+      <a class="yaz" href="https://wa.me/905414283628" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-video"><video muted playsinline loop autoplay preload="metadata" poster="img/15.jpg" aria-label="El üstünde Poseidon dövmesi"><source src="acilis.mp4" type="video/mp4"></video></div>
+    <div class="hero-metin">
+      <h1>Ömür boyu taşıyacağınız işi <i>özenle</i> çizeriz.</h1>
+      <p>Gerçekçi siyah-gri, ince çizgi ve yazı dövmeleri, titanyum piercing. Beylikdüzü’nde, Kubist Park’ta.</p>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905414283628" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
+        <a class="btn" href="#calismalar">Çalışmalara bakın</a>
+      </div>
+      <p class="bilgi"><span><b>5,0</b> Google’da 34 yorum</span><span><b>Her gün</b> 10.00–21.00</span></p>
+    </div>
+  </section>
+
+  <section class="stiller" id="stiller" aria-labelledby="stilBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="stilBaslik">Hangi stil size göre?</h2>
+      <p class="giris">Stüdyoda en çok yapılan dört iş. Kartın üstüne gelin ya da dokunun, arkasında kısa bir açıklama var.</p>
+      <ul class="kartlar">
+        <li class="don"><button type="button" aria-label="Gerçekçi siyah-gri: açıklamayı göster">
+          <span class="yuz"><img src="img/00.jpg" alt="Kükreyen aslan, gerçekçi siyah-gri dövme" loading="lazy"><span>Gerçekçi siyah-gri</span></span>
+          <span class="arka"><strong>Gerçekçi siyah-gri</strong><span>Portre, aslan, mitoloji. Gölgelerle derinlik veren, fotoğraf gibi işler.</span></span>
+        </button></li>
+        <li class="don"><button type="button" aria-label="İnce çizgi: açıklamayı göster">
+          <span class="yuz"><img src="img/01.jpg" alt="Uyuyan yavru kaplan, ince çizgi dövme" loading="lazy"><span>İnce çizgi</span></span>
+          <span class="arka"><strong>İnce çizgi</strong><span>Küçük, sade ve zarif. İlk dövme için de sık tercih edilir.</span></span>
+        </button></li>
+        <li class="don"><button type="button" aria-label="Yazı: açıklamayı göster">
+          <span class="yuz"><img src="img/02.jpg" alt="Only the strong survive yazılı kol dövmesi" loading="lazy"><span>Yazı</span></span>
+          <span class="arka"><strong>Yazı</strong><span>Anlamlı bir cümle, bir isim ya da tarih. Harfler sizin için çizilir.</span></span>
+        </button></li>
+        <li class="don"><button type="button" aria-label="Piercing: açıklamayı göster">
+          <span class="yuz"><img src="img/03.jpg" alt="Taşlı takılarla kulak piercingleri" loading="lazy"><span>Piercing</span></span>
+          <span class="arka"><strong>Piercing</strong><span>Kulak ve kıkırdak piercingleri, implant kalitesinde titanyum takılarla.</span></span>
+        </button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="calisma" id="calismalar" aria-labelledby="calismaBaslik">
+    <div class="wrap">
+      <h2 class="baslik" id="calismaBaslik">Son çalışmalardan</h2>
+      <p class="giris">Hepsi stüdyoda, kendi elimizden çıktı.</p>
+      <ul class="galeri">
+        <li><figure><img src="img/04.jpg" alt="Zambaklar arasında tavşan dövmesi" loading="lazy"><figcaption>Tavşan ve zambak</figcaption></figure></li>
+        <li><figure><img src="img/05.jpg" alt="Kleopatra portresi dövmesi" loading="lazy"><figcaption>Kleopatra</figcaption></figure></li>
+        <li><figure><img src="img/06.jpg" alt="Kahküllü kadın portresi kol dövmesi" loading="lazy"><figcaption>Kadın portresi</figcaption></figure></li>
+        <li><figure><img src="img/07.jpg" alt="Kanatlı melek kol dövmesi" loading="lazy"><figcaption>Melek</figcaption></figure></li>
+        <li><figure><img src="img/08.jpg" alt="Kılıçlı iki melek dövmesi" loading="lazy"><figcaption>Melekler</figcaption></figure></li>
+        <li><figure><img src="img/09.jpg" alt="Kırmızı ince çizgi çiçek dövmesi" loading="lazy"><figcaption>Kırmızı çiçekler</figcaption></figure></li>
+        <li><figure><img src="img/10.jpg" alt="Göz, eller ve pusula, ince çizgi dövmeler" loading="lazy"><figcaption>Küçük ince çizgiler</figcaption></figure></li>
+        <li><figure><img src="img/11.jpg" alt="Göğüste büyük siyah-gri dövme" loading="lazy"><figcaption>Göğüs çalışması</figcaption></figure></li>
+      </ul>
+      <div class="galeri-alt">
+        <span>Daha fazla çalışma Instagram hesabımızda.</span>
+        <a class="btn" href="https://www.instagram.com/tualtattoostudio/" target="_blank" rel="noopener">Instagram’da tümü</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="surec" aria-labelledby="surecBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="surecBaslik">Fikirden dövmeye</h2>
+        <p class="giris">Aklınızda bir fikir olması yeter, gerisini birlikte netleştiririz.</p>
+        <ol class="adimlar">
+          <li><strong>Yazın</strong><span>Fikrinizi, dövmenin yerini ve aşağı yukarı boyutunu DM ya da WhatsApp’tan anlatın.</span></li>
+          <li><strong>Çizim</strong><span>Size özel tasarım hazırlanır, beğenene kadar üzerinde konuşulur.</span></li>
+          <li><strong>Şablon</strong><span>Çizim deriye mor şablonla aktarılır; yerini ve boyutunu aynada birlikte kontrol edersiniz.</span></li>
+          <li><strong>Seans</strong><span>Küçük işler kısa sürer. Büyük kol çalışmaları planlanır, bazıları tek seansta biter.</span></li>
+        </ol>
+      </div>
+      <video id="kolVideo" muted playsinline loop preload="none" poster="img/16.jpg" aria-label="Göz ve gül motifli kol dövmesi"><source src="kol.mp4" type="video/mp4"></video>
+    </div>
+  </section>
+
+  <section class="piercing" id="piercing" aria-labelledby="piercingBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="piercingBaslik">Piercing</h2>
+        <p class="giris">Kulak memesinden kıkırdağa. Takıyı birlikte seçer, yerini aynada belirleriz.</p>
+        <p class="titanyum"><b>Titanyum</b><span>İmplant kalitesinde takılar</span></p>
+        <div class="tirnak"><strong>Tırnak</strong><span>Stüdyoda manikür ve pedikür için de randevu alabilirsiniz.</span></div>
+      </div>
+      <div class="p-foto">
+        <img src="img/13.jpg" alt="Kıkırdakta taşlı piercing" loading="lazy">
+        <img src="img/14.jpg" alt="Kulakta fiyonk küpe ve piercing" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-labelledby="yorumBaslik">
+    <div class="wrap">
+      <div class="yorum-ust">
+        <h2 class="baslik" id="yorumBaslik">Yaptıranlar ne diyor?</h2>
+        <p class="puan"><b>5,0</b>Google’da 34 yorum</p>
+      </div>
+      <div class="yorum-izgara">
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Aleyna Hanım’a teşekkür ediyorum. İlk defa dövme yaptırdım ve devamı geldi. El becerisine diyecek bir şey yok.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Ahmet K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Bebek gibi oldu, çok beğendim. Çok özenli ve titiz çalıştı, ellerine sağlık.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">E</span><span><strong>Esra Y.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Kolumu kaplattım, iç dış çok iyi oldu. Sırtıma da yazı yazdırdım. Çok memnun kaldım, ellerinize sağlık.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">F</span><span><strong>Furkan K.</strong><small><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="gel" id="gel" aria-labelledby="gelBaslik">
+    <div class="wrap">
+      <div>
+        <h2 class="baslik" id="gelBaslik">Kubist Park, 2. kat</h2>
+        <dl>
+          <div><dt>Adres</dt><dd>Kubist Rezidans, Beykent Avrupa Cad., Adnan Kahveci Mah., Kat 2 Daire 183, Beylikdüzü</dd></div>
+          <div><dt>Açık</dt><dd>Her gün 10.00–21.00</dd></div>
+          <div><dt>Telefon ve WhatsApp</dt><dd><a href="tel:+905414283628">0541 428 36 28</a></dd></div>
+        </dl>
+      </div>
+      <div class="btns">
+        <a class="btn dolu" href="https://wa.me/905414283628" target="_blank" rel="noopener">WhatsApp’tan yazın</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Tual%20Tattoo%20%26%20Nails&amp;query_place_id=ChIJCwj0KDxluAoR2yRCfhuSQlc" target="_blank" rel="noopener">Yol tarifi al</a>
+        <a class="btn" href="https://www.instagram.com/tualtattoostudio/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="marka" href="#top">The Tual</a>
+      <p>Beylikdüzü’nde dövme, piercing ve tırnak stüdyosu.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#stiller">Stiller</a></li>
+        <li><a href="#calismalar">Çalışmalar</a></li>
+        <li><a href="#piercing">Piercing</a></li>
+        <li><a href="#gel">Nerede?</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p>Her gün<br>10.00–21.00</p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+905414283628">0541 428 36 28</a></li>
+        <li><a href="https://wa.me/905414283628" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/tualtattoostudio/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Tual%20Tattoo%20%26%20Nails&amp;query_place_id=ChIJCwj0KDxluAoR2yRCfhuSQlc" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 Tual Tattoo &amp; Nails · Tüm hakları saklıdır</span>
+    <span>Kubist Park, Adnan Kahveci, Beylikdüzü</span>
+  </div>
+  <p class="wrap alt-not">Bu sayfa Tual Tattoo &amp; Nails için hazırlanmış bir örnek tasarımdır. · Hazırlayan: Anıl Akyıl</p>
+</footer>
+
+<script>
+(function () {
+  // Dokunmatik ekranda kart dokununca döner
+  document.querySelectorAll('.don button').forEach(function (b) {
+    b.addEventListener('click', function () { b.parentElement.classList.toggle('acik'); });
+  });
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { document.querySelectorAll('video').forEach(function (v) { v.removeAttribute('autoplay'); v.pause(); }); return; }
+  var k = document.getElementById('kolVideo');
+  new IntersectionObserver(function (g) { g.forEach(function (x) { if (x.isIntersecting) { var p = k.play(); if (p && p.catch) p.catch(function () {}); } else k.pause(); }); }, { threshold: .3 }).observe(k);
+})();
+</script>
+</body>
+</html>
