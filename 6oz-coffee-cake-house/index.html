@@ -92,12 +92,13 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 
 /* Gelenekler */
 .gelenek { background: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
-.gelenek-izgara { display: grid; gap: 26px; margin-top: 34px; }
-.gelenek article { background: var(--pano); border-radius: 18px; padding: 24px 22px; }
+.gelenek .wrap { display: grid; gap: 34px; }
+.gelenek-liste { display: grid; gap: 14px; margin-top: 30px; }
+.gelenek article { background: var(--pano); border-radius: 18px; padding: 22px 24px; }
 .gelenek h3 { font: 700 1.45rem/1.15 var(--sans); }
 .gelenek article p { margin-top: 8px; color: var(--soluk); }
-.gelenek .pol { margin: 22px auto 0; max-width: 300px; }
-@media (min-width: 860px) { .gelenek-izgara { grid-template-columns: repeat(3, 1fr); align-items: start; } }
+.gelenek .pol { margin: 0 auto; width: min(100%, 380px); transform: rotate(2deg); }
+@media (min-width: 860px) { .gelenek .wrap { grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; } }
 
 /* Yorumlar */
 .yorum { padding: clamp(56px, 9vw, 100px) 0; }
@@ -143,6 +144,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
 .alt-saat span { white-space: nowrap; }
 @media (max-width: 699px) { .alt-izgara > div:nth-child(3) { grid-column: 1 / -1; order: 5; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+.kaynak { display: flex !important; align-items: center; gap: 5px; }
 </style>
 </head>
 <body>
@@ -165,9 +167,9 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
         </div>
       </div>
       <div class="pano3">
-        <figure class="pol sol"><img src="img/00.jpg" alt="Latte art yapılan bir fincan kahve"><figcaption>kendi kavurduğumuz kahve</figcaption></figure>
-        <figure class="pol sag"><img src="img/01.jpg" alt="Bir dilim San Sebastian cheesecake"><figcaption>en çok sorulan: San Sebastian</figcaption></figure>
-        <figure class="pol duz"><img src="img/02.jpg" alt="Şans kurabiyelerine bakan bir köpek"><figcaption>şans kurabiyesi bekleyen dostumuz</figcaption></figure>
+        <figure class="pol sol"><img src="img/00.jpg" alt="Latte art yapılan bir fincan kahve"><figcaption>Kendi kavurduğumuz kahve</figcaption></figure>
+        <figure class="pol sag"><img src="img/01.jpg" alt="Bir dilim San Sebastian cheesecake"><figcaption>En çok sorulan: San Sebastian</figcaption></figure>
+        <figure class="pol duz"><img src="img/02.jpg" alt="Şans kurabiyelerine bakan bir köpek"><figcaption>Şans kurabiyesi bekleyen dostumuz</figcaption></figure>
       </div>
     </div>
   </section>
@@ -181,7 +183,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
           <li>Espresso</li><li>Americano</li><li>Latte</li><li>Cappuccino</li><li>Flat white</li><li>Mocha</li><li>Filtre kahve</li><li>Türk kahvesi</li><li>Frozen</li><li>Milkshake</li><li>Karadut smoothie</li><li>El yapımı limonata</li>
         </ul>
       </div>
-      <figure class="pol sag"><img src="img/03.jpg" alt="6OZ fincanında köpüklü kahve" loading="lazy"><figcaption>sabah 07.30’dan itibaren</figcaption></figure>
+      <figure class="pol sag"><img src="img/03.jpg" alt="6OZ fincanında köpüklü kahve" loading="lazy"><figcaption>Sabah 07.30’dan itibaren</figcaption></figure>
     </div>
   </section>
 
@@ -191,13 +193,13 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
       <p>Hepsi bizim mutfağımızdan, ev yapımı. Vitrin güne göre değişir; bugün ne olduğunu WhatsApp’tan sorabilirsiniz.</p>
       <div class="pasta-pano">
         <figure class="pol"><img src="img/04.jpg" alt="Bademli Alman pastası" loading="lazy"><figcaption>Alman pastası</figcaption></figure>
-        <figure class="pol"><img src="img/05.jpg" alt="Oz Chocolate pastasından bir dilim" loading="lazy"><figcaption>yeni: Oz Chocolate</figcaption></figure>
-        <figure class="pol"><img src="img/06.jpg" alt="Brownie" loading="lazy"><figcaption>brownie</figcaption></figure>
-        <figure class="pol"><img src="img/07.jpg" alt="Apple crumble" loading="lazy"><figcaption>apple crumble</figcaption></figure>
+        <figure class="pol"><img src="img/05.jpg" alt="Oz Chocolate pastasından bir dilim" loading="lazy"><figcaption>Yeni: Oz Chocolate</figcaption></figure>
+        <figure class="pol"><img src="img/06.jpg" alt="Brownie" loading="lazy"><figcaption>Brownie</figcaption></figure>
+        <figure class="pol"><img src="img/07.jpg" alt="Apple crumble" loading="lazy"><figcaption>Apple crumble</figcaption></figure>
         <figure class="pol"><img src="img/08.jpg" alt="Mango görünümlü tatlılar" loading="lazy"><figcaption>Cedric yorumumuz: mango</figcaption></figure>
         <figure class="pol"><img src="img/09.jpg" alt="Kahve çekirdeği görünümlü tatlılar" loading="lazy"><figcaption>Cedric yorumumuz: kahveli</figcaption></figure>
-        <figure class="pol"><img src="img/12.jpg" alt="Vegan kurabiyeler" loading="lazy"><figcaption>vegan kurabiye</figcaption></figure>
-        <figure class="pol"><img src="img/11.jpg" alt="Tost ve portakal suyu" loading="lazy"><figcaption>tostlarımız</figcaption></figure>
+        <figure class="pol"><img src="img/12.jpg" alt="Vegan kurabiyeler" loading="lazy"><figcaption>Vegan kurabiye</figcaption></figure>
+        <figure class="pol"><img src="img/11.jpg" alt="Tost ve portakal suyu" loading="lazy"><figcaption>Tostlarımız</figcaption></figure>
       </div>
       <p class="dahasi">Bir de çikolatalı vişneli pasta, fıstıklı Cedric, kruvasan, biscotti ve susamlı kurabiye var.</p>
     </div>
@@ -205,8 +207,9 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
 
   <section class="gelenek" id="gelenek" aria-labelledby="gelenekBaslik">
     <div class="wrap">
+      <div>
       <h2 id="gelenekBaslik">On yılda biriken küçük geleneklerimiz</h2>
-      <div class="gelenek-izgara">
+      <div class="gelenek-liste">
         <article>
           <h3>Şans kurabiyeleri</h3>
           <p>On yıldır her yıl sonunda raflara şans kurabiyelerimiz çıkar. Bir dilek tutup şansınızı denersiniz. Çabuk tükenir.</p>
@@ -218,18 +221,19 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; ma
         <article>
           <h3>Sokak dostlarımız</h3>
           <p>Mahallenin köpekleri bizim de dostumuz. Kapıda mamaları ve suları hep hazır, içeride kanepede uyuyakaldıkları da olur.</p>
-          <figure class="pol sol"><img src="img/10.jpg" alt="Kafedeki kanepede dinlenen iki sokak köpeği" loading="lazy"><figcaption>öğle uykusu</figcaption></figure>
         </article>
       </div>
+      </div>
+      <figure class="pol"><img src="img/10.jpg" alt="Kafedeki kanepede dinlenen iki sokak köpeği" loading="lazy"><figcaption>Öğle uykusu</figcaption></figure>
     </div>
   </section>
 
   <section class="yorum" aria-labelledby="yorumBaslik">
     <div class="wrap">
       <div class="yorum-ust"><h2 id="yorumBaslik">Misafirlerimiz ne diyor?</h2><p>Google’da 4,7 puan, 343 yorum</p></div>
-      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Arzu A.</strong><small>Google yorumu</small></span></figcaption></figure>
-      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption><span class="harf" aria-hidden="true">C</span><span><strong>Cumhur N.</strong><small>Google yorumu</small></span></figcaption></figure>
-      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption><span class="harf" aria-hidden="true">U</span><span><strong>Utku K.</strong><small>Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Arzu A.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption><span class="harf" aria-hidden="true">C</span><span><strong>Cumhur N.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption><span class="harf" aria-hidden="true">U</span><span><strong>Utku K.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption></figure>
     </div>
   </section>
 

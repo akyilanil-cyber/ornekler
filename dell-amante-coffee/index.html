@@ -79,22 +79,37 @@ header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
 
 /* Kruvasan */
 .kruvasan { background: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
-.kruvasan .wrap { display: grid; gap: 30px; }
-.kruvasan img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
-.kalem { list-style: none; padding: 0; margin-top: 20px; }
-.kalem li { padding: 13px 0; border-top: 1px solid rgba(12,43,34,.12); display: grid; gap: 2px; }
-.kalem li strong { font-weight: 600; }
+.kruvasan .wrap { display: grid; gap: 40px; }
+.kr-foto { position: relative; padding-bottom: 40px; }
+.kr-foto > img { width: 88%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px; }
+.kr-foto .yakin { position: absolute; right: 0; bottom: 0; width: 44%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 6px solid var(--beyaz); box-shadow: 0 18px 36px -14px rgba(12,43,34,.45); }
+.saat { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+.saat b { font: 400 clamp(3.4rem, 9vw, 5.2rem)/.9 var(--serif); color: var(--pirinc); letter-spacing: -.02em; }
+.saat span { font-size: .95rem; color: var(--soluk); max-width: 14ch; line-height: 1.35; }
+.kalem { list-style: none; padding: 0; margin-top: 26px; display: grid; gap: 12px; }
+.kalem li { position: relative; background: var(--fistik); border-radius: 6px; padding: 16px 18px 15px 20px; display: grid; gap: 3px; }
+.kalem li::before { content: ""; position: absolute; left: 0; top: 14px; bottom: 14px; width: 4px; border-radius: 0 3px 3px 0; background: var(--domates); }
+.kalem li strong { font: 500 1.3rem/1.2 var(--serif); }
 .kalem li span { color: var(--soluk); font-size: .95rem; }
-@media (min-width: 860px) { .kruvasan .wrap { grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; } }
+@media (min-width: 860px) { .kruvasan .wrap { grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; } }
 
 /* Bardakta */
 .bardak { padding: clamp(56px, 9vw, 110px) 0; }
-.bardak .wrap { display: grid; gap: 30px; }
-.bardak video { width: 100%; max-width: 360px; aspect-ratio: 9/16; object-fit: cover; border-radius: 6px; }
-.icecek { columns: 2; column-gap: 28px; list-style: none; padding: 0; margin-top: 22px; }
-.icecek li { break-inside: avoid; padding: 9px 0; border-bottom: 1px solid rgba(12,43,34,.12); }
-@media (min-width: 860px) { .bardak .wrap { grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; } .bardak video { justify-self: end; } }
-@media (max-width: 380px) { .icecek { columns: 1; } }
+.bardak .wrap { display: grid; gap: 34px; }
+.bardak video { width: 100%; max-width: 360px; aspect-ratio: 9/16; object-fit: cover; border-radius: 6px; justify-self: center; }
+.alt-bas { font: 600 .95rem var(--sans); color: var(--soluk); margin: 28px 0 12px; }
+.imza { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; margin: 0; }
+.imza li { list-style: none; border-radius: 8px; padding: 18px 16px 16px; color: var(--murekkep); display: grid; gap: 4px; align-content: start; min-height: 112px; position: relative; overflow: hidden; }
+.imza li::after { content: ""; position: absolute; right: -18px; bottom: -18px; width: 74px; height: 74px; border-radius: 50%; background: var(--renk); opacity: .9; }
+.imza strong { font: 500 1.35rem/1.15 var(--serif); position: relative; z-index: 1; max-width: 9ch; }
+.imza span { font-size: .85rem; color: var(--soluk); position: relative; z-index: 1; max-width: 16ch; }
+.imza .mango { --renk: #F2A93B; background: #FBEBD0; }
+.imza .ocean { --renk: #2FB4D6; background: #D8F0F6; }
+.imza .sunrise { --renk: #E2483A; background: #F9DCD7; }
+.imza .limon { --renk: #B9417A; background: #F3DCE7; }
+.klasik { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.klasik li { font: 500 1.05rem var(--serif); padding: 9px 16px; border: 1.5px solid rgba(12,43,34,.18); border-radius: 999px; background: var(--beyaz); }
+@media (min-width: 860px) { .bardak .wrap { grid-template-columns: 1.15fr .85fr; gap: 72px; align-items: center; } }
 
 /* Mekân */
 .mekan { background: var(--zumrut); color: var(--beyaz); padding: clamp(56px, 9vw, 110px) 0; }
@@ -142,6 +157,7 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 .alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(185,204,195,.2); font-size: .82rem; }
 @media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
 @media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+.kaynak { display: flex !important; align-items: center; gap: 5px; }
 </style>
 </head>
 <body>
@@ -184,14 +200,18 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
 
   <section class="kruvasan" id="kruvasan" aria-labelledby="kruvasanBaslik">
     <div class="wrap">
-      <img src="img/08.jpg" alt="Tezgâhta kruvasan ve sandviç çeşitleri" loading="lazy">
+      <div class="kr-foto">
+        <img src="img/08.jpg" alt="Tezgâhta kruvasan ve sandviç çeşitleri" loading="lazy">
+        <img class="yakin" src="img/13.jpg" alt="Yakından kat kat kruvasanlar" loading="lazy">
+      </div>
       <div>
+        <p class="saat"><b>07.30</b><span>Kapıyı açtığımızda tezgâhta</span></p>
         <h2 class="baslik" id="kruvasanBaslik">Her sabah taze kruvasan</h2>
-        <p class="giris">Kahvenin en iyi arkadaşı. Sabah 07.30’da tezgâhta.</p>
+        <p class="giris">Kahvenin en iyi arkadaşı. Sandviçlerimizi de kendi mutfağımızda hazırlıyoruz.</p>
         <ul class="kalem">
           <li><strong>Kruvasan çeşitleri</strong><span>Sade ya da dolgulu, günlük taze</span></li>
-          <li><strong>Avokado ve yumurtalı</strong><span>Kendi hazırladığımız sandviçlerden</span></li>
-          <li><strong>Kapya biber ve köz patlıcanlı</strong><span>Kendi hazırladığımız sandviçlerden</span></li>
+          <li><strong>Avokado ve yumurtalı</strong><span>Kruvasan sandviç</span></li>
+          <li><strong>Kapya biber ve köz patlıcanlı</strong><span>Kruvasan sandviç</span></li>
         </ul>
       </div>
     </div>
@@ -201,16 +221,20 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
     <div class="wrap">
       <div>
         <h2 class="baslik" id="bardakBaslik">Bardakta neler var?</h2>
-        <p class="giris">Klasik kahvelerin yanında imza içeceklerimiz.</p>
-        <ul class="icecek">
+        <p class="giris">Klasik kahvelerin yanında renkli, buz gibi imza içeceklerimiz.</p>
+        <p class="alt-bas">İmza soğuklar</p>
+        <ul class="imza">
+          <li class="mango"><strong>Chilli Mango</strong><span>Mango ve acı biber</span></li>
+          <li class="ocean"><strong>Ocean</strong><span>Masmavi ve buzlu</span></li>
+          <li class="sunrise"><strong>Sunrise</strong><span>Kıpkırmızı ve buzlu</span></li>
+          <li class="limon"><strong>Limonata</strong><span>Çarkıfelek, frambuaz ve hibiskus</span></li>
+        </ul>
+        <p class="alt-bas">Her zaman</p>
+        <ul class="klasik">
           <li>Spanish latte</li>
           <li>Ice latte</li>
           <li>Sıcak çikolata</li>
           <li>Beyaz sıcak çikolata</li>
-          <li>Chilli Mango</li>
-          <li>Ocean</li>
-          <li>Sunrise</li>
-          <li>Çarkıfelek, frambuaz ve hibiskuslu limonata</li>
         </ul>
       </div>
       <video id="bardakVideo" muted playsinline loop preload="none" poster="img/07.jpg" aria-label="Buzlu latte hazırlanırken"><source src="bardak.mp4" type="video/mp4"></video>
@@ -239,17 +263,17 @@ footer a:hover { color: var(--beyaz); text-decoration: underline; }
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Beylikdüzü’nde en lezzetli ve taze tatlıları yiyebileceğiniz bir kafe. Temizliğe çok dikkat eden bir yönetim. Sık sık gittiğim, güzel, nezih bir mekân.</blockquote>
-          <figcaption><span class="harf" aria-hidden="true">H</span><span><strong>Haluk İ.</strong><small>Google yorumu</small></span></figcaption>
+          <figcaption><span class="harf" aria-hidden="true">H</span><span><strong>Haluk İ.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Barista hanımefendinin önerisiyle Spanish latte denedim ve çok beğendim. Güler yüzleri ve lezzetleriyle kesinlikle tekrar geleceğim.</blockquote>
-          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeynep Ö.</strong><small>Google yorumu</small></span></figcaption>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeynep Ö.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
         <figure>
           <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
           <blockquote>Sakin, nezih ve kahveleri güzel.</blockquote>
-          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mustafa Ç.</strong><small>Google yorumu</small></span></figcaption>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mustafa Ç.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
         </figure>
       </div>
     </div>

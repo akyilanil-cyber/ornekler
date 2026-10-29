@@ -80,6 +80,16 @@ a { color: inherit; }
 /* Yanına ne alırsın */
 .masa { padding: clamp(56px, 10vw, 110px) 0; }
 .masa h2 { font: 800 clamp(2rem, 6vw, 3.4rem)/1 var(--display); letter-spacing: -.03em; }
+.menu-grup { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+.grup { background: var(--alaca); border-radius: 20px; padding: 18px 18px 16px; }
+.grup h3 { font: 700 1.15rem/1.1 var(--display); color: var(--kagit); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.grup h3::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--fener); flex: none; }
+.grup ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; color: var(--duman); }
+.grup.ates { background: linear-gradient(150deg, var(--fener), var(--kor)); }
+.grup.ates h3, .grup.ates ul { color: var(--gece); }
+.grup.ates h3::before { background: var(--gece); }
+.grup.ates li { font-weight: 600; }
+@media (max-width: 380px) { .menu-grup { grid-template-columns: 1fr; } }
 .masa-izgara { display: grid; grid-template-columns: 1.2fr 1fr; gap: 14px; margin: 30px 0; }
 .masa-izgara img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; aspect-ratio: 3/4; }
 .masa-izgara img:first-child { grid-row: span 2; aspect-ratio: auto; }
@@ -88,6 +98,23 @@ a { color: inherit; }
 .not { color: var(--duman); font-size: .95rem; margin-top: 16px; max-width: 46ch; }
 
 /* Bilmen gerekenler */
+/* Yorumlar */
+.yorum { padding: clamp(20px, 4vw, 40px) 0 clamp(48px, 8vw, 90px); }
+.yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 8px 24px; }
+.yorum-ust h2 { font: 800 clamp(2rem, 6vw, 3.4rem)/1 var(--display); letter-spacing: -.03em; }
+.yorum-ust p { color: var(--duman); }
+.yorum-ust b { color: var(--kagit); font: 800 1.6rem var(--display); margin-right: 6px; }
+.yorum-izgara { display: grid; gap: 16px; margin-top: 28px; }
+.yorum figure { margin: 0; background: var(--kagit); color: var(--gece); border-radius: 22px; padding: 24px 24px 20px; display: flex; flex-direction: column; gap: 12px; }
+.yorum .yildiz { color: var(--fener); letter-spacing: 2px; }
+.yorum blockquote { flex: 1; font-size: 1.05rem; line-height: 1.55; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(31,27,51,.12); }
+.yorum .harf { width: 40px; height: 40px; border-radius: 50%; background: var(--kor); color: var(--kagit); display: grid; place-items: center; font: 700 1rem var(--display); flex: none; }
+.yorum figcaption strong { display: block; }
+.yorum figcaption small { color: #5E5873; font-size: .85rem; }
+.kaynak { display: flex; align-items: center; gap: 5px; }
+@media (min-width: 860px) { .yorum-izgara { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
+
 .bil { padding: 0 0 clamp(56px, 10vw, 110px); }
 .bil dl { display: grid; gap: 14px; }
 .bil dl > div { background: var(--alaca); border-radius: 20px; padding: 22px 22px; }
@@ -119,12 +146,12 @@ footer a:hover { text-decoration: underline; }
 footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spacing: -.03em; display: inline-block; margin-bottom: 10px; text-decoration: none; }
 
 @media (min-width: 860px) {
-  .an { grid-template-columns: 140px 1fr 1fr; align-items: start; }
+  .an { grid-template-columns: 140px 1fr 1fr; align-items: center; }
   .an::before { left: 68px; }
   .saat { font-size: 2.6rem; }
   .an figure, .an .bilet { margin-top: 0; grid-column: 3 !important; grid-row: 1 / span 3; justify-self: end; width: 100%; }
   .an > div { grid-column: 2; }
-  .masa .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: start; }
+  .masa .wrap { display: grid; grid-template-columns: 1fr 1.1fr; gap: 56px; align-items: center; }
   .masa-izgara { margin: 0; grid-column: 2; grid-row: 1 / span 3; }
   .bil dl { grid-template-columns: repeat(3, 1fr); }
   .gate-in { padding-left: 6vw; }
@@ -210,23 +237,41 @@ footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spa
     <div class="wrap">
       <div>
         <h2 id="masaBaslik">Yanına ne alırsın?</h2>
-        <ul class="liste" style="margin-top:26px">
-          <li>Sıcak ve soğuk kahveler</li>
-          <li>Sıcak çikolata</li>
-          <li>Buz gibi yaz içecekleri</li>
-          <li>Dubai Cup</li>
-          <li>Frambuazlı tart</li>
-          <li>Rulo pasta</li>
-          <li>Ateşte marshmallow</li>
-          <li>Kestane</li>
-          <li>Sandviçler</li>
-        </ul>
+        <div class="menu-grup">
+          <div class="grup ates"><h3>Ateş başında</h3><ul><li>Ateşte marshmallow</li><li>Kestane</li></ul></div>
+          <div class="grup"><h3>Tatlılar</h3><ul><li>Dubai Cup</li><li>Frambuazlı tart</li><li>Rulo pasta</li></ul></div>
+          <div class="grup"><h3>Fincanda</h3><ul><li>Sıcak ve soğuk kahveler</li><li>Sıcak çikolata</li></ul></div>
+          <div class="grup"><h3>Soğuklar ve sandviç</h3><ul><li>Buz gibi yaz içecekleri</li><li>Sandviçler</li></ul></div>
+        </div>
         <p class="not">Menü mevsime göre değişir. Güncel tatlıları Instagram’da paylaşıyoruz.</p>
       </div>
       <div class="masa-izgara">
         <img src="img/05.jpg" alt="Frambuazlı tart" loading="lazy">
         <img src="img/06.jpg" alt="Tepside meyveli pasta dilimi, kavanoz tatlı ve buzlu içecek" loading="lazy">
         <img src="img/03.jpg" alt="Gedi Coffee bardağında kahve" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="yorum" aria-labelledby="yorumBaslik">
+    <div class="wrap">
+      <div class="yorum-ust"><h2 id="yorumBaslik">Gelenler ne diyor?</h2><p><b>4,8</b>Google’da 705 yorum</p></div>
+      <div class="yorum-izgara">
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Devamlı olarak geldiğim bir mekân. Atmosferi o kadar güzel ki, özellikle sinema günleri çok daha keyifli oluyor. Çalışanların güler yüzlü olması da ayrı güzel.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeliha K.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Manzarası ve gün batımı tek kelimeyle harika. Kamp sandalyeleriyle çok samimi, rahat ve açık bir havası var. Kahveleri çok başarılı, özellikle magnolyası kesinlikle denenmeli.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Muzi A.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Çok huzurlu ve keyifli bir ortamı var, kahve fiyatları gayet makul. Akşamları ateş başında kahve keyfi yapmak gibi bir ihtiyacım olduğunu burayı keşfedene kadar bilmiyordum.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Aysenur B.</strong><small class="kaynak"><svg viewBox="0 0 48 48" width="14" height="14" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg> Google yorumu</small></span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
