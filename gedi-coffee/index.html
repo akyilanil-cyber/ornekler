@@ -103,8 +103,20 @@ a { color: inherit; }
 .gel-kart p { margin: 12px 0 20px; }
 .gel-kart .btn { border-color: var(--gece); color: var(--gece); }
 .gel-kart .btn.dolu { background: var(--kor); border-color: var(--kor); color: var(--kagit); }
-footer { padding: 48px 20px calc(36px + env(safe-area-inset-bottom)); text-align: center; color: var(--duman); font-size: .88rem; }
-footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spacing: -.03em; }
+
+/* Alt bilgi */
+footer { padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem;  color: var(--duman); }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.alt-izgara { display: grid; gap: 30px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-baslik { font-weight: 600; margin-bottom: 10px; color: var(--kagit); }
+.alt-izgara ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(183,174,203,.22); font-size: .82rem; }
+.alt-not { margin-top: 14px; font-size: .75rem; opacity: .7; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+footer .marka { font: 800 2rem/1 var(--display); color: var(--kagit); letter-spacing: -.03em; display: inline-block; margin-bottom: 10px; text-decoration: none; }
 
 @media (min-width: 860px) {
   .an { grid-template-columns: 140px 1fr 1fr; align-items: start; }
@@ -150,7 +162,7 @@ footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spaci
     </div>
   </section>
 
-  <section class="aksam" aria-labelledby="aksamBaslik">
+  <section class="aksam" id="aksam" aria-labelledby="aksamBaslik">
     <div class="wrap">
       <h2 id="aksamBaslik">Gedi’de bir akşam böyle geçer</h2>
 
@@ -194,7 +206,7 @@ footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spaci
     </div>
   </section>
 
-  <section class="masa" aria-labelledby="masaBaslik">
+  <section class="masa" id="masa" aria-labelledby="masaBaslik">
     <div class="wrap">
       <div>
         <h2 id="masaBaslik">Yanına ne alırsın?</h2>
@@ -219,7 +231,7 @@ footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spaci
     </div>
   </section>
 
-  <section class="bil" aria-label="Gelmeden önce">
+  <section class="bil" id="bil" aria-label="Gelmeden önce">
     <div class="wrap">
       <dl>
         <div><dt>Self servis</dt><dd>Siparişini kasadan verirsin, hazır olunca alırsın.</dd></div>
@@ -229,7 +241,7 @@ footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spaci
     </div>
   </section>
 
-  <section class="gel" aria-labelledby="gelBaslik">
+  <section class="gel" id="gel" aria-labelledby="gelBaslik">
     <div class="gel-kart">
       <h2 id="gelBaslik">Beykent’te seni bekliyoruz</h2>
       <p>Beykent, Beylikdüzü. Google’da 4,8 puan.</p>
@@ -243,9 +255,38 @@ footer .marka { font: 800 2rem var(--display); color: var(--kagit); letter-spaci
 </main>
 
 <footer>
-  <p class="marka">Gedi</p>
-  <p>Beykent, Beylikdüzü · Her gün 17.00–02.00</p>
-  <p style="margin-top:10px;font-size:.78rem">Bu sayfa Gedi Coffee için hazırlanmış bir örnek tasarımdır.</p>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="marka" href="#top">Gedi</a>
+      <p>Beykent’te seyir terası, ateş başı ve açık hava film geceleri.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#aksam">Bir akşam</a></li>
+        <li><a href="#masa">Yanına ne alırsın?</a></li>
+        <li><a href="#bil">Gelmeden önce</a></li>
+        <li><a href="#gel">Nerede?</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p>Her gün<br>17.00–02.00</p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+905356168955">0535 616 89 55</a></li>
+        <li><a href="https://www.instagram.com/gedicoffe/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://maps.app.goo.gl/PWPBkDoZTWgHQEaW8" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 Gedi Coffee · Tüm hakları saklıdır</span>
+    <span>Beykent, Beylikdüzü · İstanbul</span>
+  </div>
+  <p class="wrap alt-not">Bu sayfa Gedi Coffee için hazırlanmış bir örnek tasarımdır.</p>
 </footer>
 
 <script>

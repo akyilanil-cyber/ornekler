@@ -57,7 +57,17 @@ header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
 .vitrin { padding: clamp(56px, 9vw, 110px) 0 clamp(40px, 6vw, 72px); }
 .baslik { font: 400 clamp(2rem, 6vw, 3.4rem)/1.05 var(--serif); max-width: 16ch; }
 .giris { margin-top: 12px; max-width: 46ch; color: var(--soluk); }
-.raf { display: grid; grid-auto-flow: column; grid-auto-columns: min(74vw, 300px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 34px max(20px, calc((100vw - 1160px) / 2)) 30px; margin-top: 8px; scrollbar-width: thin; }
+/* Telefonda yana kayan raf; kenar boşluğu sayfa hizasıyla aynı, kaydırma ilk kartı bu hizaya oturtur */
+.raf { --kenar: max(20px, calc((100% - 1160px) / 2)); display: grid; grid-auto-flow: column; grid-auto-columns: min(74vw, 300px); gap: 18px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--kenar); padding: 34px var(--kenar) 30px; margin-top: 8px; scrollbar-width: none; }
+.raf::-webkit-scrollbar { display: none; }
+/* Geniş ekranda beş tatlı sayfa genişliğinde tek rafa sığar, kaydırma yok */
+@media (min-width: 1000px) {
+  .raf { width: min(1160px, 100% - 40px); margin-inline: auto; padding: 40px 0 30px; grid-auto-flow: row; grid-template-columns: repeat(5, 1fr); grid-auto-columns: auto; overflow: visible; gap: 20px; }
+  .raf .kart { right: 8px; bottom: 30px; max-width: 88%; padding: 9px 12px 10px; }
+  .raf .kart strong { font-size: 1.05rem; }
+  .raf .kart span { font-size: .8rem; }
+  .ipucu .kaydir { display: none; }
+}
 .tatli { scroll-snap-align: start; position: relative; padding-bottom: 22px; }
 .tatli::after { content: ""; position: absolute; left: -9px; right: -9px; bottom: 0; height: 7px; border-radius: 2px; background: linear-gradient(180deg, #CDB07C, var(--pirinc) 60%, #8A6C3E); box-shadow: 0 10px 18px -8px rgba(12,43,34,.45); }
 .tatli img { width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 6px 6px 0 0; }
@@ -93,29 +103,45 @@ header nav a.yol { background: var(--zumrut); color: var(--beyaz); }
 .mekan-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; aspect-ratio: 3/4; }
 .mekan-foto img:first-child { grid-column: span 2; aspect-ratio: 16/10; }
 @media (min-width: 860px) { .mekan-foto { grid-template-columns: 2fr 1fr 1fr; } .mekan-foto img:first-child { grid-column: auto; aspect-ratio: auto; } }
-.ozellik { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
-.ozellik span { font-size: .92rem; padding: 7px 13px; border-radius: 999px; background: rgba(251,252,250,.12); }
-
-/* Yorumlar */
+/* Yorumlar: Google yorum kartı gibi okunur (yıldız, ad, kaynak) */
 .yorum { padding: clamp(56px, 9vw, 100px) 0; }
-.yorum .wrap { display: grid; gap: 18px; }
-.yorum blockquote { font: 400 clamp(1.35rem, 3.6vw, 1.9rem)/1.3 var(--serif); max-width: 30ch; }
-.yorum figcaption { margin-top: 10px; color: var(--soluk); font-size: .95rem; }
-.yorum figure { margin: 0; padding: 26px 0; border-top: 1px solid rgba(12,43,34,.15); }
-@media (min-width: 860px) { .yorum .wrap { grid-template-columns: 1fr 1fr; gap: 48px; } }
+.yorum-ust { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 24px; }
+.puan-ozet { display: flex; align-items: center; gap: 10px; font-size: .98rem; color: var(--soluk); }
+.puan-ozet b { font: 500 2rem/1 var(--serif); color: var(--murekkep); }
+.yildiz { color: #C99A2E; letter-spacing: 2px; font-size: 1rem; }
+.yorum-izgara { display: grid; gap: 16px; margin-top: 30px; }
+.yorum figure { margin: 0; background: var(--beyaz); border-radius: 10px; padding: 24px 24px 20px; border: 1px solid rgba(12,43,34,.08); display: flex; flex-direction: column; gap: 14px; }
+.yorum blockquote { font: 400 1.22rem/1.45 var(--serif); flex: 1; }
+.yorum .baslik { max-width: none; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid rgba(12,43,34,.1); }
+.harf { width: 40px; height: 40px; border-radius: 50%; background: var(--zumrut); color: var(--beyaz); display: grid; place-items: center; font: 600 1rem var(--sans); flex: none; }
+.yorum figcaption strong { display: block; font-weight: 600; font-size: .98rem; }
+.yorum figcaption small { display: block; color: var(--soluk); font-size: .85rem; }
+@media (min-width: 860px) { .yorum-izgara { grid-template-columns: repeat(3, 1fr); gap: 20px; } }
 
 /* Ziyaret */
 .ziyaret { background: var(--beyaz); }
 .ziyaret .wrap { display: grid; gap: 28px; padding: clamp(56px, 9vw, 100px) 0; }
-.ziyaret img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; }
+.ziyaret img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: 50% 40%; border-radius: 6px; }
 .ziyaret dl { display: grid; gap: 14px; margin: 18px 0 24px; }
 .ziyaret dt { font-size: .85rem; color: var(--soluk); }
 .ziyaret dd { font-size: 1.05rem; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 8px; font: 600 .98rem var(--sans); text-decoration: none; border: 1.5px solid var(--zumrut); color: var(--zumrut); margin: 0 8px 10px 0; }
 .btn.dolu { background: var(--zumrut); color: var(--beyaz); }
-@media (min-width: 860px) { .ziyaret .wrap { grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; } }
-footer { background: var(--murekkep); color: #B9CCC3; text-align: center; padding: 40px 20px calc(30px + env(safe-area-inset-bottom)); font-size: .88rem; }
-footer .marka { color: var(--beyaz); display: block; font-size: 1.6rem; margin-bottom: 8px; }
+@media (min-width: 860px) { .ziyaret .wrap { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 64px; align-items: center; } .ziyaret img { max-height: 620px; } }
+
+/* Alt bilgi */
+footer { background: var(--murekkep); color: #B9CCC3; font-size: .95rem; padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); }
+footer a { text-decoration: none; }
+footer a:hover { color: var(--beyaz); text-decoration: underline; }
+.alt-izgara { display: grid; gap: 32px; }
+.alt-izgara .marka { color: var(--beyaz); font-size: 1.7rem; display: inline-block; margin-bottom: 10px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-baslik { color: var(--beyaz); font-weight: 600; margin-bottom: 10px; }
+.alt-izgara ul { list-style: none; padding: 0; display: grid; gap: 6px; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(185,204,195,.2); font-size: .82rem; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -153,7 +179,7 @@ footer .marka { color: var(--beyaz); display: block; font-size: 1.6rem; margin-b
       <figure class="tatli"><img src="img/04.jpg" alt="Üzerine Belçika çikolatası dökülen San Sebastian cheesecake ve latte" loading="lazy"><figcaption class="kart"><strong>San Sebastian</strong><span>Belçika çikolatasıyla</span></figcaption></figure>
       <figure class="tatli"><img src="img/05.jpg" alt="Kapta dondurma" loading="lazy"><figcaption class="kart"><strong>Dondurma</strong><span>Yaz aylarında</span></figcaption></figure>
     </div>
-    <div class="wrap"><p class="ipucu">Yana kaydırın. Dubai Ball’u da sorun: dışı tel tel çıtır, içi yumuşacık.</p></div>
+    <div class="wrap"><p class="ipucu"><span class="kaydir">Yana kaydırın. </span>Dubai Ball’u da sorun: dışı tel tel çıtır, içi yumuşacık.</p></div>
   </section>
 
   <section class="kruvasan" id="kruvasan" aria-labelledby="kruvasanBaslik">
@@ -200,14 +226,32 @@ footer .marka { color: var(--beyaz); display: block; font-size: 1.6rem; margin-b
         <img src="img/10.jpg" alt="Duvar resmi olan oturma alanı" loading="lazy">
         <img src="img/11.jpg" alt="Kitaplık önündeki çalışma tezgâhı" loading="lazy">
       </div>
-      <div class="ozellik"><span>Teras</span><span>Çalışmaya uygun</span><span>Paket servis</span><span>Adrese servis</span></div>
     </div>
   </section>
 
-  <section class="yorum" aria-label="Misafir yorumları">
+  <section class="yorum" aria-labelledby="yorumBaslik">
     <div class="wrap">
-      <figure><blockquote>Beylikdüzü’nde en lezzetli ve taze tatlıları yiyebileceğiniz bir kafe. Temizliğe çok dikkat eden bir yönetim.</blockquote><figcaption>Haluk, Google yorumu</figcaption></figure>
-      <figure><blockquote>Barista hanımefendinin önerisiyle Spanish latte denedim ve çok beğendim. Kesinlikle tekrar geleceğim.</blockquote><figcaption>Zeynep, Google yorumu</figcaption></figure>
+      <div class="yorum-ust">
+        <h2 class="baslik" id="yorumBaslik">Misafirlerimiz ne diyor?</h2>
+        <p class="puan-ozet"><b>4,6</b><span>5 üzerinden<br>Google’da 535 yorum</span></p>
+      </div>
+      <div class="yorum-izgara">
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Beylikdüzü’nde en lezzetli ve taze tatlıları yiyebileceğiniz bir kafe. Temizliğe çok dikkat eden bir yönetim. Sık sık gittiğim, güzel, nezih bir mekân.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">H</span><span><strong>Haluk İ.</strong><small>Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Barista hanımefendinin önerisiyle Spanish latte denedim ve çok beğendim. Güler yüzleri ve lezzetleriyle kesinlikle tekrar geleceğim.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">Z</span><span><strong>Zeynep Ö.</strong><small>Google yorumu</small></span></figcaption>
+        </figure>
+        <figure>
+          <span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span>
+          <blockquote>Sakin, nezih ve kahveleri güzel.</blockquote>
+          <figcaption><span class="harf" aria-hidden="true">M</span><span><strong>Mustafa Ç.</strong><small>Google yorumu</small></span></figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -230,9 +274,39 @@ footer .marka { color: var(--beyaz); display: block; font-size: 1.6rem; margin-b
 </main>
 
 <footer>
-  <span class="marka">Dell’Amante</span>
-  Alya Residence, Beylikdüzü · Her gün 07.30–01.00
-  <p style="margin-top:10px;font-size:.78rem">Bu sayfa Dell’Amante Coffee için hazırlanmış bir örnek tasarımdır.</p>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="marka" href="#top">Dell’Amante</a>
+      <p>Alya Residence’ta kahve, kruvasan ve kendi üretimimiz tatlılar.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#vitrin">Tatlılar</a></li>
+        <li><a href="#kruvasan">Kruvasan</a></li>
+        <li><a href="#bardak">İçecekler</a></li>
+        <li><a href="#ziyaret">Bizi bulun</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p>Her gün<br>07.30–01.00</p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+908503052111">0850 305 21 11</a></li>
+        <li><a href="https://wa.me/908503052111" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/dellamantecoffee/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=DELL'AMANTE%20COFFEE&amp;query_place_id=ChIJ27yspghftRQRav4n3quI2zE" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 Dell’Amante Coffee · Tüm hakları saklıdır</span>
+    <span>Adnan Kahveci Mah. Büyükdere Cad. No: 2/8, Beylikdüzü</span>
+  </div>
+  <p class="wrap" style="margin-top:14px;font-size:.75rem;opacity:.7">Bu sayfa Dell’Amante Coffee için hazırlanmış bir örnek tasarımdır.</p>
 </footer>
 
 <script>

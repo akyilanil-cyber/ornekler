@@ -104,7 +104,16 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 .yorum .wrap { display: grid; gap: 22px; }
 .yorum figure { margin: 0; background: var(--beyaz); border-radius: 18px; padding: 24px 22px; }
 .yorum blockquote { font-size: 1.15rem; line-height: 1.5; }
-.yorum figcaption { margin-top: 12px; color: var(--soluk); font-size: .95rem; }
+.yorum figure { display: flex; flex-direction: column; gap: 12px; }
+.yorum blockquote { flex: 1; }
+.yildiz { color: #E0A526; letter-spacing: 2px; }
+.yorum figcaption { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid rgba(43,29,23,.1); }
+.harf { width: 40px; height: 40px; border-radius: 50%; background: var(--duvar); color: var(--beyaz); display: grid; place-items: center; font-weight: 700; flex: none; }
+.yorum figcaption strong { display: block; color: var(--kahve); }
+.yorum figcaption small { display: block; color: var(--soluk); font-size: .85rem; }
+.yorum-ust { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 8px 24px; grid-column: 1 / -1; }
+.yorum-ust h2 { font: 800 clamp(1.8rem, 5vw, 2.6rem)/1.05 var(--sans); letter-spacing: -.02em; }
+.yorum-ust p { color: var(--soluk); }
 @media (min-width: 860px) { .yorum .wrap { grid-template-columns: repeat(3, 1fr); } }
 
 /* Gel */
@@ -116,8 +125,23 @@ header a.wa { font-size: .95rem; font-weight: 700; text-decoration: none; backgr
 .gel .btn { border-color: var(--beyaz); color: var(--beyaz); }
 .gel .btn.dolu { border-color: var(--alti); }
 @media (min-width: 860px) { .gel .wrap { grid-template-columns: 1fr 1fr; gap: 64px; } }
-footer { text-align: center; padding: 34px 20px calc(30px + env(safe-area-inset-bottom)); color: var(--soluk); font-size: .88rem; }
-footer .logo { font-size: 1.8rem; color: var(--kahve); }
+
+/* Alt bilgi */
+footer { padding: 56px 0 calc(24px + env(safe-area-inset-bottom)); font-size: .95rem; background: var(--beyaz); color: var(--soluk); }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.alt-izgara { display: grid; gap: 30px; }
+.alt-izgara p { max-width: 32ch; }
+.alt-baslik { font-weight: 600; margin-bottom: 10px; color: var(--kahve); }
+.alt-izgara ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
+.alt-son { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px 24px; margin-top: 44px; padding-top: 20px; border-top: 1px solid rgba(43,29,23,.12); font-size: .82rem; }
+.alt-not { margin-top: 14px; font-size: .75rem; opacity: .7; }
+@media (max-width: 699px) { .alt-izgara { grid-template-columns: 1fr 1fr; gap: 28px 20px; } .alt-izgara > div:first-child { grid-column: 1 / -1; } }
+@media (min-width: 700px) { .alt-izgara { grid-template-columns: 1.4fr 1fr 1fr 1fr; } }
+footer .logo { font-size: 1.8rem; color: var(--kahve); display: inline-block; margin-bottom: 8px; }
+.alt-saat { display: grid; grid-template-columns: auto auto; gap: 2px 14px; justify-content: start; }
+.alt-saat span { white-space: nowrap; }
+@media (max-width: 699px) { .alt-izgara > div:nth-child(3) { grid-column: 1 / -1; order: 5; } }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
 </head>
@@ -148,7 +172,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); }
     </div>
   </section>
 
-  <section class="kahve" aria-labelledby="kahveBaslik">
+  <section class="kahve" id="kahve" aria-labelledby="kahveBaslik">
     <div class="wrap">
       <div>
         <h2 id="kahveBaslik">Fincanın içindeki kahveyi biz kavurduk</h2>
@@ -179,7 +203,7 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); }
     </div>
   </section>
 
-  <section class="gelenek" aria-labelledby="gelenekBaslik">
+  <section class="gelenek" id="gelenek" aria-labelledby="gelenekBaslik">
     <div class="wrap">
       <h2 id="gelenekBaslik">On yılda biriken küçük geleneklerimiz</h2>
       <div class="gelenek-izgara">
@@ -200,11 +224,12 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); }
     </div>
   </section>
 
-  <section class="yorum" aria-label="Misafir yorumları">
+  <section class="yorum" aria-labelledby="yorumBaslik">
     <div class="wrap">
-      <figure><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption>Arzu, Google yorumu</figcaption></figure>
-      <figure><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption>Cumhur, Google yorumu</figcaption></figure>
-      <figure><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption>Utku, Google yorumu</figcaption></figure>
+      <div class="yorum-ust"><h2 id="yorumBaslik">Misafirlerimiz ne diyor?</h2><p>Google’da 4,7 puan, 343 yorum</p></div>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahveleri çok iyi ama tatlıları olay. Sakin ve huzurlu bir yer. Bulunduğu konum merkezi, otopark sorunu yok.</blockquote><figcaption><span class="harf" aria-hidden="true">A</span><span><strong>Arzu A.</strong><small>Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>San Sebastian için mutlaka gelmelisiniz. Kahveler de çok başarılı; her geldiğimde aynı tadı yaşamak gerçekten çok güzel.</blockquote><figcaption><span class="harf" aria-hidden="true">C</span><span><strong>Cumhur N.</strong><small>Google yorumu</small></span></figcaption></figure>
+      <figure><span class="yildiz" aria-label="5 üzerinden 5 yıldız">★★★★★</span><blockquote>Kahvelerin porsiyonları tecrübe ettiğim her kahveciden daha büyük ve tatmin edici. Flat white tercih ettim, gayet lezzetliydi.</blockquote><figcaption><span class="harf" aria-hidden="true">U</span><span><strong>Utku K.</strong><small>Google yorumu</small></span></figcaption></figure>
     </div>
   </section>
 
@@ -233,9 +258,39 @@ footer .logo { font-size: 1.8rem; color: var(--kahve); }
 </main>
 
 <footer>
-  <a class="logo" href="#top"><b>6</b>OZ</a>
-  <p>Coffee &amp; Cake House · Beylikdüzü</p>
-  <p style="margin-top:8px;font-size:.78rem">Bu sayfa 6OZ Coffee &amp; Cake House için hazırlanmış bir örnek tasarımdır.</p>
+  <div class="wrap alt-izgara">
+    <div>
+      <a class="logo" href="#top"><b>6</b>OZ</a>
+      <p>On yıldır Beylikdüzü’nde kendi kavurduğumuz kahve ve ev yapımı pastalar.</p>
+    </div>
+    <div>
+      <p class="alt-baslik">Sayfada</p>
+      <ul>
+        <li><a href="#kahve">Kahvemiz</a></li>
+        <li><a href="#pasta">Pastalar</a></li>
+        <li><a href="#gelenek">Geleneklerimiz</a></li>
+        <li><a href="#gel">Nerede, ne zaman?</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="alt-baslik">Açık</p>
+      <p class="alt-saat"><span>Pzt–Cuma</span><span>07.30–21.00</span><span>Cumartesi</span><span>09.30–20.30</span><span>Pazar</span><span>13.00–18.00</span></p>
+    </div>
+    <div>
+      <p class="alt-baslik">İletişim</p>
+      <ul>
+        <li><a href="tel:+905323364263">0532 336 42 63</a></li>
+        <li><a href="https://wa.me/905323364263" target="_blank" rel="noopener">WhatsApp</a></li>
+        <li><a href="https://www.instagram.com/6ozcoffee/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=6OZ%20COFFEE%20%26%20CAKE%20HOUSE&amp;query_place_id=ChIJo1MuoURftRQRww_PlWYxh60" target="_blank" rel="noopener">Yol tarifi al</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap alt-son">
+    <span>© 2026 6OZ Coffee &amp; Cake House · Tüm hakları saklıdır</span>
+    <span>Adnan Kahveci Mah. Çalışlar Cad. No:10/9, Beylikdüzü</span>
+  </div>
+  <p class="wrap alt-not">Bu sayfa 6OZ Coffee &amp; Cake House için hazırlanmış bir örnek tasarımdır.</p>
 </footer>
 </body>
 </html>
