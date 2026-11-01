@@ -51,14 +51,3 @@ document.getElementById('edit-request').addEventListener('click',()=>{result.hid
 document.getElementById('copy-message').addEventListener('click',async()=>{try{if(navigator.clipboard&&isSecureContext)await navigator.clipboard.writeText(prepared.value);else{prepared.focus();prepared.select();if(!document.execCommand('copy'))throw Error('copy');}status.textContent='Kopyalandı. Instagram sohbetimize yapıştırabilirsiniz.';}catch{prepared.focus();prepared.select();status.textContent='Mesajı seçtik. Kopyalayıp Instagram sohbetimize yapıştırabilirsiniz.';}});
 
 const reviewRail=document.getElementById('review-rail');document.querySelectorAll('[data-review-dir]').forEach(button=>button.addEventListener('click',()=>{const card=reviewRail.querySelector('.google-review');const gap=parseFloat(getComputedStyle(reviewRail).gap)||0;reviewRail.scrollBy({left:Number(button.dataset.reviewDir)*(card.getBoundingClientRect().width+gap),behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'instant':'smooth'});}));
-
-const heroVideo=document.getElementById('hero-treatment-video'),heroToggle=document.getElementById('hero-video-toggle'),motionPreference=matchMedia('(prefers-reduced-motion:reduce)');
-let heroUserPaused=false;
-function showHeroState(){heroToggle.textContent=heroVideo.paused?'Oynat':'Duraklat';heroToggle.setAttribute('aria-label',heroVideo.paused?'Videoyu oynat':'Videoyu duraklat');heroToggle.setAttribute('aria-pressed',String(heroVideo.paused));}
-function startHeroVideo(){if(!heroVideo.getAttribute('src'))heroVideo.src=heroVideo.dataset.src;heroVideo.muted=true;heroToggle.hidden=false;heroVideo.play().catch(showHeroState);}
-if(!motionPreference.matches)startHeroVideo();
-heroVideo.addEventListener('play',showHeroState);heroVideo.addEventListener('pause',showHeroState);
-heroVideo.addEventListener('error',()=>{heroToggle.hidden=true;});
-heroToggle.addEventListener('click',()=>{heroUserPaused=!heroVideo.paused;if(heroVideo.paused)startHeroVideo();else heroVideo.pause();});
-motionPreference.addEventListener('change',e=>{if(e.matches){heroVideo.pause();heroToggle.hidden=true;}else if(!heroUserPaused)startHeroVideo();});
-document.addEventListener('visibilitychange',()=>{if(document.hidden)heroVideo.pause();else if(!motionPreference.matches&&!heroUserPaused)startHeroVideo();});
